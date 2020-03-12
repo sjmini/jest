@@ -2,10 +2,13 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
+import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object CallExpression5Contains0 {
   val length: Int = 0
-  val func: Func = Func("""CallExpression5Contains0""", List(Id("""this"""), Id("""CallExpression"""), Id("""IdentifierName"""), Id("""symbol""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""CallExpression"""))), EStr("""Contains""")), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""symbol"""))))), IIf(EBOp(OEq, ERef(RefId(Id("""__x1__"""))), EBool(true)), IReturn(EBool(true)), ISeq(List())), IIf(EIsInstanceOf(ERef(RefId(Id("""symbol"""))), """ReservedWord"""), IReturn(EBool(false)), ISeq(List())), IIf(EBOp(OAnd, EIsInstanceOf(ERef(RefId(Id("""symbol"""))), """Identifier"""), EBOp(OEq, EGetSyntax(ERef(RefId(Id("""symbol""")))), EGetSyntax(ERef(RefId(Id("""IdentifierName""")))))), IReturn(EBool(true)), ISeq(List())), IReturn(EBool(false)))))
+  val func: Func = Func("""CallExpression5Contains0""", List(Id("""this"""), Id("""CallExpression"""), Id("""IdentifierName"""), Id("""symbol""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""CallExpression"""))), EStr("""Contains""")).setId(16271), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""symbol"""))))).setId(16272), IIf(EBOp(OEq, ERef(RefId(Id("""__x1__"""))), EBool(true)), IReturn(EBool(true)).setId(16273), ISeq(List()).setId(16293)).setId(16276), IIf(EIsInstanceOf(ERef(RefId(Id("""symbol"""))), """ReservedWord"""), IReturn(EBool(false)).setId(16278), ISeq(List()).setId(16296)).setId(16280), IIf(EBOp(OAnd, EIsInstanceOf(ERef(RefId(Id("""symbol"""))), """Identifier"""), EBOp(OEq, EGetSyntax(ERef(RefId(Id("""symbol""")))), EGetSyntax(ERef(RefId(Id("""IdentifierName""")))))), IReturn(EBool(true)).setId(16283), ISeq(List()).setId(16299)).setId(16285), IReturn(EBool(false)).setId(16287))).setId(16302))
+  val instToStepMap: Map[Int, Int] = HashMap(16280 -> 3, 16283 -> 4, 16287 -> 6, 16272 -> 1, 16276 -> 1, 16279 -> 2, 16274 -> 0, 16284 -> 4, 16278 -> 2, 16273 -> 0, 16285 -> 5, 16281 -> 3, 16277 -> 1, 16288 -> 6, 16271 -> 1, 16286 -> 5)
+  val stepToInstsMap: Map[Int, HashSet[Int]] = HashMap(0 -> HashSet(16274, 16273), 5 -> HashSet(16285, 16286), 1 -> HashSet(16272, 16276, 16277, 16271), 6 -> HashSet(16287, 16288), 2 -> HashSet(16279, 16278), 3 -> HashSet(16280, 16281), 4 -> HashSet(16283, 16284))
   /* Beautified form:
   "CallExpression5Contains0" (this, CallExpression, IdentifierName, symbol) => {
     access __x0__ = (CallExpression "Contains")

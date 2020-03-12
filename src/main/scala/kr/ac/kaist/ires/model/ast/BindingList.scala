@@ -33,7 +33,7 @@ case class BindingList1(x0: BindingList, x2: LexicalBinding, parserParams: List[
 object BindingList1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "BoundNames0" -> BindingList1BoundNames0.func,
-    "Evaluation0" -> BindingList1Evaluation0.func
+    "Evaluation0" -> BindingList1Evaluation0.func,
+    "BoundNames0" -> BindingList1BoundNames0.func
   )
 }

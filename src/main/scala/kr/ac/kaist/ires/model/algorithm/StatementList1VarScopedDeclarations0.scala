@@ -2,10 +2,13 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
+import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object StatementList1VarScopedDeclarations0 {
   val length: Int = 0
-  val func: Func = Func("""StatementList1VarScopedDeclarations0""", List(Id("""this"""), Id("""StatementList"""), Id("""StatementListItem""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""StatementList"""))), EStr("""VarScopedDeclarations""")), ILet(Id("""declarations"""), ERef(RefId(Id("""__x0__""")))), IAccess(Id("""__x1__"""), ERef(RefId(Id("""StatementListItem"""))), EStr("""VarScopedDeclarations""")), ILet(Id("""__x2__"""), ERef(RefId(Id("""__x1__""")))), ILet(Id("""__x3__"""), EINum(0L)), IWhile(EBOp(OLt, ERef(RefId(Id("""__x3__"""))), ERef(RefProp(RefId(Id("""__x2__""")), EStr("""length""")))), ISeq(List(ILet(Id("""__x4__"""), ERef(RefProp(RefId(Id("""__x2__""")), ERef(RefId(Id("""__x3__""")))))), IAppend(ERef(RefId(Id("""__x4__"""))), ERef(RefId(Id("""declarations""")))), IAssign(RefId(Id("""__x3__""")), EBOp(OPlus, ERef(RefId(Id("""__x3__"""))), EINum(1L)))))), IReturn(ERef(RefId(Id("""declarations""")))))))
+  val func: Func = Func("""StatementList1VarScopedDeclarations0""", List(Id("""this"""), Id("""StatementList"""), Id("""StatementListItem""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""StatementList"""))), EStr("""VarScopedDeclarations""")).setId(26806), ILet(Id("""declarations"""), ERef(RefId(Id("""__x0__""")))).setId(26807), IAccess(Id("""__x1__"""), ERef(RefId(Id("""StatementListItem"""))), EStr("""VarScopedDeclarations""")).setId(26809), ILet(Id("""__x2__"""), ERef(RefId(Id("""__x1__""")))).setId(26811), ILet(Id("""__x3__"""), EINum(0L)).setId(26812), IWhile(EBOp(OLt, ERef(RefId(Id("""__x3__"""))), ERef(RefProp(RefId(Id("""__x2__""")), EStr("""length""")))), ISeq(List(ILet(Id("""__x4__"""), ERef(RefProp(RefId(Id("""__x2__""")), ERef(RefId(Id("""__x3__""")))))).setId(26813), IAppend(ERef(RefId(Id("""__x4__"""))), ERef(RefId(Id("""declarations""")))).setId(26810), IAssign(RefId(Id("""__x3__""")), EBOp(OPlus, ERef(RefId(Id("""__x3__"""))), EINum(1L))).setId(26814))).setId(26830)).setId(26816), IReturn(ERef(RefId(Id("""declarations""")))).setId(26819))).setId(26833))
+  val instToStepMap: Map[Int, Int] = HashMap(26820 -> 2, 26807 -> 0, 26819 -> 2, 26811 -> 1, 26806 -> 0, 26816 -> 1, 26818 -> 1, 26812 -> 1, 26809 -> 1, 26817 -> 1, 26808 -> 0)
+  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(26807, 26806, 26808), 1 -> HashSet(26811, 26816, 26818, 26812, 26809, 26817), 2 -> HashSet(26820, 26819))
   /* Beautified form:
   "StatementList1VarScopedDeclarations0" (this, StatementList, StatementListItem) => {
     access __x0__ = (StatementList "VarScopedDeclarations")

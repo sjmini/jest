@@ -50,22 +50,25 @@ trait Walker {
   def walk(program: Program): Program = Program(walkList[Inst](program.insts, walk))
 
   // instructions
-  def walk(inst: Inst): Inst = inst match {
-    case IExpr(expr) => IExpr(walk(expr))
-    case ILet(id, expr) => ILet(walk(id), walk(expr))
-    case IAssign(ref, expr) => IAssign(walk(ref), walk(expr))
-    case IDelete(ref) => IDelete(walk(ref))
-    case IAppend(expr, list) => IAppend(walk(expr), walk(list))
-    case IPrepend(expr, list) => IPrepend(walk(expr), walk(list))
-    case IReturn(expr) => IReturn(walk(expr))
-    case IIf(cond, thenInst, elseInst) => IIf(walk(cond), walk(thenInst), walk(elseInst))
-    case IWhile(cond, body) => IWhile(walk(cond), walk(body))
-    case ISeq(insts) => ISeq(walkList[Inst](insts, walk))
-    case IAssert(expr) => IAssert(walk(expr))
-    case IPrint(expr) => IPrint(walk(expr))
-    case IApp(id, fexpr, args) => IApp(walk(id), walk(fexpr), walkList[Expr](args, walk))
-    case IAccess(id, bexpr, expr) => IAccess(walk(id), walk(bexpr), walk(expr))
-    case IWithCont(id, params, body) => IWithCont(walk(id), walkList[Id](params, walk), walk(body))
+  def walk(inst: Inst): Inst = {
+    val resultInst = inst match {
+      case IExpr(expr) => IExpr(walk(expr))
+      case ILet(id, expr) => ILet(walk(id), walk(expr))
+      case IAssign(ref, expr) => IAssign(walk(ref), walk(expr))
+      case IDelete(ref) => IDelete(walk(ref))
+      case IAppend(expr, list) => IAppend(walk(expr), walk(list))
+      case IPrepend(expr, list) => IPrepend(walk(expr), walk(list))
+      case IReturn(expr) => IReturn(walk(expr))
+      case IIf(cond, thenInst, elseInst) => IIf(walk(cond), walk(thenInst), walk(elseInst))
+      case IWhile(cond, body) => IWhile(walk(cond), walk(body))
+      case ISeq(insts) => ISeq(walkList[Inst](insts, walk))
+      case IAssert(expr) => IAssert(walk(expr))
+      case IPrint(expr) => IPrint(walk(expr))
+      case IApp(id, fexpr, args) => IApp(walk(id), walk(fexpr), walkList[Expr](args, walk))
+      case IAccess(id, bexpr, expr) => IAccess(walk(id), walk(bexpr), walk(expr))
+      case IWithCont(id, params, body) => IWithCont(walk(id), walkList[Id](params, walk), walk(body))
+    }
+    resultInst.setId(inst.instId)
   }
 
   // expressions

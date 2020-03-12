@@ -33,3 +33,11 @@ target/
 tests/detail
 tests/test262.json
 tests/result/test262Test_*
+
+## Visual Studio workspace
+*.code-workspace
+
+## Metals related files
+.bloop
+.metals
+project/metals.sbt

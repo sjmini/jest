@@ -36,12 +36,12 @@ object BindingElement1 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
     "HasInitializer1" -> BindingElement1HasInitializer1.func,
-    "BoundNames1" -> BindingElement1BoundNames1.func,
-    "HasInitializer0" -> BindingElement1HasInitializer0.func,
-    "KeyedBindingInitialization1" -> BindingElement1KeyedBindingInitialization1.func,
-    "IteratorBindingInitialization1" -> BindingElement1IteratorBindingInitialization1.func,
     "ContainsExpression1" -> BindingElement1ContainsExpression1.func,
     "IsSimpleParameterList1" -> BindingElement1IsSimpleParameterList1.func,
-    "IsSimpleParameterList0" -> BindingElement1IsSimpleParameterList0.func
+    "BoundNames1" -> BindingElement1BoundNames1.func,
+    "KeyedBindingInitialization1" -> BindingElement1KeyedBindingInitialization1.func,
+    "IteratorBindingInitialization1" -> BindingElement1IteratorBindingInitialization1.func,
+    "IsSimpleParameterList0" -> BindingElement1IsSimpleParameterList0.func,
+    "HasInitializer0" -> BindingElement1HasInitializer0.func
   )
 }

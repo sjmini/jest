@@ -34,8 +34,8 @@ object BitwiseANDExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "IsFunctionDefinition0" -> BitwiseANDExpression1IsFunctionDefinition0.func,
-    "Evaluation0" -> BitwiseANDExpression1Evaluation0.func,
     "ExpressionRules0" -> BitwiseANDExpression1ExpressionRules0.func,
-    "AssignmentTargetType0" -> BitwiseANDExpression1AssignmentTargetType0.func
+    "AssignmentTargetType0" -> BitwiseANDExpression1AssignmentTargetType0.func,
+    "Evaluation0" -> BitwiseANDExpression1Evaluation0.func
   )
 }

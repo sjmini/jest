@@ -20,9 +20,9 @@ case class AsyncGeneratorDeclaration0(x4: BindingIdentifier, x6: FormalParameter
 object AsyncGeneratorDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Contains0" -> AsyncGeneratorDeclaration0Contains0.func,
     "BoundNames0" -> AsyncGeneratorDeclaration0BoundNames0.func,
     "InstantiateFunctionObject0" -> AsyncGeneratorDeclaration0InstantiateFunctionObject0.func,
+    "Contains0" -> AsyncGeneratorDeclaration0Contains0.func,
     "IsConstantDeclaration0" -> AsyncGeneratorDeclaration0IsConstantDeclaration0.func
   )
 }
@@ -38,9 +38,9 @@ case class AsyncGeneratorDeclaration1(x5: FormalParameters, x8: AsyncGeneratorBo
 object AsyncGeneratorDeclaration1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "BoundNames0" -> AsyncGeneratorDeclaration1BoundNames0.func,
     "Contains0" -> AsyncGeneratorDeclaration1Contains0.func,
     "IsConstantDeclaration0" -> AsyncGeneratorDeclaration1IsConstantDeclaration0.func,
-    "InstantiateFunctionObject0" -> AsyncGeneratorDeclaration1InstantiateFunctionObject0.func
+    "InstantiateFunctionObject0" -> AsyncGeneratorDeclaration1InstantiateFunctionObject0.func,
+    "BoundNames0" -> AsyncGeneratorDeclaration1BoundNames0.func
   )
 }

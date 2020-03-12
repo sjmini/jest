@@ -1,7 +1,59 @@
 package kr.ac.kaist.ires.ir
 
+import scala.collection.mutable.{ Map => MutableMap }
+import scala.collection.immutable.HashSet
+import scala.annotation.tailrec
+
+// Unique ID generator
+object Inst {
+  private var internalId: Int = 0
+  private def getId = {
+    val returnId = internalId
+    internalId += 1
+    returnId
+  }
+
+  def getAllInstIds(target: Inst): HashSet[Int] = {
+    @tailrec
+    def helper(obj: Inst, result: HashSet[Int], remains: List[Inst]): HashSet[Int] = {
+      obj match {
+        case ISeq(insts) => insts match {
+          case Nil => remains match {
+            case Nil => result + obj.instId
+            case head :: next => helper(head, result + obj.instId, next)
+          }
+          case head :: next => helper(head, result + obj.instId, next ++ remains)
+        }
+        case IWithCont(_, _, bodyInst) => helper(bodyInst, result + obj.instId, remains)
+        case _ => remains match {
+          case Nil => result + obj.instId
+          case head :: next => helper(head, result + obj.instId, next)
+        }
+      }
+    }
+
+    helper(target, HashSet[Int](), Nil)
+  }
+}
+
 // IR Instructions
-sealed trait Inst extends IRNode
+sealed trait Inst extends IRNode with Product {
+  var instId = Inst.getId
+
+  def setId(id: Int): this.type = {
+    this.instId = id
+    this
+  }
+
+  def setId(inst: Inst): this.type = {
+    this.instId = inst.instId
+    this
+  }
+
+  override def toString(): String = {
+    s"${this.productPrefix}(${this.productIterator.mkString(",")}).setId(${this.instId})"
+  }
+}
 case class IExpr(expr: Expr) extends Inst
 case class ILet(id: Id, expr: Expr) extends Inst
 case class IAssign(ref: Ref, expr: Expr) extends Inst

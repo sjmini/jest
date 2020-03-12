@@ -34,7 +34,7 @@ object LeftHandSideExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "IsDestructuring0" -> LeftHandSideExpression1IsDestructuring0.func,
-    "IsFunctionDefinition0" -> LeftHandSideExpression1IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> LeftHandSideExpression1IsIdentifierRef0.func
+    "IsIdentifierRef0" -> LeftHandSideExpression1IsIdentifierRef0.func,
+    "IsFunctionDefinition0" -> LeftHandSideExpression1IsFunctionDefinition0.func
   )
 }

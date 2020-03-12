@@ -2,10 +2,13 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
+import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object LabelledStatement0ContainsUndefinedBreakTarget0 {
   val length: Int = 0
-  val func: Func = Func("""LabelledStatement0ContainsUndefinedBreakTarget0""", List(Id("""this"""), Id("""LabelIdentifier"""), Id("""LabelledItem"""), Id("""labelSet""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""LabelIdentifier"""))), EStr("""StringValue""")), ILet(Id("""label"""), ERef(RefId(Id("""__x0__""")))), ILet(Id("""__x1__"""), ECopy(ERef(RefId(Id("""labelSet"""))))), IAppend(ERef(RefId(Id("""label"""))), ERef(RefId(Id("""__x1__""")))), ILet(Id("""newLabelSet"""), ERef(RefId(Id("""__x1__""")))), IAccess(Id("""__x2__"""), ERef(RefId(Id("""LabelledItem"""))), EStr("""ContainsUndefinedBreakTarget""")), IApp(Id("""__x3__"""), ERef(RefId(Id("""__x2__"""))), List(ERef(RefId(Id("""newLabelSet"""))))), IReturn(ERef(RefId(Id("""__x3__""")))))))
+  val func: Func = Func("""LabelledStatement0ContainsUndefinedBreakTarget0""", List(Id("""this"""), Id("""LabelIdentifier"""), Id("""LabelledItem"""), Id("""labelSet""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""LabelIdentifier"""))), EStr("""StringValue""")).setId(36188), ILet(Id("""label"""), ERef(RefId(Id("""__x0__""")))).setId(36189), ILet(Id("""__x1__"""), ECopy(ERef(RefId(Id("""labelSet"""))))).setId(36191), IAppend(ERef(RefId(Id("""label"""))), ERef(RefId(Id("""__x1__""")))).setId(36192), ILet(Id("""newLabelSet"""), ERef(RefId(Id("""__x1__""")))).setId(36193), IAccess(Id("""__x2__"""), ERef(RefId(Id("""LabelledItem"""))), EStr("""ContainsUndefinedBreakTarget""")).setId(36195), IApp(Id("""__x3__"""), ERef(RefId(Id("""__x2__"""))), List(ERef(RefId(Id("""newLabelSet"""))))).setId(36196), IReturn(ERef(RefId(Id("""__x3__""")))).setId(36197))).setId(36208))
+  val instToStepMap: Map[Int, Int] = HashMap(36192 -> 1, 36195 -> 2, 36198 -> 2, 36188 -> 0, 36194 -> 1, 36197 -> 2, 36189 -> 0, 36193 -> 1, 36191 -> 1, 36196 -> 2, 36190 -> 0)
+  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(36188, 36189, 36190), 1 -> HashSet(36192, 36194, 36193, 36191), 2 -> HashSet(36195, 36198, 36197, 36196))
   /* Beautified form:
   "LabelledStatement0ContainsUndefinedBreakTarget0" (this, LabelIdentifier, LabelledItem, labelSet) => {
     access __x0__ = (LabelIdentifier "StringValue")

@@ -20,8 +20,8 @@ case class ForBinding0(x0: BindingIdentifier, parserParams: List[Boolean]) exten
 object ForBinding0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> ForBinding0Evaluation0.func,
-    "IsDestructuring0" -> ForBinding0IsDestructuring0.func
+    "IsDestructuring0" -> ForBinding0IsDestructuring0.func,
+    "Evaluation0" -> ForBinding0Evaluation0.func
   )
 }
 case class ForBinding1(x0: BindingPattern, parserParams: List[Boolean]) extends ForBinding {

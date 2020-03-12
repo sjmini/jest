@@ -35,7 +35,7 @@ object LogicalANDExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> LogicalANDExpression1Evaluation0.func,
     "AssignmentTargetType0" -> LogicalANDExpression1AssignmentTargetType0.func,
-    "IsFunctionDefinition0" -> LogicalANDExpression1IsFunctionDefinition0.func,
-    "ExpressionRules0" -> LogicalANDExpression1ExpressionRules0.func
+    "ExpressionRules0" -> LogicalANDExpression1ExpressionRules0.func,
+    "IsFunctionDefinition0" -> LogicalANDExpression1IsFunctionDefinition0.func
   )
 }

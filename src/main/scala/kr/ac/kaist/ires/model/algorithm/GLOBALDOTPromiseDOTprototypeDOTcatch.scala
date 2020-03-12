@@ -2,10 +2,13 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
+import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object GLOBALDOTPromiseDOTprototypeDOTcatch {
   val length: Int = 1
-  val func: Func = Func("""GLOBAL.Promise.prototype.catch""", List(Id("""this"""), Id("""argumentsList"""), Id("""NewTarget""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""GetArgument"""))), List(ERef(RefId(Id("""argumentsList"""))), EINum(0L))), ILet(Id("""onRejected"""), ERef(RefId(Id("""__x0__""")))), ILet(Id("""promise"""), ERef(RefId(Id("""this""")))), IApp(Id("""__x1__"""), ERef(RefId(Id("""Invoke"""))), List(ERef(RefId(Id("""promise"""))), EStr("""then"""), EList(List(EUndef, ERef(RefId(Id("""onRejected"""))))))), IIf(EBOp(OEq, ETypeOf(ERef(RefId(Id("""__x1__""")))), EStr("""Completion""")), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x1__""")), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x1__"""))))), ISeq(List())), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x1__"""))))), IReturn(ERef(RefId(Id("""__x2__""")))))))
+  val func: Func = Func("""GLOBAL.Promise.prototype.catch""", List(Id("""this"""), Id("""argumentsList"""), Id("""NewTarget""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""GetArgument"""))), List(ERef(RefId(Id("""argumentsList"""))), EINum(0L))).setId(92931), ILet(Id("""onRejected"""), ERef(RefId(Id("""__x0__""")))).setId(92932), ILet(Id("""promise"""), ERef(RefId(Id("""this""")))).setId(92934), IApp(Id("""__x1__"""), ERef(RefId(Id("""Invoke"""))), List(ERef(RefId(Id("""promise"""))), EStr("""then"""), EList(List(EUndef, ERef(RefId(Id("""onRejected"""))))))).setId(92936), IIf(EBOp(OEq, ETypeOf(ERef(RefId(Id("""__x1__""")))), EStr("""Completion""")), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x1__""")), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Value""")))).setId(92937), IReturn(ERef(RefId(Id("""__x1__""")))).setId(92938)).setId(92939), ISeq(List()).setId(92953)).setId(92941), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x1__"""))))).setId(92942), IReturn(ERef(RefId(Id("""__x2__""")))).setId(92943))).setId(92957))
+  val instToStepMap: Map[Int, Int] = HashMap(92936 -> 2, 92933 -> 0, 92943 -> 2, 92944 -> 2, 92941 -> 2, 92934 -> 1, 92931 -> 0, 92942 -> 2, 92935 -> 1, 92932 -> 0)
+  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(92933, 92932, 92931), 1 -> HashSet(92935, 92934), 2 -> HashSet(92936, 92943, 92944, 92941, 92942))
   /* Beautified form:
   "GLOBAL.Promise.prototype.catch" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)

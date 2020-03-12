@@ -35,7 +35,7 @@ object BitwiseXORExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> BitwiseXORExpression1AssignmentTargetType0.func,
     "ExpressionRules0" -> BitwiseXORExpression1ExpressionRules0.func,
-    "Evaluation0" -> BitwiseXORExpression1Evaluation0.func,
-    "IsFunctionDefinition0" -> BitwiseXORExpression1IsFunctionDefinition0.func
+    "IsFunctionDefinition0" -> BitwiseXORExpression1IsFunctionDefinition0.func,
+    "Evaluation0" -> BitwiseXORExpression1Evaluation0.func
   )
 }

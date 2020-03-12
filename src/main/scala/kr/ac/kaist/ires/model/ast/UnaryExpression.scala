@@ -34,9 +34,9 @@ object UnaryExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> UnaryExpression1AssignmentTargetType0.func,
+    "IsFunctionDefinition0" -> UnaryExpression1IsFunctionDefinition0.func,
     "Evaluation0" -> UnaryExpression1Evaluation0.func,
-    "ExpressionRules0" -> UnaryExpression1ExpressionRules0.func,
-    "IsFunctionDefinition0" -> UnaryExpression1IsFunctionDefinition0.func
+    "ExpressionRules0" -> UnaryExpression1ExpressionRules0.func
   )
 }
 case class UnaryExpression2(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
@@ -51,10 +51,10 @@ case class UnaryExpression2(x1: UnaryExpression, parserParams: List[Boolean]) ex
 object UnaryExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> UnaryExpression2Evaluation0.func,
-    "ExpressionRules0" -> UnaryExpression2ExpressionRules0.func,
     "IsFunctionDefinition0" -> UnaryExpression2IsFunctionDefinition0.func,
-    "AssignmentTargetType0" -> UnaryExpression2AssignmentTargetType0.func
+    "AssignmentTargetType0" -> UnaryExpression2AssignmentTargetType0.func,
+    "ExpressionRules0" -> UnaryExpression2ExpressionRules0.func,
+    "Evaluation0" -> UnaryExpression2Evaluation0.func
   )
 }
 case class UnaryExpression3(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
@@ -87,10 +87,10 @@ case class UnaryExpression4(x1: UnaryExpression, parserParams: List[Boolean]) ex
 object UnaryExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> UnaryExpression4AssignmentTargetType0.func,
     "Evaluation0" -> UnaryExpression4Evaluation0.func,
-    "IsFunctionDefinition0" -> UnaryExpression4IsFunctionDefinition0.func,
-    "ExpressionRules0" -> UnaryExpression4ExpressionRules0.func
+    "ExpressionRules0" -> UnaryExpression4ExpressionRules0.func,
+    "AssignmentTargetType0" -> UnaryExpression4AssignmentTargetType0.func,
+    "IsFunctionDefinition0" -> UnaryExpression4IsFunctionDefinition0.func
   )
 }
 case class UnaryExpression5(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
@@ -105,9 +105,9 @@ case class UnaryExpression5(x1: UnaryExpression, parserParams: List[Boolean]) ex
 object UnaryExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "AssignmentTargetType0" -> UnaryExpression5AssignmentTargetType0.func,
     "Evaluation0" -> UnaryExpression5Evaluation0.func,
     "IsFunctionDefinition0" -> UnaryExpression5IsFunctionDefinition0.func,
-    "AssignmentTargetType0" -> UnaryExpression5AssignmentTargetType0.func,
     "ExpressionRules0" -> UnaryExpression5ExpressionRules0.func
   )
 }
@@ -141,10 +141,10 @@ case class UnaryExpression7(x1: UnaryExpression, parserParams: List[Boolean]) ex
 object UnaryExpression7 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsFunctionDefinition0" -> UnaryExpression7IsFunctionDefinition0.func,
     "ExpressionRules0" -> UnaryExpression7ExpressionRules0.func,
+    "Evaluation0" -> UnaryExpression7Evaluation0.func,
     "AssignmentTargetType0" -> UnaryExpression7AssignmentTargetType0.func,
-    "Evaluation0" -> UnaryExpression7Evaluation0.func
+    "IsFunctionDefinition0" -> UnaryExpression7IsFunctionDefinition0.func
   )
 }
 case class UnaryExpression8(x0: AwaitExpression, parserParams: List[Boolean]) extends UnaryExpression {
@@ -159,8 +159,8 @@ case class UnaryExpression8(x0: AwaitExpression, parserParams: List[Boolean]) ex
 object UnaryExpression8 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "AssignmentTargetType0" -> UnaryExpression8AssignmentTargetType0.func,
     "IsFunctionDefinition0" -> UnaryExpression8IsFunctionDefinition0.func,
-    "ExpressionRules0" -> UnaryExpression8ExpressionRules0.func,
-    "AssignmentTargetType0" -> UnaryExpression8AssignmentTargetType0.func
+    "ExpressionRules0" -> UnaryExpression8ExpressionRules0.func
   )
 }

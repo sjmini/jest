@@ -21,8 +21,8 @@ object ObjectBindingPattern0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ContainsExpression0" -> ObjectBindingPattern0ContainsExpression0.func,
-    "BoundNames0" -> ObjectBindingPattern0BoundNames0.func,
-    "BindingInitialization0" -> ObjectBindingPattern0BindingInitialization0.func
+    "BindingInitialization0" -> ObjectBindingPattern0BindingInitialization0.func,
+    "BoundNames0" -> ObjectBindingPattern0BoundNames0.func
   )
 }
 case class ObjectBindingPattern1(x1: BindingRestProperty, parserParams: List[Boolean]) extends ObjectBindingPattern {

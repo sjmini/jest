@@ -20,9 +20,9 @@ case class GeneratorMethod0(x1: PropertyName, x3: UniqueFormalParameters, x6: Ge
 object GeneratorMethod0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ComputedPropertyContains0" -> GeneratorMethod0ComputedPropertyContains0.func,
-    "HasDirectSuper0" -> GeneratorMethod0HasDirectSuper0.func,
     "PropertyDefinitionEvaluation0" -> GeneratorMethod0PropertyDefinitionEvaluation0.func,
-    "PropName0" -> GeneratorMethod0PropName0.func
+    "HasDirectSuper0" -> GeneratorMethod0HasDirectSuper0.func,
+    "PropName0" -> GeneratorMethod0PropName0.func,
+    "ComputedPropertyContains0" -> GeneratorMethod0ComputedPropertyContains0.func
   )
 }

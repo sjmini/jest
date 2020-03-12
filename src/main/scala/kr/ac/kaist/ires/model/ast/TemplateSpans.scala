@@ -37,8 +37,8 @@ case class TemplateSpans1(x0: TemplateMiddleList, x1: Lexical, parserParams: Lis
 object TemplateSpans1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "Evaluation0" -> TemplateSpans1Evaluation0.func,
     "SubstitutionEvaluation0" -> TemplateSpans1SubstitutionEvaluation0.func,
-    "TemplateStrings0" -> TemplateSpans1TemplateStrings0.func,
-    "Evaluation0" -> TemplateSpans1Evaluation0.func
+    "TemplateStrings0" -> TemplateSpans1TemplateStrings0.func
   )
 }
