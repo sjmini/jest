@@ -1,0 +1,65 @@
+package kr.ac.kaist.ires.parser
+
+import scala.collection.mutable
+import scala.util.parsing.combinator.Parsers
+import scala.util.parsing.input.{ Reader, Position }
+import scala.language.implicitConversions
+
+trait EPackratParsers extends Parsers {
+  case class Box(var rightmostFailedPos: Option[Position])
+
+  case class EPackratReader[+T <: Elem](
+      underlying: Reader[T],
+      box: Box = Box(None),
+      private[EPackratParsers] val cache: Map[(Parser[_], Position), ParseResult[_]] = Map()
+  ) extends Reader[T] {
+    override def source: java.lang.CharSequence = underlying.source
+    override def offset: Int = underlying.offset
+    override def toString: String = underlying.toString
+    def first: T = underlying.first
+    def rest: Reader[T] = copy(underlying = underlying.rest)
+    def pos: Position = underlying.pos
+    def atEnd: Boolean = underlying.atEnd
+  }
+
+  abstract class EPackratParser[+T] extends super.Parser[T]
+
+  val EMPTY = Parser[String] { in => Success("", in) }
+
+  implicit def parser2packrat[T, P](p: => P)(implicit f: P => Parser[T]): EPackratParser[T] = {
+    lazy val q = p
+    memo(Parser { in => q(in) })
+  }
+
+  def memo[T](p: super.Parser[T]): EPackratParser[T] = new EPackratParser[T] {
+    def apply(in: Input) = {
+      val inMem = in.asInstanceOf[EPackratReader[Elem]]
+      val pos = inMem.pos
+      val cache = inMem.cache
+      cache.get((p, pos)) match {
+        case Some(res) => res.asInstanceOf[ParseResult[T]]
+        case None =>
+          val res = p(inMem.copy(cache = cache + ((p, pos) -> Failure("recursive rule", inMem))))
+          res match {
+            case (succ: Success[_]) => inc(p, inMem.copy(cache = cache + ((p, pos) -> succ)))
+            case fail => fail
+          }
+      }
+    }
+  }
+
+  private def inc[T](
+    p: super.Parser[T],
+    inMem: EPackratReader[Elem]
+  ): ParseResult[T] = {
+    val pos = inMem.pos
+    val cache = inMem.cache
+    val curRes = cache((p, pos)).asInstanceOf[ParseResult[T]]
+    val newRes = p(inMem)
+    newRes match {
+      case (_: Success[_]) if (curRes.next.pos < newRes.next.pos) =>
+        inc(p, inMem.copy(cache = cache + ((p, pos) -> newRes)))
+      case _ => curRes
+    }
+  }
+}
