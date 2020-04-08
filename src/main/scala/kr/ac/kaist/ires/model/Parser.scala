@@ -496,10 +496,9 @@ object Parser extends ESParsers {
       log((MATCH <~ t("await")) ^^ { case _ => BindingIdentifier2(args) })("BindingIdentifier2")
     ))("BindingIdentifier")
   })
-  private val NoReservedIdentifierName: Lexer = IdentifierName \ ReservedWord
   lazy val Identifier: ESParser[Identifier] = memo(args => {
     log((
-      log(MATCH ~ nt("""(IdentifierName \ (ReservedWord))""", NoReservedIdentifierName) ^^ { case _ ~ x0 => Identifier0(x0, args) })("Identifier0")
+      log(MATCH ~ nt("""(IdentifierName \ (ReservedWord))""", (IdentifierName \ (ReservedWord))) ^^ { case _ ~ x0 => Identifier0(x0, args) })("Identifier0")
     ))("Identifier")
   })
   lazy val AsyncArrowBindingIdentifier: ESParser[AsyncArrowBindingIdentifier] = memo(args => {
