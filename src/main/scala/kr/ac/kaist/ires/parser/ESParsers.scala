@@ -12,13 +12,17 @@ import scala.util.parsing.input._
 trait ESParsers extends LAParsers {
   // automatic semicolon insertion
   def insertSemicolon(reader: EPackratReader[Char]): Option[String] = {
-    reader.container.rightmostFailedPos match {
-      case Some((pos, rev)) =>
+    reader.box.rightmostFailedPos match {
+      case Some(pos) =>
         val source = reader.source.toString
         val line = pos.line - 1
         val column = pos.column - 1
         val lines = source.replace("\r\n", "\n").split(Array('\n', '\r'))
-        val revStr = rev.mkString
+        val revStr = {
+          val (preLines, postLines) = lines.splitAt(line)
+          preLines.foldLeft("") { case (s, l) => s + l + "\n" } +
+            (if (postLines.length > 0) postLines(0).substring(0, column) else "")
+        }.reverse
 
         if (DEBUG_SEMI_INSERT) {
           lines.zipWithIndex.foreach {
@@ -73,24 +77,27 @@ trait ESParsers extends LAParsers {
 
   // terminal parsers
   val t = cached[String, LAParser[String]] {
-    case t => log(new LAParser(follow => {
-      Skip ~> {
-        if (t.matches("[a-z]+")) t <~ not(IDContinue)
-        else t
-      } <~ +follow.parser
-    }, FirstTerms() + t))(t)
+    case t => log(new LAParser[String] {
+      val parser = cached(follow => {
+        Skip ~> {
+          if (t.matches("[a-z]+")) t <~ not(IDContinue)
+          else t
+        } <~ +follow.parser
+      })
+      protected def getFirst = noFirst + t
+    })(t)
   }
   val nt = cached[(String, Lexer), LAParser[Lexical]] {
-    case (name, nt) => log(new LAParser(
-      follow => (Skip ~> nt <~ +follow.parser) ^^ { case s => Lexical(name, s) },
-      FirstTerms() + (name -> nt)
-    ))(name)
+    case (name, nt) => log(new LAParser[Lexical] {
+      val parser = cached(follow => (Skip ~> nt <~ +follow.parser) ^^ { Lexical(name, _) })
+      protected def getFirst = noFirst + (name -> nt)
+    })(name)
   }
-  def ntl = cached[Lexer, LAParser[Lexical]] {
-    case nt => log(new LAParser(
-      follow => (Skip ~> nt) ^^ { case s => Lexical("", s) },
-      FirstTerms()
-    ))("")
+  val ntl = cached[Parser[String], LAParser[Lexical]] {
+    case nt => log(new LAParser[Lexical] {
+      val parser = cached(follow => (Skip ~> nt) ^^ { Lexical("", _) })
+      protected def getFirst = noFirst
+    })("")
   }
 
   // parser that supports automatic semicolon insertions
@@ -129,13 +136,11 @@ trait ESParsers extends LAParsers {
 
   // record right-most faield positions
   protected def record[T](parser: Parser[T], in: EPackratReader[Char]): ParseResult[T] = {
-    val container = in.container
+    val box = in.box
     val res = parser(in)
-    (res, container.rightmostFailedPos) match {
-      case (f @ Failure(_, cur: EPackratReader[_]), Some((origPos, _))) if origPos < cur.pos =>
-        container.rightmostFailedPos = Some((cur.pos, cur.rev))
-      case (f @ Failure(_, cur: EPackratReader[_]), None) =>
-        container.rightmostFailedPos = Some((cur.pos, cur.rev))
+    (res, box.rightmostFailedPos) match {
+      case (f @ Failure(_, cur: EPackratReader[_]), origPos) if origPos.fold(true)(_ < cur.pos) =>
+        box.rightmostFailedPos = Some(cur.pos)
       case _ =>
     }
     res
@@ -145,10 +150,10 @@ trait ESParsers extends LAParsers {
   val Script: ESParser[Script]
 
   // no LineTerminator parser
-  lazy val NoLineTerminator: LAParser[String] = log(new LAParser(
-    follow => strNoLineTerminator,
-    emptyFirst
-  ))("NoLineTerminator")
+  lazy val NoLineTerminator: LAParser[String] = log(new LAParser[String] {
+    val parser = follow => strNoLineTerminator
+    protected def getFirst = emptyFirst
+  })("NoLineTerminator")
 
   // all rules
   val rules: Map[String, ESParser[AST]]

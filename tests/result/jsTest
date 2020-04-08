@@ -1,11 +1,11 @@
   JSCheck:
-    PASS : 101
-    Yet  : 0
+    PASS : 97
+    Yet  : 4
     FAIL : 0
     TOTAL: 101
   JSEval:
-    PASS : 101
-    Yet  : 0
+    PASS : 97
+    Yet  : 4
     FAIL : 0
     TOTAL: 101
   JSParse:

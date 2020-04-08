@@ -1,0 +1,193 @@
+package kr.ac.kaist.ires.parser
+
+import scala.collection.mutable
+import scala.util.parsing.combinator.Parsers
+import scala.util.parsing.input.{ Reader, Position }
+import scala.language.implicitConversions
+
+trait EPackratParsers extends Parsers {
+  var TOTAL = 0
+  var SUCCESS = 0
+  var FAILURE = 0
+
+  case class Box(
+      var rightmostFailedPos: Option[Position],
+      private[EPackratParsers] var wrapper: Option[Work]
+  )
+  case class Work(p: Parser[_], pos: Position) {
+    override def toString: String = f"(0x${p.hashCode}%x, $pos)"
+  }
+  class WorkList[T] {
+    private val stack = mutable.Stack[T]()
+    private val set = mutable.Set[T]()
+    def isEmpty = set.isEmpty
+    def put(elem: T): Unit = if (!(set contains elem)) { set += elem; stack += elem }
+    def getNext: T = { val elem = stack.pop; set -= elem; elem }
+    override def toString: String = stack.mkString("[", ", ", "]")
+  }
+
+  case class EPackratReader[+T <: Elem](
+      underlying: Reader[T],
+      box: Box = Box(None, None),
+      private[EPackratParsers] val cache: mutable.Map[Work, ParseResult[_]] = mutable.HashMap.empty,
+      private[EPackratParsers] val at: mutable.Map[Position, EPackratReader[Elem]] = mutable.HashMap.empty,
+      private[EPackratParsers] val depGraph: mutable.Map[Work, Set[Work]] = mutable.HashMap.empty,
+      private[EPackratParsers] val worklist: WorkList[Work] = new WorkList
+  ) extends Reader[T] {
+    override def source: java.lang.CharSequence = underlying.source
+    override def offset: Int = underlying.offset
+    override def toString: String = underlying.toString
+    def first: T = underlying.first
+    def rest: Reader[T] = copy(
+      underlying = underlying.rest,
+    )
+    def pos: Position = underlying.pos
+    def atEnd: Boolean = underlying.atEnd
+  }
+
+  abstract class EPackratParser[+T] extends super.Parser[T]
+
+  val EMPTY = Parser[String] { in => Success("", in) }
+
+  implicit def parser2packrat[T, P](p: => P)(implicit f: P => Parser[T]): EPackratParser[T] = {
+    lazy val q = p
+    memo(Parser { in => q(in) })
+  }
+
+  private def display(any: Any): Unit = {} // println(any)
+
+  private def getResult[T](inMem: EPackratReader[Elem], work: Work): ParseResult[T] = inMem.cache.get(work) match {
+    // first access
+    case None =>
+      display(s"  - FIRST-ACCESS $work: Added failed cache / Inserted in worklist")
+      val fail = Failure("recursive access", inMem)
+
+      // caching the current work is fail
+      display(s"    - ADD-CACHE: FAILED")
+      inMem.cache.put(work, fail)
+
+      // put the current work to the worklist
+      display(s"    - ADD-WORKLIST")
+      inMem.worklist.put(work)
+
+      // return failure at the first access
+      fail
+
+    // return cached result
+    case Some(res) =>
+      display(s"  - CACHED: $res")
+      res.asInstanceOf[ParseResult[T]]
+  }
+
+  def memo[T](p: super.Parser[T]): EPackratParser[T] = new EPackratParser[T] {
+    def apply(in: Input) = {
+      val inMem = in.asInstanceOf[EPackratReader[Elem]]
+      val cache = inMem.cache
+      val depGraph = inMem.depGraph
+      val worklist = inMem.worklist
+      val wrapper = inMem.box.wrapper
+      val at = inMem.at
+      val pos = inMem.pos
+      val work = Work(p, pos)
+      at.put(pos, inMem)
+
+      // add an dependency edge to the wrapper work
+      (wrapper match {
+        case Some(to) =>
+          display(s"  ------------------------------------------------")
+          display(s"  memo $work:")
+          display(s"  - ADD-DEPENDENCY: $work -> $to")
+          val set = depGraph.getOrElse(work, Set())
+          depGraph += work -> (set + to)
+        case None =>
+          getResult[T](inMem, work)
+          grow(inMem)
+      })
+      getResult[T](inMem, work)
+
+      // XXX previous version
+      // case Some(res) =>
+      //   display(s"exist: $res")
+      //   res.asInstanceOf[ParseResult[T]]
+      // case None =>
+      //   display("nothing")
+      //   cache.put((p, pos), Failure("recursive rule", curIn))
+      //   val res = p(curIn)
+      //   display(res)
+      //   // res match {
+      //   //   case (succ: Success[_]) =>
+      //   //     cache.put((p, pos), succ)
+      //   //     inc(p, curIn)
+      //   //   case fail => fail
+      //   // }
+      //   res match {
+      //     case (succ: Success[_]) => cache.put((p, pos), succ)
+      //     case fail =>
+      //   }
+      //   inc(p, curIn)
+    }
+  }
+
+  private def grow(inMem: EPackratReader[Elem]): Unit = {
+    val cache = inMem.cache
+    val depGraph = inMem.depGraph
+    val worklist = inMem.worklist
+    val box = inMem.box
+    val at = inMem.at
+
+    while (!worklist.isEmpty) {
+      val work @ Work(p, pos) = worklist.getNext
+      display(s">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+      display(s"grow:")
+      display(s"- #worklist: $worklist")
+      display(s"- depGraph: $depGraph")
+      display(f"- work: $work")
+
+      val oldRes = cache(work)
+      box.wrapper = Some(work)
+      val inMem = at(pos)
+      val newRes = p(inMem)
+      display(s"- oldRes: $oldRes")
+      display(s"- newRes: ${
+        newRes match {
+          case (no: NoSuccess) => no.msg
+          case _ => newRes
+        }
+      }")
+
+      TOTAL += 1
+      if ((!oldRes.successful && newRes.successful) || (oldRes.next.pos < newRes.next.pos)) {
+        SUCCESS += 1
+        at.put(pos, inMem)
+        cache.put(work, newRes)
+        display(s"- UPDATED: $newRes")
+
+        val deps = depGraph.getOrElse(work, Nil)
+        display(s"- WORKLIST <- $deps)")
+        deps.foreach(worklist.put _)
+      } else FAILURE += 1
+      display(s"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    }
+  }
+
+  // XXX previous version
+  // private def inc[T](
+  //   p: super.Parser[T],
+  //   curIn: EPackratReader[Elem]
+  // ): ParseResult[T] = {
+  //   val pos = curIn.pos
+  //   val cache = curIn.cache
+  //   val curRes = cache((p, pos)).asInstanceOf[ParseResult[T]]
+  //   val newRes = p(curIn)
+  //   display(s"inc:")
+  //   display(s"  - #cache: ${cache.size}")
+  //   display(s"  - curRes: $curRes")
+  //   display(s"  - newRes: $newRes")
+  //   newRes match {
+  //     case (_: Success[_]) if (curRes.next.pos < newRes.next.pos) =>
+  //       cache.put((p, pos), newRes)
+  //       inc(p, curIn)
+  //     case _ => curRes
+  //   }
+  // }
+}

@@ -29,9 +29,9 @@ trait LAParsers extends Lexer {
       this.ts ++ that.ts,
       this.nts ++ that.nts
     )
-    def parser: Lexer = Skip ~> Parser { rawIn =>
+    lazy val parser: Lexer = Skip ~> Parser { rawIn =>
       val base =
-        if (possibleEmpty) phrase(empty)
+        if (possibleEmpty) phrase("")
         else failed
       val t = TERMINAL.filter(ts contains _)
       record(
@@ -49,106 +49,118 @@ trait LAParsers extends Lexer {
   val noFirst: FirstTerms = FirstTerms()
 
   // lookahead parsers
-  class LAParser[+T](
-      val parser: FirstTerms => Parser[T],
-      val first: FirstTerms
-  ) {
-    def ~[U](that: => LAParser[U]): LAParser[~[T, U]] = new LAParser(
-      follow => this.parser(that.first ~ follow) ~ that.parser(follow),
-      this.first ~ that.first
-    )
+  trait LAParser[+T] { self =>
+    val parser: FirstTerms => Parser[T]
+    protected def getFirst: FirstTerms
 
-    def ~>[U](that: => LAParser[U]): LAParser[U] = new LAParser(
-      follow => this.parser(that.first ~ follow) ~> that.parser(follow),
-      this.first ~ that.first
-    )
+    private var visited = false
+    private var firstCache: FirstTerms = noFirst
+    def first: FirstTerms = {
+      if (!visited) { visited = true; firstCache = getFirst }
+      firstCache
+    }
 
-    def <~[U](that: => LAParser[U]): LAParser[T] = new LAParser(
-      follow => this.parser(that.first ~ follow) <~ that.parser(follow),
-      this.first ~ that.first
-    )
+    def ~[U](that: => LAParser[U]): LAParser[T ~ U] = new LAParser[T ~ U] {
+      val parser = follow => self.parser(that.first ~ follow) ~ that.parser(follow)
+      protected def getFirst = self.first ~ that.first
+    }
+
+    def ~>[U](that: => LAParser[U]): LAParser[U] = new LAParser[U] {
+      val parser = follow => self.parser(that.first ~ follow) ~> that.parser(follow)
+      protected def getFirst = self.first ~ that.first
+    }
+
+    def <~[U](that: => LAParser[U]): LAParser[T] = new LAParser[T] {
+      val parser = follow => self.parser(that.first ~ follow) <~ that.parser(follow)
+      protected def getFirst = self.first ~ that.first
+    }
 
     def |[U >: T](that: LAParser[U]): LAParser[U] =
-      if (that eq MISMATCH) this else new LAParser(
-        follow => this.parser(follow) | that.parser(follow),
-        this.first + that.first
-      )
+      if (that eq MISMATCH) self
+      else new LAParser[U] {
+        val parser = follow => self.parser(follow) ||| that.parser(follow)
+        protected def getFirst = self.first + that.first
+      }
 
-    def ^^[U](f: T => U): LAParser[U] = new LAParser(
-      follow => this.parser(follow) ^^ f,
-      this.first
-    )
+    def ^^[U](f: T => U): LAParser[U] = new LAParser[U] {
+      val parser = follow => self.parser(follow) ^^ f
+      protected def getFirst = self.first
+    }
 
-    def ^^^[U](v: => U): LAParser[U] = new LAParser(
-      follow => this.parser(follow) ^^^ v,
-      this.first
-    )
+    def ^^^[U](v: => U): LAParser[U] = new LAParser[U] {
+      val parser = follow => self.parser(follow) ^^^ v
+      protected def getFirst = self.first
+    }
 
     def apply(follow: FirstTerms, in: EPackratReader[Char]): ParseResult[T] =
-      parser(follow)(in)
+      parse(parser(follow), in)
 
-    def unary_-(): LAParser[Unit] = new LAParser(
-      follow => not(parser(follow)),
-      emptyFirst
-    )
+    def unary_-(): LAParser[Unit] = new LAParser[Unit] {
+      val parser = follow => not(self.parser(follow))
+      protected def getFirst = emptyFirst
+    }
 
-    def unary_+(): LAParser[T] = new LAParser(
-      follow => guard(parser(follow)),
-      emptyFirst
-    )
+    def unary_+(): LAParser[T] = new LAParser[T] {
+      val parser = follow => guard(self.parser(follow))
+      protected def getFirst = emptyFirst
+    }
   }
 
   // always match
-  lazy val MATCH: LAParser[String] = log(new LAParser(follow => "" <~ +follow.parser, emptyFirst))("MATCH")
+  lazy val MATCH: LAParser[String] = log(new LAParser[String] {
+    val parser = cached(follow => "" <~ +follow.parser)
+    protected def getFirst = emptyFirst
+  })("MATCH")
 
   // always mismatch
-  lazy val MISMATCH: LAParser[Nothing] = log(new LAParser(follow => failed, noFirst))("MISMATCH")
+  lazy val MISMATCH: LAParser[Nothing] = log(new LAParser[Nothing] {
+    val parser = cached(follow => failed)
+    protected def getFirst = noFirst
+  })("MISMATCH")
 
   // optional parsers
   def opt[T](p: => LAParser[T]): LAParser[Option[T]] = p ^^ { Some(_) } | MATCH ^^^ None
 
   // memoization of lookahead parsers
-  case class ParseCase[+T](parser: LAParser[T], follow: FirstTerms, pos: Position)
-  protected def memo[T](p: LAParser[T]): LAParser[T] =
-    new LAParser(follow => Parser { rawIn =>
-      val in = rawIn.asInstanceOf[EPackratReader[Char]]
-      val c = ParseCase(p, follow, in.pos)
-      val container = in.container
-      container.cache.get(c) match {
-        case Some(res) => res.asInstanceOf[ParseResult[T]]
-        case None =>
-          val res = record(p.parser(follow), in)
-          container.cache += c -> res
-          res
-      }
-    }, p.first)
+  def memo[T](p: => LAParser[T]): LAParser[T] = new LAParser[T] {
+    val parser = cached(follow => {
+      lazy val q = p
+      memo(Parser { in => q.parser(follow)(in) })
+    })
+    protected def getFirst = p.first
+  }
 
   // logging
   var keepLog: Boolean = true
-  def log[T](p: LAParser[T])(name: String): LAParser[T] = if (!DEBUG_PARSER) p else new LAParser(follow => Parser { rawIn =>
-    val in = rawIn.asInstanceOf[EPackratReader[Char]]
-    val stopMsg = s"trying $name with $follow at [${in.pos}] \n\n${in.pos.longString}\n"
-    if (keepLog) stop(stopMsg) match {
-      case "q" =>
-        keepLog = false
-        p(follow, in)
-      case "j" =>
-        keepLog = false
-        val r = p(follow, in)
-        println(name + " --> " + r)
-        keepLog = true
-        r
-      case _ =>
-        val r = p(follow, in)
-        println(name + " --> " + r)
-        r
+  def log[T](p: LAParser[T])(name: String): LAParser[T] =
+    if (!DEBUG_PARSER) p
+    else new LAParser[T] {
+      val parser = follow => Parser { rawIn =>
+        val in = rawIn.asInstanceOf[EPackratReader[Char]]
+        val stopMsg = s"trying $name with $follow at [${in.pos}] \n\n${in.pos.longString}\n"
+        if (keepLog) stop(stopMsg) match {
+          case "q" =>
+            keepLog = false
+            p(follow, in)
+          case "j" =>
+            keepLog = false
+            val r = p(follow, in)
+            printlnCyan(name + " --> " + r)
+            keepLog = true
+            r
+          case _ =>
+            val r = p(follow, in)
+            printlnCyan(name + " --> " + r)
+            r
+        }
+        else p(follow, in)
+      }
+      protected def getFirst = p.first
     }
-    else p(follow, in)
-  }, p.first)
 
   // stop message
   protected def stop(msg: String): String = {
-    println(msg)
+    printlnCyan(msg)
     scala.io.StdIn.readLine
   }
 
