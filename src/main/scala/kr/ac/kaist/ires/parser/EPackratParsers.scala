@@ -31,7 +31,8 @@ trait EPackratParsers extends Parsers {
       box: Box = Box(None, None),
       private[EPackratParsers] val cache: mutable.Map[Work, ParseResult[_]] = mutable.HashMap.empty,
       private[EPackratParsers] val at: mutable.Map[Position, EPackratReader[Elem]] = mutable.HashMap.empty,
-      private[EPackratParsers] val depGraph: mutable.Map[Work, Set[Work]] = mutable.HashMap.empty
+      private[EPackratParsers] val depGraph: mutable.Map[Work, Set[Work]] = mutable.HashMap.empty,
+      private[EPackratParsers] val isLRs: mutable.Set[Work] = mutable.HashSet()
   ) extends Reader[T] {
     override def source: java.lang.CharSequence = underlying.source
     override def offset: Int = underlying.offset
@@ -68,6 +69,7 @@ trait EPackratParsers extends Parsers {
       val box = inMem.box
       val at = inMem.at
       val pos = inMem.pos
+      val isLRs = inMem.isLRs
       val work = Work(p, pos)
       at.put(pos, inMem)
       display(s"--------------------------------------------------")
@@ -97,35 +99,41 @@ trait EPackratParsers extends Parsers {
             case (succ: Success[_]) =>
               cache.put(work, succ)
 
-              inc(p, inMem)
+              if (isLRs contains work) {
+                inc(p, inMem)
 
-              val worklist = new WorkList[Work]
-              val deps = depGraph.getOrElse(work, Nil)
-              display(s"- WORKLIST <- $deps)")
-              deps.foreach(worklist.put _)
+                val worklist = new WorkList[Work]
+                val deps = depGraph.getOrElse(work, Nil)
+                display(s"- WORKLIST <- $deps)")
+                deps.foreach(worklist.put _)
 
-              worklist.put(work)
-              while (!worklist.isEmpty) {
-                val work @ Work(p, pos) = worklist.getNext
-                display(s"$work <- $worklist")
-                val oldRes = cache(work)
-                box.wrapper = None
-                val inMem = at(pos)
-                val newRes = inc(p, inMem)
-                display(s"- oldRes: $oldRes")
-                display(s"- newRes: ${simple(newRes)}")
+                worklist.put(work)
+                while (!worklist.isEmpty) {
+                  val work @ Work(p, pos) = worklist.getNext
+                  display(s"$work <- $worklist")
+                  val oldRes = cache(work)
+                  box.wrapper = None
+                  val inMem = at(pos)
+                  val newRes = inc(p, inMem)
+                  display(s"- oldRes: $oldRes")
+                  display(s"- newRes: ${simple(newRes)}")
 
-                if (lessThen(oldRes, newRes)) {
-                  val deps = depGraph.getOrElse(work, Nil)
-                  display(s"- WORKLIST <- $deps)")
-                  deps.foreach(worklist.put _)
+                  if (lessThen(oldRes, newRes)) {
+                    val deps = depGraph.getOrElse(work, Nil)
+                    display(s"- WORKLIST <- $deps)")
+                    deps.foreach(worklist.put _)
+                  }
                 }
-              }
-              box.wrapper = originWrapper
-              cache(work).asInstanceOf[ParseResult[T]]
-            case fail => fail
+                box.wrapper = originWrapper
+                cache(work).asInstanceOf[ParseResult[T]]
+              } else succ
+            case res => res
           }
         case Some(res) =>
+          res match {
+            case Failure("LR", _) => isLRs.add(work)
+            case _ =>
+          }
           display(s"  - CACHE-EXIST: $res")
           res.asInstanceOf[ParseResult[T]]
       }

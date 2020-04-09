@@ -49,8 +49,8 @@ trait LAParsers extends Lexer {
   val noFirst: FirstTerms = FirstTerms()
 
   // lookahead parsers
-  trait LAParser[+T] { self =>
-    val parser: FirstTerms => Parser[T]
+  trait LAParser[+T] {
+    def parser: FirstTerms => Parser[T]
     protected def getFirst: FirstTerms
 
     private var visited = false
@@ -60,75 +60,132 @@ trait LAParsers extends Lexer {
       firstCache
     }
 
-    def ~[U](that: => LAParser[U]): LAParser[T ~ U] = new LAParser[T ~ U] {
-      val parser = follow => self.parser(that.first ~ follow) ~ that.parser(follow)
-      protected def getFirst = self.first ~ that.first
-    }
-
-    def ~>[U](that: => LAParser[U]): LAParser[U] = new LAParser[U] {
-      val parser = follow => self.parser(that.first ~ follow) ~> that.parser(follow)
-      protected def getFirst = self.first ~ that.first
-    }
-
-    def <~[U](that: => LAParser[U]): LAParser[T] = new LAParser[T] {
-      val parser = follow => self.parser(that.first ~ follow) <~ that.parser(follow)
-      protected def getFirst = self.first ~ that.first
-    }
-
-    def |[U >: T](that: LAParser[U]): LAParser[U] =
-      if (that eq MISMATCH) self
-      else new LAParser[U] {
-        val parser = follow => self.parser(follow) ||| that.parser(follow)
-        protected def getFirst = self.first + that.first
-      }
-
-    def ^^[U](f: T => U): LAParser[U] = new LAParser[U] {
-      val parser = follow => self.parser(follow) ^^ f
-      protected def getFirst = self.first
-    }
-
-    def ^^^[U](v: => U): LAParser[U] = new LAParser[U] {
-      val parser = follow => self.parser(follow) ^^^ v
-      protected def getFirst = self.first
-    }
-
     def apply(follow: FirstTerms, in: EPackratReader[Char]): ParseResult[T] =
       parse(parser(follow), in)
 
-    def unary_-(): LAParser[Unit] = new LAParser[Unit] {
-      val parser = follow => not(self.parser(follow))
-      protected def getFirst = emptyFirst
+    def ~[U](that: LAParser[U]): LAParser[T ~ U] = LASeq(this, that)
+    def <~[U](that: LAParser[U]): LAParser[T] = LASeqLeft(this, that)
+    def |[U >: T](that: LAParser[U]): LAParser[U] = {
+      if (this eq MISMATCH) that
+      else if (that eq MISMATCH) this
+      else LAOr(this, that)
+    }
+    def ^^[U](f: T => U): LAParser[U] = LAMap(this, f)
+    def ^^^[U](v: => U): LAParser[U] = LAValue(this, () => v)
+    def unary_-(): LAParser[Unit] = LANotPred(this)
+    def unary_+(): LAParser[T] = LAAndPred(this)
+  }
+
+  case class LASeq[T, U](left: LAParser[T], right: LAParser[U]) extends LAParser[T ~ U] {
+    lazy val parser = follow => left.parser(right.first ~ follow) ~ right.parser(follow)
+    protected def getFirst = left.first ~ right.first
+    override def toString: String = s"($left ~ $right)"
+  }
+
+  case class LASeqLeft[T, U](left: LAParser[T], right: LAParser[U]) extends LAParser[T] {
+    lazy val parser = follow => left.parser(right.first ~ follow) <~ right.parser(follow)
+    protected def getFirst = left.first ~ right.first
+    override def toString: String = s"($left <~ $right)"
+  }
+
+  case class LAOr[T](left: LAParser[T], right: LAParser[T]) extends LAParser[T] {
+    lazy val parser = follow => left.parser(follow) ||| right.parser(follow)
+    protected def getFirst = left.first + right.first
+    override def toString: String = s"$left |\n$right"
+  }
+
+  case class LAMap[T, U](laParser: LAParser[T], f: T => U) extends LAParser[U] {
+    lazy val parser = follow => laParser.parser(follow) ^^ f
+    protected def getFirst = laParser.first
+    override def toString: String = s"($laParser ^^ <FUNC>)"
+  }
+
+  case class LAValue[T, U](laParser: LAParser[T], v: () => U) extends LAParser[U] {
+    lazy val parser = follow => laParser.parser(follow) ^^^ v()
+    protected def getFirst = laParser.first
+    override def toString: String = s"($laParser ^^^ <VALUE>)"
+  }
+
+  case class LANotPred[T](laParser: LAParser[T]) extends LAParser[Unit] {
+    lazy val parser = follow => not(laParser.parser(follow))
+    protected def getFirst = emptyFirst
+    override def toString: String = s"-$laParser"
+  }
+
+  case class LAAndPred[T](laParser: LAParser[T]) extends LAParser[T] {
+    lazy val parser = follow => guard(laParser.parser(follow))
+    protected def getFirst = emptyFirst
+    override def toString: String = s"+$laParser"
+  }
+
+  private val pair = `~`
+  case class LAMemoized[T](laParser: () => LAParser[T]) extends LAParser[T] {
+    // XXX lazy val p = laParser()
+    lazy val p = {
+      val rule = laParser()
+      var simples: List[LAParser[T]] = Nil
+      var lrs: List[LAParser[T => T]] = Nil
+      var alts: List[LAParser[T]] = flatten(rule)
+      for (alt <- alts) alt match {
+        case LAMap(p, f) => convertForLR(p) match {
+          case Left(p) => simples ::= p ^^ f
+          case Right(p) => lrs ::= p ^^ { g => (t: T) => f(g(t)) }
+        }
+        case _ =>
+      }
+      val simple = simples.reduce(_ | _)
+      if (lrs.length == 0) rule else {
+        lazy val lr: LAParser[List[T => T]] = memo(MATCH ^^^ Nil | lrs.reduce(_ | _) ~ lr ^^ { case f ~ l => f :: l })
+        simple ~ lr ^^ { case t ~ fs => fs.foldLeft(t) { case (t, f) => f(t) } }
+      }
+    }
+    lazy val parser = cached(follow => {
+      memo(Parser { in => p.parser(follow)(in) })
+    })
+    protected def getFirst = p.first
+
+    private def flatten(p: LAParser[T]): List[LAParser[T]] = p match {
+      case LAOr(l, r) => flatten(l) ++ flatten(r)
+      case _ => List(p)
     }
 
-    def unary_+(): LAParser[T] = new LAParser[T] {
-      val parser = follow => guard(self.parser(follow))
-      protected def getFirst = emptyFirst
+    private def convertForLR[A](p: LAParser[A]): Either[LAParser[A], LAParser[T => A]] = p match {
+      case LASeq(LASeq(MATCH, l), r) if l eq this => Right(MATCH ~ r ^^ { case m ~ r => (t: T) => pair(pair(m, t), r) })
+      case LASeqLeft(LASeq(MATCH, l), r) if l eq this => Right(MATCH <~ r ^^ { case m => (t: T) => pair(m, t) })
+
+      case LASeq(l, r) => convertForLR(l) match {
+        case Left(l) => Left(p)
+        case Right(l) => Right(l ~ r ^^ { case f ~ r => (t: T) => pair(f(t), r) })
+      }
+      case LASeqLeft(l, r) => convertForLR(l) match {
+        case Left(l) => Left(p)
+        case Right(l) => Right(l <~ r)
+      }
+      case p => Left(p)
     }
+
+    override def toString: String = "<TERM>"
   }
+
+  // optional parsers
+  def opt[T](p: => LAParser[T]): LAParser[Option[T]] = p ^^ { Some(_) } | MATCH ^^^ None
+
+  // memoization of lookahead parsers
+  def memo[T](p: => LAParser[T]): LAParser[T] = LAMemoized(() => p)
 
   // always match
   lazy val MATCH: LAParser[String] = log(new LAParser[String] {
     val parser = cached(follow => "" <~ +follow.parser)
     protected def getFirst = emptyFirst
+    override def toString: String = "MATCH"
   })("MATCH")
 
   // always mismatch
   lazy val MISMATCH: LAParser[Nothing] = log(new LAParser[Nothing] {
     val parser = cached(follow => failed)
     protected def getFirst = noFirst
+    override def toString: String = "MISMATCH"
   })("MISMATCH")
-
-  // optional parsers
-  def opt[T](p: => LAParser[T]): LAParser[Option[T]] = p ^^ { Some(_) } | MATCH ^^^ None
-
-  // memoization of lookahead parsers
-  def memo[T](p: => LAParser[T]): LAParser[T] = new LAParser[T] {
-    val parser = cached(follow => {
-      lazy val q = p
-      memo(Parser { in => q.parser(follow)(in) })
-    })
-    protected def getFirst = p.first
-  }
 
   // logging
   var keepLog: Boolean = true

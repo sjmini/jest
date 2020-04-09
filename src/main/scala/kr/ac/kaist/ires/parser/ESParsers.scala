@@ -85,18 +85,21 @@ trait ESParsers extends LAParsers {
         } <~ +follow.parser
       })
       protected def getFirst = noFirst + t
+      override def toString: String = t
     })(t)
   }
   val nt = cached[(String, Lexer), LAParser[Lexical]] {
     case (name, nt) => log(new LAParser[Lexical] {
       val parser = cached(follow => (Skip ~> nt <~ +follow.parser) ^^ { Lexical(name, _) })
       protected def getFirst = noFirst + (name -> nt)
+      override def toString: String = name
     })(name)
   }
   val ntl = cached[Parser[String], LAParser[Lexical]] {
     case nt => log(new LAParser[Lexical] {
       val parser = cached(follow => (Skip ~> nt) ^^ { Lexical("", _) })
       protected def getFirst = noFirst
+      override def toString: String = "<NTL>"
     })("")
   }
 
@@ -130,7 +133,7 @@ trait ESParsers extends LAParsers {
   // resolve left recursions
   type FLAParser[T] = LAParser[T => T]
   def resolveLL[T](f: LAParser[T], s: FLAParser[T]): LAParser[T] = {
-    lazy val p: FLAParser[T] = s ~ p ^^ { case b ~ f => (x: T) => f(b(x)) } | MATCH ^^^ { (x: T) => x }
+    lazy val p: FLAParser[T] = memo(s ~ p ^^ { case b ~ f => (x: T) => f(b(x)) } | MATCH ^^^ { (x: T) => x })
     f ~ p ^^ { case a ~ f => f(a) }
   }
 
