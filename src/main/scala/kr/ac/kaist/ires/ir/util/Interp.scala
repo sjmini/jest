@@ -32,7 +32,7 @@ class Interp {
   // instructions
   def interp(inst: Inst): State => State = st => {
     instCount = instCount + 1
-    if ((instCount % 10000 == 0) && (System.currentTimeMillis - startTime) > timeout) error("timeoutInst")
+    // if ((instCount % 10000 == 0) && (System.currentTimeMillis - startTime) > timeout) error("timeoutInst")
     if (DEBUG_INTERP) inst match {
       case ISeq(_) =>
       case _ => println(s"${st.context.name}: ${beautify(inst)}")

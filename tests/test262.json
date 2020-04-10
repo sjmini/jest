@@ -4,12 +4,6 @@
    ],
    "normal":[
       {
-         "name":"/built-ins/decodeURI/S15.1.3.1_A5.5.js",
-         "includes":[
-
-         ]
-      },
-      {
          "name":"/built-ins/Array/prototype/some/15.4.4.17-7-c-ii-2.js",
          "includes":[
 
@@ -76,204 +70,6 @@
          ]
       },
       {
-         "name":"/built-ins/Array/length.js",
-         "includes":[
-            "propertyHelper.js"
-         ]
-      },
-      {
-         "name":"/built-ins/Array/proto.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperties/15.2.3.7-6-a-1.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperties/15.2.3.7-6-a-12.js",
-         "includes":[
-            "propertyHelper.js"
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperties/15.2.3.7-6-a-127.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperty/15.2.3.6-4-62.js",
-         "includes":[
-            "propertyHelper.js"
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperty/15.2.3.6-4-13.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperty/15.2.3.6-4-1.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperty/15.2.3.6-4-6.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperty/15.2.3.6-4-131.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/defineProperty/15.2.3.6-4-625gs.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/getPrototypeOf/15.2.3.2-2-3.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Object/getPrototypeOf/15.2.3.2-2-30.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Promise/resolve/arg-uniq-ctor.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Promise/resolve/context-non-object-with-promise.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Promise/prototype/then/ctor-custom.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/Promise/prototype/then/ctor-null.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/regexp-is-undefined.js",
-         "includes":[
-            "compareArray.js",
-            "compareIterator.js",
-            "regExpUtils.js"
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/regexp-matchAll-invocation.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/prop-desc.js",
-         "includes":[
-            "propertyHelper.js"
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/regexp-is-null.js",
-         "includes":[
-            "compareArray.js",
-            "compareIterator.js",
-            "regExpUtils.js"
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/name.js",
-         "includes":[
-            "propertyHelper.js"
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/regexp-matchAll-not-callable.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/this-val-non-obj-coercible.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/length.js",
-         "includes":[
-            "propertyHelper.js"
-         ]
-      },
-      {
-         "name":"/built-ins/String/prototype/matchAll/regexp-prototype-has-no-matchAll.js",
-         "includes":[
-            "compareArray.js",
-            "compareIterator.js",
-            "regExpUtils.js"
-         ]
-      },
-      {
-         "name":"/built-ins/eval/prop-desc-enumerable.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/encodeURI/S15.1.3.3_A5.5.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/decodeURIComponent/S15.1.3.2_A5.5.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/ThrowTypeError/name.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/parseFloat/S15.1.2.3_A7.5.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/encodeURIComponent/S15.1.3.4_A5.5.js",
-         "includes":[
-
-         ]
-      },
-      {
          "name":"/built-ins/RegExp/property-escapes/generated/Changes_When_NFKC_Casefolded.js",
          "includes":[
             "regExpUtils.js"
@@ -317,24 +113,6 @@
       },
       {
          "name":"/built-ins/RegExp/S15.10.2.8_A3_T15.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/RegExp/S15.10.2.8_A3_T1.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/RegExp/lookBehind/sliced-strings.js",
-         "includes":[
-
-         ]
-      },
-      {
-         "name":"/built-ins/parseInt/S15.1.2.2_A9.5.js",
          "includes":[
 
          ]
@@ -388,12 +166,6 @@
          ]
       },
       {
-         "name":"/language/expressions/does-not-equals/S11.9.2_A7.9.js",
-         "includes":[
-
-         ]
-      },
-      {
          "name":"/language/statements/switch/tco-dftl-body.js",
          "includes":[
             "tcoHelper.js"
@@ -421,12 +193,6 @@
          "name":"/language/statements/if/tco-else-body.js",
          "includes":[
             "tcoHelper.js"
-         ]
-      },
-      {
-         "name":"/language/statements/if/S12.5_A12_T1.js",
-         "includes":[
-
          ]
       },
       {
@@ -505,12 +271,6 @@
          "name":"/language/statements/return/tco.js",
          "includes":[
             "tcoHelper.js"
-         ]
-      },
-      {
-         "name":"/language/global-code/decl-lex.js",
-         "includes":[
-
          ]
       },
       {
