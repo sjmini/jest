@@ -129,7 +129,8 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     )).remove("locale", !_.locales.isEmpty)
     .remove("negative", !_.negative.isEmpty)
 
-  lazy val test262configSummary = getTests(standardFeatures).getSummary
+  lazy val test262configSummary = readFile(s"$TEST_DIR/test262.json").parseJson.convertTo[Test262ConfigSummary]
+  // getTests(standardFeatures).getSummary
   lazy val test262propconfigSummary =
     getTests("optional-chaining" :: standardFeatures)
       .remove("non optional-chaining", m => !(m.features contains "optional-chaining"))
@@ -141,7 +142,7 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     config: FilterMetaConfig
   ): Unit = {
     println(s"Total ${allTests.length} tests")
-    val summary = test262configSummary
+    val summary = readFile(s"$TEST_DIR/test262.json").parseJson.convertTo[Test262ConfigSummary]
     println(s"negative applicable tests: ${summary.error.length}")
     println(s"positive applicable tests: ${summary.normal.length}")
     val pw = new PrintWriter(new File(s"$TEST_DIR/test262.json"))
