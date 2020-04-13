@@ -29,12 +29,15 @@ trait Lexer extends RegexParsers with EPackratParsers with UnicodeRegex {
     )
 
     // exclusion (butnot) symbol
-    def \(cond: => Parser[String]): Parser[String] =
-      this.parser.filter(s => parseAll(cond.parser, new EPackratReader(new CharSequenceReader(s))).isEmpty)
+    def \(cond: Lexer): Lexer = exclusionCache((parser, cond))
 
     // optional symbol
     def opt(): Parser[String] = parser | ""
   }
+  private val exclusionCache =
+    cached[(Parser[String], Parser[String]), Lexer]({
+      case (l, r) => l.filter(s => parseAll(r.parser, new EPackratReader(new CharSequenceReader(s))).isEmpty)
+    })
 
   // basic lexers
   lazy val WhiteSpace: Lexer = TAB | VT | FF | SP | NBSP | ZWNBSP | USP
