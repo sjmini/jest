@@ -357,7 +357,7 @@ class Interp {
           val newVal = try {
             ASTVal(Await.result(Future(
               ESParser.parse(p(ast.parserParams), ast.toString).get
-            ), timeout.milliseconds))
+            ), Duration.Inf))
           } catch {
             case e: TimeoutException => error("parser timeout")
             case e: Throwable => Absent
@@ -379,7 +379,7 @@ class Interp {
           val newVal = try {
             ASTVal(Await.result(Future(
               ESParser.parse(p(parserParams), str).get
-            ), timeout.milliseconds))
+            ), Duration.Inf))
           } catch {
             case e: TimeoutException => error("parser timeout")
             case e: Throwable => Absent
