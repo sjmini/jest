@@ -16,6 +16,7 @@ object SetDefaultGlobalBindings {
       if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
       __x1__ = (+ __x1__ 1i)
     }
+    global["SubMap"]["globalThis"]["Value"] = global
     app __x3__ = (WrapCompletion global)
     return __x3__
   }""")
