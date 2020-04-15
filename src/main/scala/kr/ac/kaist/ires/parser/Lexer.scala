@@ -12,10 +12,6 @@ trait Lexer extends RegexParsers with EPackratParsers with UnicodeRegex {
   // lexer type
   type Lexer = EPackratParser[String]
 
-  // implicit conversion to Lexer
-  implicit def str2lexer[T](str: String): Lexer = parser2packrat(literal(str))
-  implicit def regex2lexer[T](r: Regex): Lexer = parser2packrat(regex(r))
-
   // implicit lexer helper
   implicit class LexerHelper[T](val parser: T)(implicit f: T => Parser[String]) {
     // lookahead symbols
@@ -33,20 +29,20 @@ trait Lexer extends RegexParsers with EPackratParsers with UnicodeRegex {
     )
 
     // exclusion (butnot) symbol
-    def \(cond: => Parser[String]): Parser[String] =
-      this.parser.filter(s => parseAll(cond.parser, s).isEmpty)
+    def \(cond: Lexer): Lexer = exclusionCache((parser, cond))
 
     // optional symbol
-    def opt(): Parser[String] = parser | empty
+    def opt(): Parser[String] = parser | ""
   }
+  private val exclusionCache =
+    cached[(Parser[String], Parser[String]), Lexer]({
+      case (l, r) => l.filter(s => parseAll(r.parser, new EPackratReader(new CharSequenceReader(s))).isEmpty)
+    })
 
   // basic lexers
   lazy val WhiteSpace: Lexer = TAB | VT | FF | SP | NBSP | ZWNBSP | USP
   lazy val LineTerminator: Lexer = LF | CR | LS | PS
   lazy val LineTerminatorSequence: Lexer = LF | CR <~ -LF | LS | PS | CR % LF
-
-  // empty
-  val empty: Lexer = ""
 
   // skip
   lazy val Skip: Lexer =

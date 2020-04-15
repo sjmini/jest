@@ -1,0 +1,28 @@
+[36mRun starting. Expected test count is: 0[0m
+[32mTest262Test:[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/follows-undefined (3 seconds, 574 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/conditional/coalesce-expr-ternary (7 seconds, 769 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/chainable-if-parenthesis-covered-logical-or (4 seconds, 261 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-symbol (6 seconds, 289 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/tco-pos-undefined (15 hours, 52 minutes, 24 seconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/chainable-if-parenthesis-covered-logical-and (3 seconds, 189 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/chainable-with-bitwise-xor (2 seconds, 534 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-false (6 seconds, 616 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-object (7 seconds, 525 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/chainable-with-bitwise-or (2 seconds, 225 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/abrupt-is-a-short-circuit (2 seconds, 626 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/chainable (2 seconds, 216 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/follows-null (2 seconds, 20 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-prevents-evaluation (2 seconds, 502 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-true (6 seconds, 416 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-empty-string (6 seconds, 387 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/tco-pos-null (9 hours, 33 minutes, 57 seconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-0 (6 seconds, 922 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-string (6 seconds, 786 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/chainable-with-bitwise-and (2 seconds, 504 milliseconds)[0m
+[32m- [Test262Eval] /test/language/expressions/coalesce/short-circuit-number-42 (6 seconds, 766 milliseconds)[0m
+[36mRun completed in 25 hours, 28 minutes, 7 seconds.[0m
+[36mTotal number of tests run: 21[0m
+[36mSuites: completed 1, aborted 0[0m
+[36mTests: succeeded 21, failed 0, canceled 0, ignored 0, pending 0[0m
+[32mAll tests passed.[0m

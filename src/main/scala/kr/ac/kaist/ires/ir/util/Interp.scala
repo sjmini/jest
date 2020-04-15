@@ -11,7 +11,6 @@ import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
 // IR Interpreter
 class Interp {
-  val timeout: Long = 3000L
   val startTime: Long = System.currentTimeMillis
   var instCount = 0
 
@@ -32,12 +31,11 @@ class Interp {
   // instructions
   def interp(inst: Inst): State => State = st => {
     instCount = instCount + 1
-    if ((instCount % 10000 == 0) && (System.currentTimeMillis - startTime) > timeout) error("timeoutInst")
     if (DEBUG_INTERP) inst match {
       case ISeq(_) =>
       case _ => println(s"${st.context.name}: ${beautify(inst)}")
     }
-    inst match {
+    val res = inst match {
       case IExpr(expr) =>
         val (_, s0) = interp(expr)(st)
         s0
@@ -225,6 +223,8 @@ class Interp {
         s0.copy(context = s0.context.copy(insts = List(body)))
       }
     }
+    if (instCount % 100000 == 0) GC.gc(res)
+    else res
   }
 
   // expresssions
@@ -354,14 +354,7 @@ class Interp {
       }
       v match {
         case ASTVal(ast) =>
-          val newVal = try {
-            ASTVal(Await.result(Future(
-              ESParser.parse(p(ast.parserParams), ast.toString).get
-            ), timeout.milliseconds))
-          } catch {
-            case e: TimeoutException => error("parser timeout")
-            case e: Throwable => Absent
-          }
+          val newVal = ASTVal(ESParser.parse(p(ast.parserParams), ast.toString).get)
           newVal match {
             case ASTVal(s) => ModelHelper.checkSupported(s)
             case _ => ()
@@ -376,14 +369,7 @@ class Interp {
                 case _ => error(s"parserParams should be boolean")
               }
           }
-          val newVal = try {
-            ASTVal(Await.result(Future(
-              ESParser.parse(p(parserParams), str).get
-            ), timeout.milliseconds))
-          } catch {
-            case e: TimeoutException => error("parser timeout")
-            case e: Throwable => Absent
-          }
+          val newVal = ASTVal(ESParser.parse(p(parserParams), str).get)
           newVal match {
             case ASTVal(s) => ModelHelper.checkSupported(s)
             case _ => ()

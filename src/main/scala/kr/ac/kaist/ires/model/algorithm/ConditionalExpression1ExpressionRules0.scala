@@ -5,7 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ConditionalExpression1ExpressionRules0 {
   val length: Int = 0
-  val func: Func = parseFunc(""""ConditionalExpression1ExpressionRules0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1) => {
+  val func: Func = parseFunc(""""ConditionalExpression1ExpressionRules0" (this, ShortCircuitExpression, AssignmentExpression0, AssignmentExpression1) => {
     access __x0__ = (AssignmentExpression0 "HasCallInTailPosition")
     app __x1__ = (__x0__ call)
     let has = __x1__

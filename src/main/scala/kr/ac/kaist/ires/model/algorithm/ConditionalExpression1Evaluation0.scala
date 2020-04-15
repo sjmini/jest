@@ -5,8 +5,8 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ConditionalExpression1Evaluation0 {
   val length: Int = 0
-  val func: Func = parseFunc(""""ConditionalExpression1Evaluation0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1) => {
-    access __x0__ = (LogicalORExpression "Evaluation")
+  val func: Func = parseFunc(""""ConditionalExpression1Evaluation0" (this, ShortCircuitExpression, AssignmentExpression0, AssignmentExpression1) => {
+    access __x0__ = (ShortCircuitExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
