@@ -129,8 +129,7 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     )).remove("locale", !_.locales.isEmpty)
     .remove("negative", !_.negative.isEmpty)
 
-  lazy val test262configSummary = getTests(standardFeatures).getSummary
-  lazy val test262propconfigSummary =
+  lazy val test262configSummary =
     getTests("optional-chaining" :: standardFeatures)
       .remove("non optional-chaining", m => !(m.features contains "optional-chaining"))
       .getSummary

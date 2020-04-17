@@ -142,6 +142,14 @@ object Parser extends ESParsers {
     "enum"
   )
   lazy val Punctuator: Lexer = (
+    OptionalChainingPunctuator |||
+    OtherPunctuator
+  )
+  lazy val OptionalChainingPunctuator: Lexer = (
+    "?." % -(DecimalDigit) |||
+    OtherPunctuator
+  )
+  lazy val OtherPunctuator: Lexer = (
     "{" |||
     "(" |||
     ")" |||
@@ -761,11 +769,35 @@ object Parser extends ESParsers {
       log(((MATCH <~ t(",")) <~ t("...")) ~ AssignmentExpression(List(true, pYield, pAwait)) ^^ { case _ ~ x0 => ((x: ArgumentList) => ArgumentList3(x, x0, args)) })("ArgumentList3")
     )))("ArgumentList")
   })
+  lazy val OptionalExpression: ESParser[OptionalExpression] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("OptionalExpression", args, 2)
+    log(resolveLL((
+      log(MATCH ~ MemberExpression(List(pYield, pAwait)) ~ OptionalChain(List(pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => OptionalExpression0(x0, x1, args) })("OptionalExpression0") |
+      log(MATCH ~ CallExpression(List(pYield, pAwait)) ~ OptionalChain(List(pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => OptionalExpression1(x0, x1, args) })("OptionalExpression1")
+    ), (
+      log(MATCH ~ OptionalChain(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: OptionalExpression) => OptionalExpression2(x, x0, args)) })("OptionalExpression2")
+    )))("OptionalExpression")
+  })
+  lazy val OptionalChain: ESParser[OptionalChain] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("OptionalChain", args, 2)
+    log(resolveLL((
+      log((MATCH <~ t("?.")) ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => OptionalChain0(x0, args) })("OptionalChain0") |
+      log((((MATCH <~ t("?.")) <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => OptionalChain1(x0, args) })("OptionalChain1") |
+      log((MATCH <~ t("?.")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => OptionalChain2(x0, args) })("OptionalChain2") |
+      log((MATCH <~ t("?.")) ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => OptionalChain3(x0, args) })("OptionalChain3")
+    ), (
+      log(MATCH ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain4(x, x0, args)) })("OptionalChain4") |
+      log(((MATCH <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain5(x, x0, args)) })("OptionalChain5") |
+      log((MATCH <~ t(".")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain6(x, x0, args)) })("OptionalChain6") |
+      log(MATCH ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain7(x, x0, args)) })("OptionalChain7")
+    )))("OptionalChain")
+  })
   lazy val LeftHandSideExpression: ESParser[LeftHandSideExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("LeftHandSideExpression", args, 2)
     log((
       log(MATCH ~ NewExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression0(x0, args) })("LeftHandSideExpression0") |
-      log(MATCH ~ CallExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression1(x0, args) })("LeftHandSideExpression1")
+      log(MATCH ~ CallExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression1(x0, args) })("LeftHandSideExpression1") |
+      log(MATCH ~ OptionalExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression2(x0, args) })("LeftHandSideExpression2")
     ))("LeftHandSideExpression")
   })
   lazy val UpdateExpression: ESParser[UpdateExpression] = memo(args => {
@@ -1757,7 +1789,6 @@ object Parser extends ESParsers {
     "%=" |||
     "^=" |||
     "?" |||
-    ">>>" |||
     "var" |||
     "import" |||
     ">>>=" |||
@@ -1803,6 +1834,8 @@ object Parser extends ESParsers {
     "+=" |||
     "." |||
     "^" |||
+    ">>>" |||
+    "?." <~ not(DecimalDigit) |||
     "%" |||
     "const" |||
     "await" |||
@@ -1887,6 +1920,8 @@ object Parser extends ESParsers {
     "SuperCall" -> SuperCall,
     "Arguments" -> Arguments,
     "ArgumentList" -> ArgumentList,
+    "OptionalExpression" -> OptionalExpression,
+    "OptionalChain" -> OptionalChain,
     "LeftHandSideExpression" -> LeftHandSideExpression,
     "UpdateExpression" -> UpdateExpression,
     "UnaryExpression" -> UnaryExpression,
