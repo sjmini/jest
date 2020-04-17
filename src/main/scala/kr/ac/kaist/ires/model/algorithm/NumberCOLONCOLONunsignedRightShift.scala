@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object NumberCOLONCOLONunsignedRightShift {
   val length: Int = 2
   val func: Func = parseFunc(""""Number::unsignedRightShift" (x, y) => {
-    app __x0__ = (ToInt32 x)
+    app __x0__ = (ToUint32 x)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let lnum = __x0__
     app __x1__ = (ToUint32 y)
