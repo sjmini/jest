@@ -12,7 +12,7 @@ object GLOBALDOTparseFloat {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let inputString = __x1__
     !!! "Etc"
-    !!! "Etc"
+    !!! "If neither id:{trimmedString} nor any prefix of id:{trimmedString} satisfies the syntax of a nt:{StrDecimalLiteral} ( see 7 . 1 . 4 . 1 ) , return value:{NaN} ."
     !!! "Etc"
     access __x2__ = (numberString "MV")
     let mathFloat = __x2__

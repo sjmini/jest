@@ -49,7 +49,8 @@ object BaseGlobal {
     "GLOBAL_jobQueue" -> NamedAddr("jobQueue"),
     "GLOBAL_context" -> Null,
     "GLOBAL" -> NamedAddr("GLOBAL"),
-    "REALM" -> NamedAddr("REALM")
+    "REALM" -> NamedAddr("REALM"),
+    "PRIMITIVES" -> NamedAddr("PRIMITIVES")
   )
 
   lazy val get: Map[Id, Value] = map.map {

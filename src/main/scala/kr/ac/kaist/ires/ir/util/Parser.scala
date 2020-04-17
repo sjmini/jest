@@ -79,6 +79,7 @@ object Parser extends JavaTokenParsers with RegexParsers {
   lazy private val expr: Parser[Expr] = {
     ref ^^ { ERef(_) } |
       "(0|-?[1-9]\\d*)i".r ^^ { case s => EINum(s.dropRight(1).toLong) } |
+      "(0|-?[1-9]\\d*)n".r ^^ { case s => EBigINum(BigInt(s)) } |
       floatingPointNumber ^^ { case s => ENum(s.toDouble) } |
       "Infinity" ^^ { case s => ENum(Double.PositiveInfinity) } |
       "+Infinity" ^^ { case s => ENum(Double.PositiveInfinity) } |
@@ -184,6 +185,7 @@ object Parser extends JavaTokenParsers with RegexParsers {
     func |
       addr |
       "(0|-?[1-9]\\d*)i".r ^^ { case s => INum(s.dropRight(1).toLong) } |
+      "(0|-?[1-9]\\d*)n".r ^^ { case s => BigINum(BigInt(s)) } |
       floatingPointNumber ^^ { case n => Num(n.toDouble) } |
       string ^^ { Str(_) } |
       "true" ^^^ { Bool(true) } |

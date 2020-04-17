@@ -177,6 +177,7 @@ class Interp {
           case (ASTVal(Lexical(kind, str)), Str(name)) => s2.define(id, (kind, name) match {
             case ("(IdentifierName \\ (ReservedWord))" | "IdentifierName", "StringValue") => Str(ESValueParser.parseIdentifier(str))
             case ("NumericLiteral", "MV") => Num(ESValueParser.parseNumber(str))
+            case ("NumericLiteral", "NumericValue") => Num(ESValueParser.parseNumber(str))
             case ("StringLiteral", "SV" | "StringValue") => Str(ESValueParser.parseString(str))
             case ("NoSubstitutionTemplate", "TV") => Str(ESValueParser.parseTVNoSubstitutionTemplate(str))
             case ("TemplateHead", "TV") => Str(ESValueParser.parseTVTemplateHead(str))
@@ -231,6 +232,7 @@ class Interp {
   def interp(expr: Expr, escapeCompletion: Boolean = false): State => (Value, State) = st => expr match {
     case ENum(n) => (Num(n), st)
     case EINum(n) => (INum(n), st)
+    case EBigINum(b) => (BigINum(b), st)
     case EStr(str) => (Str(str), st)
     case EBool(b) => (Bool(b), st)
     case EUndef => (Undef, st)
@@ -298,6 +300,7 @@ class Interp {
               case obj => obj.ty.name
             }
             case Num(_) | INum(_) => "Number"
+            case BigINum(_) => "BigInt"
             case Str(_) => "String"
             case Bool(_) => "Boolean"
             case Undef => "Undefined"
@@ -311,6 +314,7 @@ class Interp {
           case obj => obj.ty.name
         }
         case Num(_) | INum(_) => "Number"
+        case BigINum(_) => "BigInt"
         case Str(_) => "String"
         case Bool(_) => "Boolean"
         case Undef => "Undefined"
@@ -428,6 +432,7 @@ class Interp {
           case _ => error(s"not convertable option: Num to $cop")
         }, s1)
       }
+      case (BigINum(b), s0) => ??? // TODO
       case (v, s0) => error(s"not an convertable value: $v")
     }
     case EContains(list, elem) =>
@@ -486,6 +491,7 @@ class Interp {
       case Str("length") => (INum(str.length), st)
       case INum(k) => (Str(str(k.toInt).toString), st)
       case Num(k) => (Str(str(k.toInt).toString), st)
+      case BigINum(b) => ??? // TODO
       case v => error(s"wrong access of string reference: $str.$value")
     }
   }
@@ -494,9 +500,11 @@ class Interp {
   def interp(uop: UOp): Value => Value = (uop, _) match {
     case (ONeg, Num(n)) => Num(-n)
     case (ONeg, INum(n)) => INum(-n)
+    case (ONeg, BigINum(b)) => ??? // TODO
     case (ONot, Bool(b)) => Bool(!b)
     case (OBNot, Num(n)) => INum(~(n.toInt))
     case (OBNot, INum(n)) => INum(~n)
+    case (OBNot, BigINum(b)) => ??? // TODO
     case (_, value) => error(s"wrong type of value for the operator $uop: $value")
   }
 
@@ -560,6 +568,10 @@ class Interp {
     case (OEq, Num(l), INum(r)) => Bool(!(l equals -0.0) && l == r)
     case (OEq, Num(l), Num(r)) => Bool(l equals r)
     case (OEq, l, r) => Bool(l == r)
+
+    // big integer operations
+    case (_, BigINum(l), _) => ???
+    case (_, _, BigINum(l)) => ???
 
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
   }

@@ -10,14 +10,22 @@ object UpdateExpression1Evaluation0 {
     let lhs = __x0__
     app __x1__ = (GetValue lhs)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    app __x2__ = (ToNumber __x1__)
+    app __x2__ = (ToNumeric __x1__)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let oldValue = __x2__
-    let newValue = (+ oldValue 1.0)
-    app __x3__ = (PutValue lhs newValue)
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    __x3__
-    app __x4__ = (WrapCompletion oldValue)
-    return __x4__
+    app __x3__ = (Type oldValue)
+    access __x4__ = (PRIMITIVES __x3__)
+    access __x5__ = (__x4__ "add")
+    app __x6__ = (Type oldValue)
+    access __x7__ = (PRIMITIVES __x6__)
+    access __x8__ = (__x7__ "unit")
+    app __x9__ = (__x5__ oldValue __x8__)
+    if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
+    let newValue = __x9__
+    app __x10__ = (PutValue lhs newValue)
+    if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
+    __x10__
+    app __x11__ = (WrapCompletion oldValue)
+    return __x11__
   }""")
 }

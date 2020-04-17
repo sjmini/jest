@@ -136,6 +136,7 @@ object Beautifier {
     override def walk(expr: Expr): Unit = expr match {
       case ENum(n) => walk(s"$n")
       case EINum(n) => walk(s"${n}i")
+      case EBigINum(b) => walk(s"${b}n")
       case EStr(str) => walk("\"" + norm(str) + "\"")
       case EBool(b) => walk(s"$b")
       case EUndef => walk("undefined")
@@ -288,6 +289,7 @@ object Beautifier {
       case cont: Cont => walk(cont)
       case Num(double) => walk(s"$double")
       case INum(long) => walk(s"${long}i")
+      case BigINum(bigint) => walk(s"${bigint}n")
       case Str(str) => walk("\"" + norm(str) + "\"")
       case Bool(bool) => walk(s"$bool")
       case Undef => walk("undefined")

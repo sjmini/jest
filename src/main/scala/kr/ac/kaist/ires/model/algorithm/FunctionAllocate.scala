@@ -11,9 +11,7 @@ object FunctionAllocate {
     assert (|| (|| (|| (|| (= functionKind "normal") (= functionKind "non-constructor")) (= functionKind "generator")) (= functionKind "async")) (= functionKind "async generator"))
     if (= functionKind "normal") let needsConstruct = true else let needsConstruct = false
     if (= functionKind "non-constructor") functionKind = "normal" else {}
-    let F = (new ECMAScriptFunctionObject("SubMap" -> (new SubMap())))
-    delete F["Call"]
-    delete F["Construct"]
+    !!! "Let id:{F} be a newly created ECMAScript function object with the internal slots listed in Table 29 . All of those internal slots are initialized to value:{undefined} ."
     if (= F["HasProperty"] absent) F["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= F["DefineOwnProperty"] absent) F["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= F["Set"] absent) F["Set"] = OrdinaryObjectDOTSet else {}

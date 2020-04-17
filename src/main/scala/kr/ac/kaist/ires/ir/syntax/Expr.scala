@@ -17,6 +17,9 @@ case class ENum(n: Double) extends Expr {
 case class EINum(n: Long) extends Expr {
   override def toString: String = s"EINum(${n}L)"
 }
+case class EBigINum(b: BigInt) extends Expr {
+  override def toString: String = s"""EBigINum(BigInt("$b"))"""
+}
 case class EStr(str: String) extends Expr {
   override def toString: String = s"EStr($TRIPLE$str$TRIPLE)"
 }

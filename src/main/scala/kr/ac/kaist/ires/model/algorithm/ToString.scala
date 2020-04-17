@@ -11,7 +11,8 @@ object ToString {
       else if (= atype "Null") return "null"
       else if (= atype "Boolean") if argument return "true" else return "false"
       else if (= atype "Number") {
-        app __x0__ = (NumberToString argument)
+        app __x0__ = (NumberCOLONCOLONtoString argument)
+        if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
         return __x0__
       }
       else if (= atype "String") return argument
@@ -24,6 +25,11 @@ object ToString {
         )),
         "Target" -> CONST_empty
       ))
+      else if (= atype "BigInt") {
+        app __x0__ = (BigIntCOLONCOLONtoString argument)
+        if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+        return __x0__
+      }
       else {
         app __x0__ = (ToPrimitive argument "String")
         if (is-completion __x0__) {

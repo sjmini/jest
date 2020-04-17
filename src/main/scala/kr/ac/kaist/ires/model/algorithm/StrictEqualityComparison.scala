@@ -13,32 +13,18 @@ object StrictEqualityComparison {
       return __x2__
     } else {}
     app __x3__ = (Type x)
-    if (= __x3__ Number) {
-      if (= x NaN) {
-        app __x4__ = (WrapCompletion false)
-        return __x4__
-      } else {}
-      if (= y NaN) {
-        app __x5__ = (WrapCompletion false)
-        return __x5__
-      } else {}
-      if (= x y) {
-        app __x6__ = (WrapCompletion true)
-        return __x6__
-      } else {}
-      if (&& (= x 0i) (= y -0.0)) {
-        app __x7__ = (WrapCompletion true)
-        return __x7__
-      } else {}
-      if (&& (= x -0.0) (= y 0i)) {
-        app __x8__ = (WrapCompletion true)
-        return __x8__
-      } else {}
-      app __x9__ = (WrapCompletion false)
-      return __x9__
+    if (|| (= __x3__ Number) (= __x3__ BigInt)) {
+      app __x4__ = (Type x)
+      access __x5__ = (PRIMITIVES __x4__)
+      access __x6__ = (__x5__ "equal")
+      app __x7__ = (__x6__ x y)
+      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
+      app __x8__ = (WrapCompletion __x7__)
+      return __x8__
     } else {}
-    app __x10__ = (SameValueNonNumber x y)
-    app __x11__ = (WrapCompletion __x10__)
-    return __x11__
+    app __x9__ = (SameValueNonNumeric x y)
+    if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
+    app __x10__ = (WrapCompletion __x9__)
+    return __x10__
   }""")
 }

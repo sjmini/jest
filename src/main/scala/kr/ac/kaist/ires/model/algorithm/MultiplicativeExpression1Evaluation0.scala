@@ -16,14 +16,34 @@ object MultiplicativeExpression1Evaluation0 {
     app __x3__ = (GetValue right)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let rightValue = __x3__
-    app __x4__ = (ToNumber leftValue)
+    app __x4__ = (ToNumeric leftValue)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let lnum = __x4__
-    app __x5__ = (ToNumber rightValue)
+    app __x5__ = (ToNumeric rightValue)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let rnum = __x5__
-    app __x6__ = (MulOperation (get-syntax MultiplicativeOperator) lnum rnum)
-    app __x7__ = (WrapCompletion __x6__)
-    return __x7__
+    app __x6__ = (Type lnum)
+    app __x7__ = (Type rnum)
+    if (! (= __x6__ __x7__)) {
+      app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x8__
+    } else {}
+    app __x9__ = (Type lnum)
+    let T = __x9__
+    if (= MultiplicativeOperator !!! "*") {
+      access __x10__ = (PRIMITIVES T)
+      access __x11__ = (__x10__ "multiply")
+      app __x12__ = (__x11__ lnum rnum)
+      app __x13__ = (WrapCompletion __x12__)
+      return __x13__
+    } else {}
+    if (= MultiplicativeOperator !!! "/") {
+      access __x14__ = (PRIMITIVES T)
+      access __x15__ = (__x14__ "divide")
+      app __x16__ = (__x15__ lnum rnum)
+      app __x17__ = (WrapCompletion __x16__)
+      return __x17__
+    } else {}
+    !!! "Otherwise , nt:{MultiplicativeOperator} is code:{%} ; return id:{T} : : remainder ( id:{lnum} , id:{rnum} ) ."
   }""")
 }

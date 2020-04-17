@@ -16,14 +16,24 @@ object ShiftExpression1Evaluation0 {
     app __x3__ = (GetValue rref)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let rval = __x3__
-    app __x4__ = (ToInt32 lval)
+    app __x4__ = (ToNumeric lval)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let lnum = __x4__
-    app __x5__ = (ToUint32 rval)
+    app __x5__ = (ToNumeric rval)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let rnum = __x5__
-    let shiftCount = (& rnum 31i)
-    app __x6__ = (WrapCompletion (<< lnum shiftCount))
-    return __x6__
+    app __x6__ = (Type lnum)
+    app __x7__ = (Type rnum)
+    if (! (= __x6__ __x7__)) {
+      app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x8__
+    } else {}
+    app __x9__ = (Type lnum)
+    let T = __x9__
+    access __x10__ = (PRIMITIVES T)
+    access __x11__ = (__x10__ "leftShift")
+    app __x12__ = (__x11__ lnum rnum)
+    app __x13__ = (WrapCompletion __x12__)
+    return __x13__
   }""")
 }

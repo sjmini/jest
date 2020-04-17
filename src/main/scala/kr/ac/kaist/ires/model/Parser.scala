@@ -208,9 +208,21 @@ object Parser extends ESParsers {
   )
   lazy val NumericLiteral: Lexer = (
     DecimalLiteral |||
+    DecimalBigIntegerLiteral |||
+    NonDecimalIntegerLiteral |||
+    NonDecimalIntegerLiteral % BigIntLiteralSuffix
+  )
+  lazy val DecimalBigIntegerLiteral: Lexer = (
+    "0" % BigIntLiteralSuffix |||
+    NonZeroDigit % DecimalDigits.opt % BigIntLiteralSuffix
+  )
+  lazy val NonDecimalIntegerLiteral: Lexer = (
     BinaryIntegerLiteral |||
     OctalIntegerLiteral |||
     HexIntegerLiteral
+  )
+  lazy val BigIntLiteralSuffix: Lexer = (
+    "n"
   )
   lazy val DecimalLiteral: Lexer = (
     DecimalIntegerLiteral % "." % DecimalDigits.opt % ExponentPart.opt |||
