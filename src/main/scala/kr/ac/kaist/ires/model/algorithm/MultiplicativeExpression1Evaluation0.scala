@@ -30,20 +30,25 @@ object MultiplicativeExpression1Evaluation0 {
     } else {}
     app __x9__ = (Type lnum)
     let T = __x9__
-    if (= MultiplicativeOperator !!! "*") {
+    if (= MultiplicativeOperator "*") {
       access __x10__ = (PRIMITIVES T)
       access __x11__ = (__x10__ "multiply")
       app __x12__ = (__x11__ lnum rnum)
       app __x13__ = (WrapCompletion __x12__)
       return __x13__
     } else {}
-    if (= MultiplicativeOperator !!! "/") {
+    if (= MultiplicativeOperator "/") {
       access __x14__ = (PRIMITIVES T)
       access __x15__ = (__x14__ "divide")
       app __x16__ = (__x15__ lnum rnum)
       app __x17__ = (WrapCompletion __x16__)
       return __x17__
-    } else {}
-    !!! "Otherwise , nt:{MultiplicativeOperator} is code:{%} ; return id:{T} : : remainder ( id:{lnum} , id:{rnum} ) ."
+    } else {
+      access __x18__ = (PRIMITIVES T)
+      access __x19__ = (__x18__ "remainder")
+      app __x20__ = (__x19__ lnum rnum)
+      app __x21__ = (WrapCompletion __x20__)
+      return __x21__
+    }
   }""")
 }

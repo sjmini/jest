@@ -21,6 +21,8 @@ object UnaryExpression3Evaluation0 {
     app __x4__ = (GetValue val)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     val = __x4__
-    !!! "Return a String according to Table 37 ."
+    app __x5__ = (GetTypeOf val)
+    app __x6__ = (WrapCompletion __x5__)
+    return __x6__
   }""")
 }
