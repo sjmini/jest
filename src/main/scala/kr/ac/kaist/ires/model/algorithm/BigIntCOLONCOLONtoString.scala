@@ -14,7 +14,7 @@ object BigIntCOLONCOLONtoString {
       app __x3__ = (WrapCompletion (+ "-" __x2__))
       return __x3__
     } else {}
-    app __x4__ = (WrapCompletion !!! "StringOp")
+    app __x4__ = (WrapCompletion (convert x num2str ))
     return __x4__
   }""")
 }

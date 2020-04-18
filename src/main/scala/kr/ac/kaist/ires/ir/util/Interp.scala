@@ -11,7 +11,7 @@ import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
 // IR Interpreter
 class Interp {
-  val timeout: Long = 3000L
+  val timeout: Long = 10000L
   val startTime: Long = System.currentTimeMillis
   var instCount = 0
 
@@ -398,6 +398,7 @@ class Interp {
       case (Str(s), s0) => {
         (cop match {
           case CStrToNum => Num(ESValueParser.str2num(s))
+          case CStrToBigInt => ESValueParser.str2bigint(s)
           case _ => error(s"not convertable option: Str to $cop")
         }, s0)
       }
@@ -413,6 +414,7 @@ class Interp {
         (cop match {
           case CNumToStr => Str(Helper.toStringHelper(n, radix))
           case CNumToInt => INum(n)
+          case CNumToBigInt => BigINum(BigInt(n))
           case _ => error(s"not convertable option: Num to $cop")
         }, s1)
       }
@@ -428,10 +430,17 @@ class Interp {
         (cop match {
           case CNumToStr => Str(Helper.toStringHelper(n, radix))
           case CNumToInt => INum((math.signum(n) * math.floor(math.abs(n))).toLong)
+          case CNumToBigInt => BigINum(BigInt(new java.math.BigDecimal(n).toBigInteger))
           case _ => error(s"not convertable option: Num to $cop")
         }, s1)
       }
-      case (BigINum(b), s0) => ??? // TODO
+      case (BigINum(b), s0) => {
+        (cop match {
+          case CNumToBigInt => BigINum(b)
+          case CNumToStr => Str(b.toString)
+          case _ => error(s"not convertable option: Num to $cop")
+        }, s0)
+      }
       case (v, s0) => error(s"not an convertable value: $v")
     }
     case EContains(list, elem) =>
@@ -563,6 +572,8 @@ class Interp {
     case (OXor, Bool(l), Bool(r)) => Bool(l ^ r)
 
     // equality operations
+    case (OEq, ASTVal(l), Str(r)) => Bool(l.toString == r)
+    case (OEq, Str(l), ASTVal(r)) => Bool(l == r.toString)
     case (OEq, INum(l), Num(r)) => Bool(!(r equals -0.0) && l == r)
     case (OEq, Num(l), INum(r)) => Bool(!(l equals -0.0) && l == r)
     case (OEq, Num(l), Num(r)) => Bool(l equals r)
@@ -573,7 +584,11 @@ class Interp {
     // double with big integers
     case (OLt, BigINum(l), Num(r)) =>
       Bool(new java.math.BigDecimal(l.bigInteger).compareTo(new java.math.BigDecimal(r)) < 0)
+    case (OLt, BigINum(l), INum(r)) =>
+      Bool(new java.math.BigDecimal(l.bigInteger).compareTo(new java.math.BigDecimal(r)) < 0)
     case (OLt, Num(l), BigINum(r)) =>
+      Bool(new java.math.BigDecimal(l).compareTo(new java.math.BigDecimal(r.bigInteger)) < 0)
+    case (OLt, INum(l), BigINum(r)) =>
       Bool(new java.math.BigDecimal(l).compareTo(new java.math.BigDecimal(r.bigInteger)) < 0)
 
     // big integers
@@ -586,6 +601,7 @@ class Interp {
     case (OBAnd, BigINum(l), BigINum(r)) => BigINum(l & r)
     case (OBOr, BigINum(l), BigINum(r)) => BigINum(l | r)
     case (OBXOr, BigINum(l), BigINum(r)) => BigINum(l ^ r)
+    case (OPow, BigINum(l), BigINum(r)) => BigINum(l.pow(r.toInt))
 
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
   }

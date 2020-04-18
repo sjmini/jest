@@ -28,6 +28,10 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     case Success(n, _) => n.doubleValue
     case _ => Double.NaN
   }
+  def str2bigint(str: String): Value = parseAll(MV.StringNumericLiteralForBigInt, str) match {
+    case Success(n, _) => BigINum(BigInt(n.toBigInteger))
+    case _ => Num(Double.NaN)
+  }
   private def get[T](name: String, rule: Parser[T], str: String): T = parseAll(rule, str) match {
     case Success(res, _) => res
     case f => throw ParseFailed(name + "\n" + f.toString)
@@ -204,6 +208,15 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       MV.NonDecimalIntegerLiteral
     )
     lazy val StrDecimalLiteral: D = Predef.StrDecimalLiteral ^^ bigDecimalFromString
+    lazy val StringNumericLiteralForBigInt: D = (
+      opt(Predef.StrWhiteSpace) ^^^ zeroBigDecimal |||
+      opt(Predef.StrWhiteSpace) ~> MV.StrNumericLiteralForBigInt <~ opt(Predef.StrWhiteSpace)
+    )
+    lazy val StrNumericLiteralForBigInt: D = (
+      MV.StrDecimalLiteralForBigInt |||
+      MV.NonDecimalIntegerLiteral
+    )
+    lazy val StrDecimalLiteralForBigInt: D = Predef.StrDecimalLiteralForBigInt ^^ bigDecimalFromString
     lazy val CodePoint: D = MV.HexDigits.filter(_.compareTo(bigDecimalFromInt(0x10ffff)) <= 0)
     lazy val HexDigit: D = "[0-9a-fA-F]".r ^^ {
       case s =>
@@ -446,8 +459,13 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       seq("+", StrUnsignedDecimalLiteral) |||
       seq("-", StrUnsignedDecimalLiteral)
     )
+    lazy val StrDecimalLiteralForBigInt: S = (
+      DecimalDigits |||
+      seq("+", DecimalDigits) |||
+      seq("-", DecimalDigits)
+    )
     lazy val StrUnsignedDecimalLiteral: S = (
-      "Infinity" |||
+      "Infinity" ^^^ "1e10000" |||
       seq(DecimalDigits, ".", sOpt(DecimalDigits), sOpt(ExponentPart)) |||
       seq(".", DecimalDigits, sOpt(ExponentPart)) |||
       seq(DecimalDigits, sOpt(ExponentPart))

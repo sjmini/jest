@@ -13,6 +13,6 @@ object NumberToBigInt {
       app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x2__
     } else {}
-    return number
+    return (convert number num2bigint )
   }""")
 }

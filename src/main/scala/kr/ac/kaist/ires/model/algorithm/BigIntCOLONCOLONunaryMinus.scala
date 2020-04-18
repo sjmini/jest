@@ -10,6 +10,6 @@ object BigIntCOLONCOLONunaryMinus {
       app __x0__ = (WrapCompletion 0n)
       return __x0__
     } else {}
-    return (- x)
+    return (- (convert x num2bigint ))
   }""")
 }

@@ -16,6 +16,8 @@ object BaseGlobal {
     "ToNumber" -> ToNumber.func,
     "ToBoolean" -> ToBoolean.func,
     "ToObject" -> ToObject.func,
+    "ToBigInt" -> ToBigInt.func,
+    "StringToBigInt" -> StringToBigInt.func,
     "ToString" -> ToString.func,
     "Number" -> Str("Number"),
     "BigInt" -> Str("BigInt"),
