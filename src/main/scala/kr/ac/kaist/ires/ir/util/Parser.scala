@@ -176,7 +176,8 @@ object Parser extends JavaTokenParsers with RegexParsers {
     "str2bigint" ^^^ CStrToBigInt |
     "num2str" ^^^ CNumToStr |
     "num2int" ^^^ CNumToInt |
-    "num2bigint" ^^^ CNumToBigInt
+    "num2bigint" ^^^ CNumToBigInt |
+    "bigint2num" ^^^ CBigIntToNum
   )
 
   ////////////////////////////////////////////////////////////////////////////////

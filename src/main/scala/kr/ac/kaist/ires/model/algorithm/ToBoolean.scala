@@ -21,6 +21,8 @@ object ToBoolean {
             else return true
           } else if (= atype "Symbol") {
             return true
+          } else if (= atype "BigInt") {
+            if (= argument 0n) return false else return true
           } else {
             return true
           }

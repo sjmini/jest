@@ -12,6 +12,7 @@ object GetTypeOf {
     else if (= t "Number") return "number"
     else if (= t "String") return "string"
     else if (= t "Symbol") return "symbol"
+    else if (= t "BigInt") return "bigint"
     else {
       if (= argument.Call absent) return "object"
       else return "function"

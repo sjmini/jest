@@ -21,10 +21,7 @@ object BasePrimitive {
       "unit" -> BigINum(BigInt(1)),
       "add" -> BigIntCOLONCOLONadd.func,
       "subtract" -> BigIntCOLONCOLONsubtract.func,
-      "exponentiate" -> BigIntCOLONCOLONexponentiate.func,
       "multiply" -> BigIntCOLONCOLONmultiply.func,
-      "divide" -> BigIntCOLONCOLONdivide.func,
-      "remainder" -> BigIntCOLONCOLONremainder.func,
       "equal" -> BigIntCOLONCOLONequal.func,
       "lessThan" -> BigIntCOLONCOLONlessThan.func,
       "bitwiseNOT" -> BigIntCOLONCOLONbitwiseNOT.func

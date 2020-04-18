@@ -235,6 +235,7 @@ object Beautifier {
       case CNumToStr => "num2str"
       case CNumToInt => "num2int"
       case CNumToBigInt => "num2bigint"
+      case CBigIntToNum => "bigint2num"
     })
 
     ////////////////////////////////////////////////////////////////////////////////

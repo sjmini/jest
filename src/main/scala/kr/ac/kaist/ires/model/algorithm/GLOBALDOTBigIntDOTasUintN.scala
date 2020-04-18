@@ -16,6 +16,6 @@ object GLOBALDOTBigIntDOTasUintN {
     app __x3__ = (ToBigInt bigint)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let bigint = __x3__
-    return (% (convert bigint num2bigint ) (** 2n (convert bits num2bigint )))
+    return (%% (convert bigint num2bigint ) (** 2n (convert bits num2bigint )))
   }""")
 }

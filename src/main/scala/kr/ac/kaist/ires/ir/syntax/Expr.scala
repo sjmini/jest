@@ -61,3 +61,4 @@ case object CStrToBigInt extends COp
 case object CNumToStr extends COp
 case object CNumToInt extends COp
 case object CNumToBigInt extends COp
+case object CBigIntToNum extends COp

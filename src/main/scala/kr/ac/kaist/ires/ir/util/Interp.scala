@@ -430,6 +430,7 @@ class Interp {
           (cop match {
             case CNumToBigInt => BigINum(b)
             case CNumToStr => Str(b.toString)
+            case CBigIntToNum => Num(b.toDouble)
             case _ => error(s"not convertable option: Num to $cop")
           }, s0)
         }
@@ -590,7 +591,8 @@ class Interp {
     case (OSub, BigINum(l), BigINum(r)) => BigINum(l - r)
     case (OMul, BigINum(l), BigINum(r)) => BigINum(l * r)
     case (ODiv, BigINum(l), BigINum(r)) => BigINum(l / r)
-    case (OMod, BigINum(l), BigINum(r)) => BigINum(l % r)
+    case (OMod, BigINum(l), BigINum(r)) => BigINum(modulo(l, r))
+    case (OUMod, BigINum(l), BigINum(r)) => BigINum(unsigned_modulo(l, r))
     case (OLt, BigINum(l), BigINum(r)) => Bool(l < r)
     case (OBAnd, BigINum(l), BigINum(r)) => BigINum(l & r)
     case (OBOr, BigINum(l), BigINum(r)) => BigINum(l | r)
@@ -598,6 +600,14 @@ class Interp {
     case (OPow, BigINum(l), BigINum(r)) => BigINum(l.pow(r.toInt))
 
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
+  }
+  private def modulo(l: BigInt, r: BigInt): BigInt = {
+    l % r
+  }
+  private def unsigned_modulo(l: BigInt, r: BigInt): BigInt = {
+    val m = l % r
+    if (m * r < 0) m + r
+    else m
   }
   private def modulo(l: Double, r: Double): Double = {
     l % r
