@@ -9,7 +9,7 @@ object BigIntBitwiseOp {
     assert (|| (|| (= op "&") (= op "|")) (= op "^"))
     let result = 0n
     let shift = 0i
-    !!! "Repeat , until ( id:{x} = 0 or id:{x} = - 1 ) and ( id:{y} = 0 or id:{y} = - 1 ) , step-list:{...}"
+    if (= op "&") return (& x y) else if (= op "|") return (| x y) else return (^ x y)
     if (= op "&") {
       app __x0__ = (BinaryAnd (%% x 2i) (%% y 2i))
       let tmp = __x0__

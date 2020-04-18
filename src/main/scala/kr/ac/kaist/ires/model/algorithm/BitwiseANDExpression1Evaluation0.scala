@@ -22,11 +22,19 @@ object BitwiseANDExpression1Evaluation0 {
     app __x5__ = (ToNumeric rval)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let rnum = __x5__
-    app __x6__ = (WrapCompletion (& lnum rnum))
-    return __x6__
-    app __x7__ = (Type lnum)
-    let T = __x7__
-    !!! "If @ is code:{&} , return id:{T} : : bitwiseAND ( id:{lnum} , id:{rnum} ) ."
+    app __x6__ = (Type lnum)
+    app __x7__ = (Type rnum)
+    if (! (= __x6__ __x7__)) {
+      app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x8__
+    } else {}
+    app __x9__ = (Type lnum)
+    let T = __x9__
+    access __x10__ = (PRIMITIVES T)
+    access __x11__ = (__x10__ "bitwiseAND")
+    app __x12__ = (__x11__ lnum rnum)
+    app __x13__ = (WrapCompletion __x12__)
+    return __x13__
     !!! "If @ is code:{|} , return id:{T} : : bitwiseOR ( id:{lnum} , id:{rnum} ) ."
     !!! "Otherwise , @ is code:{^} ; return id:{T} : : bitwiseXOR ( id:{lnum} , id:{rnum} ) ."
   }""")

@@ -25,7 +25,9 @@ object BasePrimitive {
       "multiply" -> BigIntCOLONCOLONmultiply.func,
       "divide" -> BigIntCOLONCOLONdivide.func,
       "remainder" -> BigIntCOLONCOLONremainder.func,
-      "equal" -> BigIntCOLONCOLONequal.func
+      "equal" -> BigIntCOLONCOLONequal.func,
+      "lessThan" -> BigIntCOLONCOLONlessThan.func,
+      "bitwiseNOT" -> BigIntCOLONCOLONbitwiseNOT.func
     )
   )
 

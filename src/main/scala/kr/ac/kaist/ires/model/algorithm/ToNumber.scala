@@ -21,6 +21,15 @@ object ToNumber {
         )),
         "Target" -> CONST_empty
       ))
+      else if (= atype "BigInt") return (new Completion (
+        "Type" -> CONST_throw,
+        "Value" -> (new OrdinaryObject(
+          "Prototype" -> INTRINSIC_TypeErrorPrototype,
+          "ErrorData" -> undefined,
+          "SubMap" -> (new SubMap())
+        )),
+        "Target" -> CONST_empty
+      ))
       else {
         app __x0__ = (ToPrimitive argument "Number")
         if (is-completion __x0__) {

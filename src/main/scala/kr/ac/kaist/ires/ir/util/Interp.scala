@@ -11,7 +11,6 @@ import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
 // IR Interpreter
 class Interp {
-  val timeout: Long = 10000L
   val startTime: Long = System.currentTimeMillis
   var instCount = 0
 
@@ -32,7 +31,6 @@ class Interp {
   // instructions
   def interp(inst: Inst): State => State = st => {
     instCount = instCount + 1
-    if ((instCount % 10000 == 0) && (System.currentTimeMillis - startTime) > timeout) error("timeoutInst")
     if (DEBUG_INTERP) inst match {
       case ISeq(_) =>
       case _ => println(s"${st.context.name}: ${beautify(inst)}")
@@ -357,14 +355,7 @@ class Interp {
       }
       v match {
         case ASTVal(ast) =>
-          val newVal = try {
-            ASTVal(Await.result(Future(
-              ESParser.parse(p(ast.parserParams), ast.toString).get
-            ), timeout.milliseconds))
-          } catch {
-            case e: TimeoutException => error("parser timeout")
-            case e: Throwable => Absent
-          }
+          val newVal = ASTVal(ESParser.parse(p(ast.parserParams), ast.toString).get)
           newVal match {
             case ASTVal(s) => ModelHelper.checkSupported(s)
             case _ => ()
@@ -379,14 +370,7 @@ class Interp {
                 case _ => error(s"parserParams should be boolean")
               }
           }
-          val newVal = try {
-            ASTVal(Await.result(Future(
-              ESParser.parse(p(parserParams), str).get
-            ), timeout.milliseconds))
-          } catch {
-            case e: TimeoutException => error("parser timeout")
-            case e: Throwable => Absent
-          }
+          val newVal = ASTVal(ESParser.parse(p(parserParams), str).get)
           newVal match {
             case ASTVal(s) => ModelHelper.checkSupported(s)
             case _ => ()
@@ -394,55 +378,63 @@ class Interp {
           (newVal, s2)
         case v => error(s"not an AST value or a string: $v")
       }
-    case EConvert(expr, cop, l) => interp(expr, true)(st) match {
-      case (Str(s), s0) => {
-        (cop match {
-          case CStrToNum => Num(ESValueParser.str2num(s))
-          case CStrToBigInt => ESValueParser.str2bigint(s)
-          case _ => error(s"not convertable option: Str to $cop")
-        }, s0)
-      }
-      case (INum(n), s0) => {
-        val (radix, s1) = l match {
-          case e :: rest => interp(e, true)(s0) match {
-            case (INum(n), s1) => (n.toInt, s1)
-            case (Num(n), s1) => (n.toInt, s1)
-            case _ => error("radix is not int")
-          }
-          case _ => (10, s0)
+    case EConvert(expr, cop, l) =>
+      val pair = interp(expr, true)(st) match {
+        case (addr: Addr, s0) => s0.get(addr) match {
+          case Some(IRMap(Ty("Completion"), m)) => (m(Str("Value")), s0)
+          case _ => error(s"not a convertable value: $addr")
         }
-        (cop match {
-          case CNumToStr => Str(Helper.toStringHelper(n, radix))
-          case CNumToInt => INum(n)
-          case CNumToBigInt => BigINum(BigInt(n))
-          case _ => error(s"not convertable option: Num to $cop")
-        }, s1)
+        case p => p
       }
-      case (Num(n), s0) => {
-        val (radix, s1) = l match {
-          case e :: rest => interp(e, true)(s0) match {
-            case (INum(n), s1) => (n.toInt, s1)
-            case (Num(n), s1) => (n.toInt, s1)
-            case _ => error("radix is not int")
-          }
-          case _ => (10, s0)
+      pair match {
+        case (Str(s), s0) => {
+          (cop match {
+            case CStrToNum => Num(ESValueParser.str2num(s))
+            case CStrToBigInt => ESValueParser.str2bigint(s)
+            case _ => error(s"not convertable option: Str to $cop")
+          }, s0)
         }
-        (cop match {
-          case CNumToStr => Str(Helper.toStringHelper(n, radix))
-          case CNumToInt => INum((math.signum(n) * math.floor(math.abs(n))).toLong)
-          case CNumToBigInt => BigINum(BigInt(new java.math.BigDecimal(n).toBigInteger))
-          case _ => error(s"not convertable option: Num to $cop")
-        }, s1)
+        case (INum(n), s0) => {
+          val (radix, s1) = l match {
+            case e :: rest => interp(e, true)(s0) match {
+              case (INum(n), s1) => (n.toInt, s1)
+              case (Num(n), s1) => (n.toInt, s1)
+              case _ => error("radix is not int")
+            }
+            case _ => (10, s0)
+          }
+          (cop match {
+            case CNumToStr => Str(Helper.toStringHelper(n, radix))
+            case CNumToInt => INum(n)
+            case CNumToBigInt => BigINum(BigInt(n))
+            case _ => error(s"not convertable option: Num to $cop")
+          }, s1)
+        }
+        case (Num(n), s0) => {
+          val (radix, s1) = l match {
+            case e :: rest => interp(e, true)(s0) match {
+              case (INum(n), s1) => (n.toInt, s1)
+              case (Num(n), s1) => (n.toInt, s1)
+              case _ => error("radix is not int")
+            }
+            case _ => (10, s0)
+          }
+          (cop match {
+            case CNumToStr => Str(Helper.toStringHelper(n, radix))
+            case CNumToInt => INum((math.signum(n) * math.floor(math.abs(n))).toLong)
+            case CNumToBigInt => BigINum(BigInt(new java.math.BigDecimal(n).toBigInteger))
+            case _ => error(s"not convertable option: Num to $cop")
+          }, s1)
+        }
+        case (BigINum(b), s0) => {
+          (cop match {
+            case CNumToBigInt => BigINum(b)
+            case CNumToStr => Str(b.toString)
+            case _ => error(s"not convertable option: Num to $cop")
+          }, s0)
+        }
+        case (v, s0) => error(s"not an convertable value: $v")
       }
-      case (BigINum(b), s0) => {
-        (cop match {
-          case CNumToBigInt => BigINum(b)
-          case CNumToStr => Str(b.toString)
-          case _ => error(s"not convertable option: Num to $cop")
-        }, s0)
-      }
-      case (v, s0) => error(s"not an convertable value: $v")
-    }
     case EContains(list, elem) =>
       val (l, s0) = interp(list, true)(st)
       l match {
@@ -593,6 +585,8 @@ class Interp {
 
     // big integers
     case (OPlus, BigINum(l), BigINum(r)) => BigINum(l + r)
+    case (OLShift, BigINum(l), BigINum(r)) => BigINum(l << r.toInt)
+    case (OSRShift, BigINum(l), BigINum(r)) => BigINum(l >> r.toInt)
     case (OSub, BigINum(l), BigINum(r)) => BigINum(l - r)
     case (OMul, BigINum(l), BigINum(r)) => BigINum(l * r)
     case (ODiv, BigINum(l), BigINum(r)) => BigINum(l / r)

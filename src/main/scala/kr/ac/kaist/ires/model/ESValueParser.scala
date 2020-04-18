@@ -161,14 +161,10 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       MV.NonDecimalIntegerLiteral <~ Predef.BigIntLiteralSuffix ^^ toBigInt
     )
 
-    lazy val DecimalBigIntegerLiteral: V = (
-      "0" ~ Predef.BigIntLiteralSuffix ^^^ toBigInt(zeroBigDecimal) |||
-      MV.NonZeroDigit <~ Predef.BigIntLiteralSuffix ^^ toBigInt |||
-      MV.NonZeroDigit <~ Predef.BigIntLiteralSuffix ^^ toBigInt |||
-      MV.NonZeroDigit ~ MV.DecimalDigits <~ Predef.BigIntLiteralSuffix ^^ {
-        case d0 ~ d1 => toBigInt(new BigDecimal(d0.toBigInteger, -d1.precision).add(d1))
-      }
-    )
+    lazy val DecimalBigIntegerLiteral: V =
+      ("0" ||| Predef.NonZeroDigit ~ opt(Predef.DecimalDigits) ^^ {
+        case x ~ y => x + y.getOrElse("")
+      }) <~ Predef.BigIntLiteralSuffix ^^ { s => BigINum(BigInt(s)) }
   }
 
   // Mathematical Value
