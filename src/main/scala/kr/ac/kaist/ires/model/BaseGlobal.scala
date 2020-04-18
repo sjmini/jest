@@ -18,6 +18,7 @@ object BaseGlobal {
     "ToObject" -> ToObject.func,
     "ToString" -> ToString.func,
     "Number" -> Str("Number"),
+    "BigInt" -> Str("BigInt"),
     "Undefined" -> Str("Undefined"),
     "Null" -> Str("Null"),
     "String" -> Str("String"),

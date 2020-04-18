@@ -176,8 +176,7 @@ class Interp {
           }
           case (ASTVal(Lexical(kind, str)), Str(name)) => s2.define(id, (kind, name) match {
             case ("(IdentifierName \\ (ReservedWord))" | "IdentifierName", "StringValue") => Str(ESValueParser.parseIdentifier(str))
-            case ("NumericLiteral", "MV") => Num(ESValueParser.parseNumber(str))
-            case ("NumericLiteral", "NumericValue") => Num(ESValueParser.parseNumber(str))
+            case ("NumericLiteral", "NumericValue") => ESValueParser.parseNumber(str)
             case ("StringLiteral", "SV" | "StringValue") => Str(ESValueParser.parseString(str))
             case ("NoSubstitutionTemplate", "TV") => Str(ESValueParser.parseTVNoSubstitutionTemplate(str))
             case ("TemplateHead", "TV") => Str(ESValueParser.parseTVTemplateHead(str))
@@ -500,11 +499,11 @@ class Interp {
   def interp(uop: UOp): Value => Value = (uop, _) match {
     case (ONeg, Num(n)) => Num(-n)
     case (ONeg, INum(n)) => INum(-n)
-    case (ONeg, BigINum(b)) => ??? // TODO
+    case (ONeg, BigINum(b)) => BigINum(-b)
     case (ONot, Bool(b)) => Bool(!b)
     case (OBNot, Num(n)) => INum(~(n.toInt))
     case (OBNot, INum(n)) => INum(~n)
-    case (OBNot, BigINum(b)) => ??? // TODO
+    case (OBNot, BigINum(b)) => BigINum(~b)
     case (_, value) => error(s"wrong type of value for the operator $uop: $value")
   }
 
@@ -567,11 +566,26 @@ class Interp {
     case (OEq, INum(l), Num(r)) => Bool(!(r equals -0.0) && l == r)
     case (OEq, Num(l), INum(r)) => Bool(!(l equals -0.0) && l == r)
     case (OEq, Num(l), Num(r)) => Bool(l equals r)
+    case (OEq, Num(l), BigINum(r)) => Bool(l == r)
+    case (OEq, BigINum(l), Num(r)) => Bool(l == r)
     case (OEq, l, r) => Bool(l == r)
 
-    // big integer operations
-    case (_, BigINum(l), _) => ???
-    case (_, _, BigINum(l)) => ???
+    // double with big integers
+    case (OLt, BigINum(l), Num(r)) =>
+      Bool(new java.math.BigDecimal(l.bigInteger).compareTo(new java.math.BigDecimal(r)) < 0)
+    case (OLt, Num(l), BigINum(r)) =>
+      Bool(new java.math.BigDecimal(l).compareTo(new java.math.BigDecimal(r.bigInteger)) < 0)
+
+    // big integers
+    case (OPlus, BigINum(l), BigINum(r)) => BigINum(l + r)
+    case (OSub, BigINum(l), BigINum(r)) => BigINum(l - r)
+    case (OMul, BigINum(l), BigINum(r)) => BigINum(l * r)
+    case (ODiv, BigINum(l), BigINum(r)) => BigINum(l / r)
+    case (OMod, BigINum(l), BigINum(r)) => BigINum(l % r)
+    case (OLt, BigINum(l), BigINum(r)) => Bool(l < r)
+    case (OBAnd, BigINum(l), BigINum(r)) => BigINum(l & r)
+    case (OBOr, BigINum(l), BigINum(r)) => BigINum(l | r)
+    case (OBXOr, BigINum(l), BigINum(r)) => BigINum(l ^ r)
 
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
   }

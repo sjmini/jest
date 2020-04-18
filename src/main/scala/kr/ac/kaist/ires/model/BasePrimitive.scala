@@ -16,6 +16,16 @@ object BasePrimitive {
       "multiply" -> NumberCOLONCOLONmultiply.func,
       "divide" -> NumberCOLONCOLONdivide.func,
       "remainder" -> NumberCOLONCOLONremainder.func
+    ),
+    "PrimitiveBigInt" -> Map(
+      "unit" -> BigINum(BigInt(1)),
+      "add" -> BigIntCOLONCOLONadd.func,
+      "subtract" -> BigIntCOLONCOLONsubtract.func,
+      "exponentiate" -> BigIntCOLONCOLONexponentiate.func,
+      "multiply" -> BigIntCOLONCOLONmultiply.func,
+      "divide" -> BigIntCOLONCOLONdivide.func,
+      "remainder" -> BigIntCOLONCOLONremainder.func,
+      "equal" -> BigIntCOLONCOLONequal.func
     )
   )
 

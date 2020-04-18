@@ -86,30 +86,19 @@ object AbstractRelationalComparison {
         return __x33__
       } else {}
       app __x34__ = (Type nx)
-      let __x35__ = (= __x34__ BigInt)
-      if __x35__ {
-        app __x36__ = (Type ny)
-        let __x37__ = (= __x36__ Number)
-        if __x37__ {} else {
-          app __x38__ = (Type nx)
-          let __x39__ = (= __x38__ Number)
-          if __x39__ {
-            app __x40__ = (Type ny)
-            __x39__ = (= __x40__ BigInt)
-          } else {}
-          __x37__ = __x39__
-        }
-        __x35__ = __x37__
-      } else {}
-      assert __x35__
-      !!! "If id:{nx} or id:{ny} is value:{NaN} , return value:{undefined} ."
+      app __x35__ = (Type ny)
+      let __x36__ = (&& (= __x34__ BigInt) (= __x35__ Number))
+      let __x37__ = (&& (= __x34__ Number) (= __x35__ BigInt))
+      let __x38__ = (|| __x36__ __x37__)
+      assert __x38__
+      if (|| (= nx NaN) (= ny NaN)) return undefined else {}
       if (|| (= nx -Infinity) (= ny Infinity)) {
-        app __x41__ = (WrapCompletion true)
-        return __x41__
+        app __x39__ = (WrapCompletion true)
+        return __x39__
       } else {}
       if (|| (= nx Infinity) (= ny -Infinity)) {
-        app __x42__ = (WrapCompletion false)
-        return __x42__
+        app __x40__ = (WrapCompletion false)
+        return __x40__
       } else {}
       return (< nx ny)
     }
