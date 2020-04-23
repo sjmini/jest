@@ -698,13 +698,19 @@ object Parser extends ESParsers {
   })
   lazy val MetaProperty: ESParser[MetaProperty] = memo(args => {
     log((
-      log(MATCH ~ NewTarget(List()) ^^ { case _ ~ x0 => MetaProperty0(x0, args) })("MetaProperty0")
+      log(MATCH ~ NewTarget(List()) ^^ { case _ ~ x0 => MetaProperty0(x0, args) })("MetaProperty0") |
+      log(MATCH ~ ImportMeta(List()) ^^ { case _ ~ x0 => MetaProperty1(x0, args) })("MetaProperty1")
     ))("MetaProperty")
   })
   lazy val NewTarget: ESParser[NewTarget] = memo(args => {
     log((
       log((((MATCH <~ t("new")) <~ t(".")) <~ t("target")) ^^ { case _ => NewTarget0(args) })("NewTarget0")
     ))("NewTarget")
+  })
+  lazy val ImportMeta: ESParser[ImportMeta] = memo(args => {
+    log((
+      log((((MATCH <~ t("import")) <~ t(".")) <~ t("meta")) ^^ { case _ => ImportMeta0(args) })("ImportMeta0")
+    ))("ImportMeta")
   })
   lazy val NewExpression: ESParser[NewExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("NewExpression", args, 2)
@@ -1765,6 +1771,7 @@ object Parser extends ESParsers {
     "default" |||
     "static" |||
     "continue" |||
+    "meta" |||
     "+" |||
     "get" |||
     "extends" |||
@@ -1880,6 +1887,7 @@ object Parser extends ESParsers {
     "SuperProperty" -> SuperProperty,
     "MetaProperty" -> MetaProperty,
     "NewTarget" -> NewTarget,
+    "ImportMeta" -> ImportMeta,
     "NewExpression" -> NewExpression,
     "CallExpression" -> CallExpression,
     "CoverCallExpressionAndAsyncArrowHead" -> CoverCallExpressionAndAsyncArrowHead,
