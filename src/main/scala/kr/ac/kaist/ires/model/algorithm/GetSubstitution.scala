@@ -22,7 +22,7 @@ object GetSubstitution {
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       namedCaptures = __x3__
     } else {}
-    !!! "Etc"
+    !!! "Let id:{result} be the String value derived from id:{replacement} by copying code unit elements from id:{replacement} to id:{result} while performing replacements as specified in Table 52 . These code:{$} replacements are done left - to - right , and , once such a replacement is performed , the new replacement text is not subject to further replacements ."
     app __x4__ = (WrapCompletion result)
     return __x4__
   }""")

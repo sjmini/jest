@@ -33,9 +33,9 @@ object IntegerIndexedElementSet {
     } else {}
     let offset = O["ByteOffset"]
     let arrayTypeName = O["TypedArrayName"]
-    !!! "Etc"
+    !!! "Let id:{elementSize} be the Number value of the Element Size value specified in Table 60 for id:{arrayTypeName} ."
     let indexedPosition = (+ (* index elementSize) offset)
-    !!! "Etc"
+    !!! "Let id:{elementType} be the String value of the Element Type value in Table 60 for id:{arrayTypeName} ."
     app __x8__ = (SetValueInBuffer buffer indexedPosition elementType numValue true "Unordered")
     __x8__
     app __x9__ = (WrapCompletion true)

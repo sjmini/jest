@@ -133,7 +133,7 @@ object CreateDynamicFunction {
     } else {}
     app __x34__ = (SetFunctionName F "anonymous")
     __x34__
-    !!! "Etc"
+    !!! "Let id:{prefix} be the prefix associated with id:{kind} in Table 48 ."
     let sourceText = (+ (+ (+ (+ (+ (+ (+ (+ prefix " anonymous(") P) "\n") ") {") "\n") bodyText) "\n") "}")
     F["SourceText"] = sourceText
     app __x35__ = (WrapCompletion F)
