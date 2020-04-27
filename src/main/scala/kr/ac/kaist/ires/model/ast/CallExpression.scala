@@ -104,6 +104,7 @@ object CallExpression5 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression5AssignmentTargetType0.func,
     "Contains0" -> CallExpression5Contains0.func,
+    "Evaluation0" -> CallExpression5Evaluation0.func,
     "ExpressionRules0" -> CallExpression5ExpressionRules0.func
   )
 }
