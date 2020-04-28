@@ -100,6 +100,7 @@ object AbstractEqualityComparison {
     } else {}
     if __x39__ {
       app __x41__ = (ToPrimitive y)
+      if (is-completion __x41__) if (= __x41__["Type"] CONST_normal) __x41__ = __x41__["Value"] else return __x41__ else {}
       app __x42__ = (AbstractEqualityComparison x __x41__)
       app __x43__ = (WrapCompletion __x42__)
       return __x43__
@@ -112,6 +113,7 @@ object AbstractEqualityComparison {
     } else {}
     if __x45__ {
       app __x47__ = (ToPrimitive x)
+      if (is-completion __x47__) if (= __x47__["Type"] CONST_normal) __x47__ = __x47__["Value"] else return __x47__ else {}
       app __x48__ = (AbstractEqualityComparison __x47__ y)
       app __x49__ = (WrapCompletion __x48__)
       return __x49__
