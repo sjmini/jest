@@ -60,7 +60,7 @@ class Test262Test extends IRESTest {
 
   // registration
   val dir = new File(test262Dir)
-  val config = FilterMeta.test262configSummary
+  val config = FilterMeta.test262ManualconfigSummary
   val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, List[StatementListItem]]()) {
     case (imm, s) => {
       val includeName = s"${dir.toString}/harness/$s"
