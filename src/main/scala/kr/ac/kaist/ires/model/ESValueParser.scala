@@ -25,6 +25,7 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
   def parseTVTemplateTail(str: String): String = get("TV.TemplateTail", TV.TemplateTail, str)
   def parseTRVTemplateTail(str: String): String = get("TRV.TemplateTail", TRV.TemplateTail, str)
   def str2num(str: String): Double = parseAll(MV.StringNumericLiteral, str) match {
+    case Success(`zeroBigDecimal`, _) if str.trim.startsWith("-") => -0.0
     case Success(n, _) => n.doubleValue
     case _ => Double.NaN
   }
