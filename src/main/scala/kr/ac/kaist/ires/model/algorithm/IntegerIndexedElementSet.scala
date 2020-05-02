@@ -28,7 +28,7 @@ object IntegerIndexedElementSet {
       app __x6__ = (WrapCompletion false)
       return __x6__
     } else {}
-    if (= index -0.0) {
+    if (== index -0.0) {
       app __x7__ = (WrapCompletion false)
       return __x7__
     } else {}

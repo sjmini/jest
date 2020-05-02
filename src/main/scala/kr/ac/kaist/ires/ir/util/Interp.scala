@@ -574,6 +574,12 @@ class Interp {
     case (OEq, BigINum(l), Num(r)) => Bool(l == r)
     case (OEq, l, r) => Bool(l == r)
 
+    // double equality operations
+    case (OEqual, INum(l), Num(r)) => Bool(l == r)
+    case (OEqual, Num(l), INum(r)) => Bool(l == r)
+    case (OEqual, Num(l), Num(r)) => Bool(l == r)
+    case (OEqual, l, r) => Bool(l == r)
+
     // double with big integers
     case (OLt, BigINum(l), Num(r)) =>
       Bool(new java.math.BigDecimal(l.bigInteger).compareTo(new java.math.BigDecimal(r)) < 0)

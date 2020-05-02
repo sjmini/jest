@@ -216,6 +216,7 @@ object Beautifier {
       case OUMod => "%%"
       case OMod => "%"
       case OEq => "="
+      case OEqual => "=="
       case OAnd => "&&"
       case OOr => "||"
       case OXor => "^^"
