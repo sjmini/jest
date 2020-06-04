@@ -71,3 +71,6 @@ case object CmdIRREPL extends CommandObj("repl-ir", CmdIRLoad >> IRREPL)
 
 // help
 case object CmdHelp extends CommandObj("help", CmdBase >> Help)
+
+// coverage
+case object CmdCoverage extends CommandObj("coverage", CmdBase >> Coverage)

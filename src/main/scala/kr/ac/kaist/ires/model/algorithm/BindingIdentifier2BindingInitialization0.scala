@@ -2,13 +2,10 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
-import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object BindingIdentifier2BindingInitialization0 {
   val length: Int = 0
-  val func: Func = Func("""BindingIdentifier2BindingInitialization0""", List(Id("""this"""), Id("""value"""), Id("""environment""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""InitializeBoundName"""))), List(EStr("""await"""), ERef(RefId(Id("""value"""))), ERef(RefId(Id("""environment"""))))).setId(13267), IIf(EBOp(OEq, ETypeOf(ERef(RefId(Id("""__x0__""")))), EStr("""Completion""")), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x0__""")), ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Value""")))).setId(13268), IReturn(ERef(RefId(Id("""__x0__""")))).setId(13269)).setId(13270), ISeq(List()).setId(13281)).setId(13272), IApp(Id("""__x1__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x0__"""))))).setId(13273), IReturn(ERef(RefId(Id("""__x1__""")))).setId(13274))).setId(13285))
-  val instToStepMap: Map[Int, Int] = HashMap(13272 -> 0, 13267 -> 0, 13274 -> 0, 13273 -> 0, 13275 -> 0)
-  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(13272, 13267, 13274, 13273, 13275))
+  val func: Func = Func("""BindingIdentifier2BindingInitialization0""", List(Id("""this"""), Id("""value"""), Id("""environment""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""InitializeBoundName"""))), List(EStr("""await"""), ERef(RefId(Id("""value"""))), ERef(RefId(Id("""environment"""))))).setId(13267), IIf(EBOp(OEq, ETypeOf(ERef(RefId(Id("""__x0__""")))), EStr("""Completion""")), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x0__""")), ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Value""")))).setId(13268), IReturn(ERef(RefId(Id("""__x0__""")))).setId(13269)).setId(13270), ISeq(List()).setId(13271)).setId(13272), IApp(Id("""__x1__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x0__"""))))).setId(13273), IReturn(ERef(RefId(Id("""__x1__""")))).setId(13274))).setId(-1))
   /* Beautified form:
   "BindingIdentifier2BindingInitialization0" (this, value, environment) => {
     app __x0__ = (InitializeBoundName "await" value environment)

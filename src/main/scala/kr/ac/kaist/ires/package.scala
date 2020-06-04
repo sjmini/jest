@@ -29,4 +29,5 @@ package object ires {
   val DEBUG_PARSER: Boolean = false
   val DEBUG_INTERP: Boolean = false
   val DEBUG_FILTER: Boolean = false
+  val CHECK_COVERAGE: Boolean = true
 }

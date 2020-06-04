@@ -3,14 +3,20 @@ package kr.ac.kaist.ires.ir
 import scala.collection.mutable.{ Map => MutableMap }
 import scala.collection.immutable.HashSet
 import scala.annotation.tailrec
+import kr.ac.kaist.ires.ir._
 
 // Unique ID generator
 object Inst {
+  var genId = false
   private var internalId: Int = 0
   private def getId = {
-    val returnId = internalId
-    internalId += 1
-    returnId
+    if (genId) {
+      val returnId = internalId
+      internalId += 1
+      returnId
+    } else {
+      -1
+    }
   }
 
   def getAllInstIds(target: Inst): HashSet[Int] = {

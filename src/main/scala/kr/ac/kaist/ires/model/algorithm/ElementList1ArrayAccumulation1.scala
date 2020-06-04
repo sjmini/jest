@@ -2,13 +2,10 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
-import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object ElementList1ArrayAccumulation1 {
   val length: Int = 0
-  val func: Func = Func("""ElementList1ArrayAccumulation1""", List(Id("""this"""), Id("""Elision"""), Id("""SpreadElement"""), Id("""array"""), Id("""nextIndex""")), None, ISeq(List(IIf(EBOp(OEq, ERef(RefId(Id("""Elision"""))), EAbsent), ILet(Id("""padding"""), EINum(0L)).setId(13860), ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""Elision"""))), EStr("""ElisionWidth""")).setId(13859), ILet(Id("""padding"""), ERef(RefId(Id("""__x0__""")))).setId(13862))).setId(13875)).setId(13864), IAccess(Id("""__x1__"""), ERef(RefId(Id("""SpreadElement"""))), EStr("""ArrayAccumulation""")).setId(13866), IApp(Id("""__x2__"""), ERef(RefId(Id("""__x1__"""))), List(ERef(RefId(Id("""array"""))), EBOp(OPlus, ERef(RefId(Id("""nextIndex"""))), ERef(RefId(Id("""padding""")))))).setId(13867), IApp(Id("""__x3__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x2__"""))))).setId(13868), IReturn(ERef(RefId(Id("""__x3__""")))).setId(13869))).setId(13881))
-  val instToStepMap: Map[Int, Int] = HashMap(13869 -> 1, 13865 -> 0, 13868 -> 1, 13864 -> 0, 13867 -> 1, 13870 -> 1, 13866 -> 1)
-  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(13865, 13864), 1 -> HashSet(13869, 13868, 13867, 13870, 13866))
+  val func: Func = Func("""ElementList1ArrayAccumulation1""", List(Id("""this"""), Id("""Elision"""), Id("""SpreadElement"""), Id("""array"""), Id("""nextIndex""")), None, ISeq(List(IIf(EBOp(OEq, ERef(RefId(Id("""Elision"""))), EAbsent), ILet(Id("""padding"""), EINum(0L)).setId(13860), ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""Elision"""))), EStr("""ElisionWidth""")).setId(13859), ILet(Id("""padding"""), ERef(RefId(Id("""__x0__""")))).setId(13862))).setId(13863)).setId(13864), IAccess(Id("""__x1__"""), ERef(RefId(Id("""SpreadElement"""))), EStr("""ArrayAccumulation""")).setId(13866), IApp(Id("""__x2__"""), ERef(RefId(Id("""__x1__"""))), List(ERef(RefId(Id("""array"""))), EBOp(OPlus, ERef(RefId(Id("""nextIndex"""))), ERef(RefId(Id("""padding""")))))).setId(13867), IApp(Id("""__x3__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x2__"""))))).setId(13868), IReturn(ERef(RefId(Id("""__x3__""")))).setId(13869))).setId(-1))
   /* Beautified form:
   "ElementList1ArrayAccumulation1" (this, Elision, SpreadElement, array, nextIndex) => {
     if (= Elision absent) let padding = 0i else {

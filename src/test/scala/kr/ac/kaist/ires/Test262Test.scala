@@ -22,6 +22,8 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent._
 import scala.concurrent.duration._
 
+import StepTracerJsonProtocol._
+
 class Test262Test extends IRESTest {
   // tag name
   val tag: String = "test262Test"
@@ -34,11 +36,28 @@ class Test262Test extends IRESTest {
     val suffix = new SimpleDateFormat("yyMMddHHmm").format(new Date())
     val filename = s"$TEST_DIR/result/${tag}_${suffix}"
 
+    CoverageCheck.fini()
+
     val jpw = getPrintWriter(filename)
     resMap("Test262Eval").toList.sortBy { case (k, v) => k }.foreach {
       case (k, v) => jpw.println(s"$k: $v")
     }
+
     jpw.close()
+
+    println("-------------------")
+    println("-     Summary     -")
+    println("-------------------")
+    println()
+    println(s"Total covered steps: ${CoverageCheck.totalCoveredSteps} / ${CoverageCheck.totalSteps} (${CoverageCheck.totalCoveredSteps.toFloat / CoverageCheck.totalSteps})")
+
+    val ws = getPrintWriter("coveredSteps.json")
+    ws.println(CoverageCheck.coveredSteps.toJson.toString())
+    ws.close()
+
+    val ws2 = getPrintWriter("coveredInsts.json")
+    ws2.println(CoverageCheck.coveredInsts.toJson.toString())
+    ws2.close()
   }
 
   // tests for js-interpreter

@@ -2,13 +2,10 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
-import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object VariableStatement0Evaluation0 {
   val length: Int = 0
-  val func: Func = Func("""VariableStatement0Evaluation0""", List(Id("""this"""), Id("""VariableDeclarationList""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""VariableDeclarationList"""))), EStr("""Evaluation""")).setId(27525), ILet(Id("""next"""), ERef(RefId(Id("""__x0__""")))).setId(27526), IIf(EBOp(OEq, ETypeOf(ERef(RefId(Id("""next""")))), EStr("""Completion""")), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""next""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""next""")), ERef(RefProp(RefId(Id("""next""")), EStr("""Value""")))).setId(27528), IReturn(ERef(RefId(Id("""next""")))).setId(27529)).setId(27530), ISeq(List()).setId(27545)).setId(27532), IExpr(ERef(RefId(Id("""next""")))).setId(27533), IApp(Id("""__x1__"""), ERef(RefId(Id("""NormalCompletion"""))), List(ERef(RefId(Id("""CONST_empty"""))))).setId(27535), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x1__"""))))).setId(27536), IReturn(ERef(RefId(Id("""__x2__""")))).setId(27537))).setId(27551))
-  val instToStepMap: Map[Int, Int] = HashMap(27536 -> 2, 27537 -> 2, 27525 -> 0, 27535 -> 2, 27538 -> 2, 27534 -> 1, 27526 -> 0, 27527 -> 0, 27533 -> 1, 27532 -> 1)
-  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(27525, 27526, 27527), 1 -> HashSet(27534, 27533, 27532), 2 -> HashSet(27536, 27537, 27535, 27538))
+  val func: Func = Func("""VariableStatement0Evaluation0""", List(Id("""this"""), Id("""VariableDeclarationList""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""VariableDeclarationList"""))), EStr("""Evaluation""")).setId(27525), ILet(Id("""next"""), ERef(RefId(Id("""__x0__""")))).setId(27526), IIf(EBOp(OEq, ETypeOf(ERef(RefId(Id("""next""")))), EStr("""Completion""")), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""next""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""next""")), ERef(RefProp(RefId(Id("""next""")), EStr("""Value""")))).setId(27528), IReturn(ERef(RefId(Id("""next""")))).setId(27529)).setId(27530), ISeq(List()).setId(27531)).setId(27532), IExpr(ERef(RefId(Id("""next""")))).setId(27533), IApp(Id("""__x1__"""), ERef(RefId(Id("""NormalCompletion"""))), List(ERef(RefId(Id("""CONST_empty"""))))).setId(27535), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x1__"""))))).setId(27536), IReturn(ERef(RefId(Id("""__x2__""")))).setId(27537))).setId(-1))
   /* Beautified form:
   "VariableStatement0Evaluation0" (this, VariableDeclarationList) => {
     access __x0__ = (VariableDeclarationList "Evaluation")

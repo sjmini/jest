@@ -5,9 +5,11 @@ import scala.concurrent._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
-import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, Lexical }
+import kr.ac.kaist.ires.{ DEBUG_INTERP, CHECK_COVERAGE, IRES, Lexical }
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
+
+import kr.ac.kaist.ires.util.CoverageCheck
 
 // IR Interpreter
 class Interp {
@@ -36,6 +38,9 @@ class Interp {
     if (DEBUG_INTERP) inst match {
       case ISeq(_) =>
       case _ => println(s"${st.context.name}: ${beautify(inst)}")
+    }
+    if (CHECK_COVERAGE) {
+      CoverageCheck(inst.instId)
     }
     inst match {
       case IExpr(expr) =>

@@ -2,13 +2,10 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
-import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object MethodDefinition4ComputedPropertyContains0 {
   val length: Int = 0
-  val func: Func = Func("""MethodDefinition4ComputedPropertyContains0""", List(Id("""this"""), Id("""PropertyName"""), Id("""FunctionBody"""), Id("""symbol""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""PropertyName"""))), EStr("""ComputedPropertyContains""")).setId(39439), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""symbol"""))))).setId(39440), IReturn(ERef(RefId(Id("""__x1__""")))).setId(39441))).setId(39447))
-  val instToStepMap: Map[Int, Int] = Map(39440 -> 0, 39441 -> 0, 39442 -> 0, 39439 -> 0)
-  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(39439, 39442, 39440, 39441))
+  val func: Func = Func("""MethodDefinition4ComputedPropertyContains0""", List(Id("""this"""), Id("""PropertyName"""), Id("""FunctionBody"""), Id("""symbol""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""PropertyName"""))), EStr("""ComputedPropertyContains""")).setId(39439), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""symbol"""))))).setId(39440), IReturn(ERef(RefId(Id("""__x1__""")))).setId(39441))).setId(-1))
   /* Beautified form:
   "MethodDefinition4ComputedPropertyContains0" (this, PropertyName, FunctionBody, symbol) => {
     access __x0__ = (PropertyName "ComputedPropertyContains")

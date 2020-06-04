@@ -2,13 +2,10 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
-import scala.collection.immutable.{ Map, HashMap, HashSet }
 
 object Expression0ExpressionRules0 {
   val length: Int = 0
-  val func: Func = Func("""Expression0ExpressionRules0""", List(Id("""this"""), Id("""AssignmentExpression""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""AssignmentExpression"""))), EStr("""HasCallInTailPosition""")).setId(45968), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""call"""))))).setId(45969), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x1__"""))))).setId(45970), IReturn(ERef(RefId(Id("""__x2__""")))).setId(45971))).setId(45978))
-  val instToStepMap: Map[Int, Int] = HashMap(45972 -> 0, 45971 -> 0, 45970 -> 0, 45968 -> 0, 45969 -> 0)
-  val stepToInstsMap: Map[Int, HashSet[Int]] = Map(0 -> HashSet(45972, 45971, 45970, 45968, 45969))
+  val func: Func = Func("""Expression0ExpressionRules0""", List(Id("""this"""), Id("""AssignmentExpression""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""AssignmentExpression"""))), EStr("""HasCallInTailPosition""")).setId(45968), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""call"""))))).setId(45969), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x1__"""))))).setId(45970), IReturn(ERef(RefId(Id("""__x2__""")))).setId(45971))).setId(-1))
   /* Beautified form:
   "Expression0ExpressionRules0" (this, AssignmentExpression) => {
     access __x0__ = (AssignmentExpression "HasCallInTailPosition")

@@ -65,7 +65,8 @@ object IRES {
     CmdIRParse,
     CmdIRLoad,
     CmdIREval,
-    CmdIRREPL
+    CmdIRREPL,
+    CmdCoverage
   )
   val cmdMap = commands.foldLeft[Map[String, Command]](Map()) {
     case (map, cmd) => map + (cmd.name -> cmd)
@@ -80,7 +81,8 @@ object IRES {
     IRParse,
     IRLoad,
     IREval,
-    IRREPL
+    IRREPL,
+    Coverage
   )
 
   // global options
