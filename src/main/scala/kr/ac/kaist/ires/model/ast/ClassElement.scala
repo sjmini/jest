@@ -73,9 +73,5 @@ case class ClassElement2(parserParams: List[Boolean]) extends ClassElement {
 }
 object ClassElement2 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "ComputedPropertyContains0" -> ClassElement2ComputedPropertyContains0.func,
-    "IsStatic0" -> ClassElement2IsStatic0.func,
-    "PropName0" -> ClassElement2PropName0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

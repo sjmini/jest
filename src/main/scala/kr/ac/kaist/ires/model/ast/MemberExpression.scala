@@ -57,7 +57,6 @@ object MemberExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> MemberExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression1HasCallInTailPosition0.func,
-    "IsDestructuring0" -> MemberExpression1IsDestructuring0.func,
     "IsFunctionDefinition0" -> MemberExpression1IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> MemberExpression1IsIdentifierRef0.func
   )
@@ -117,9 +116,7 @@ object MemberExpression3 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> MemberExpression3Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression3HasCallInTailPosition0.func,
-    "IsDestructuring0" -> MemberExpression3IsDestructuring0.func,
     "IsFunctionDefinition0" -> MemberExpression3IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> MemberExpression3IsIdentifierRef0.func
   )
 }
 case class MemberExpression4(x0: SuperProperty, parserParams: List[Boolean]) extends MemberExpression {
@@ -143,7 +140,6 @@ object MemberExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "HasCallInTailPosition0" -> MemberExpression4HasCallInTailPosition0.func,
-    "IsDestructuring0" -> MemberExpression4IsDestructuring0.func,
     "IsFunctionDefinition0" -> MemberExpression4IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> MemberExpression4IsIdentifierRef0.func
   )
@@ -168,10 +164,7 @@ case class MemberExpression5(x0: MetaProperty, parserParams: List[Boolean]) exte
 object MemberExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> MemberExpression5HasCallInTailPosition0.func,
-    "IsDestructuring0" -> MemberExpression5IsDestructuring0.func,
     "IsFunctionDefinition0" -> MemberExpression5IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> MemberExpression5IsIdentifierRef0.func
   )
 }
 case class MemberExpression6(x1: MemberExpression, x2: Arguments, parserParams: List[Boolean]) extends MemberExpression {
@@ -199,8 +192,6 @@ object MemberExpression6 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> MemberExpression6Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression6HasCallInTailPosition0.func,
-    "IsDestructuring0" -> MemberExpression6IsDestructuring0.func,
     "IsFunctionDefinition0" -> MemberExpression6IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> MemberExpression6IsIdentifierRef0.func
   )
 }

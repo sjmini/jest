@@ -30,7 +30,6 @@ object OptionalChain0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ChainEvaluation0" -> OptionalChain0ChainEvaluation0.func,
-    "HasCallInTailPosition0" -> OptionalChain0HasCallInTailPosition0.func
   )
 }
 case class OptionalChain1(x2: Expression, parserParams: List[Boolean]) extends OptionalChain {
@@ -57,7 +56,6 @@ object OptionalChain1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ChainEvaluation0" -> OptionalChain1ChainEvaluation0.func,
-    "HasCallInTailPosition0" -> OptionalChain1HasCallInTailPosition0.func
   )
 }
 case class OptionalChain2(x1: Lexical, parserParams: List[Boolean]) extends OptionalChain {
@@ -82,8 +80,6 @@ object OptionalChain2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ChainEvaluation0" -> OptionalChain2ChainEvaluation0.func,
-    "Contains0" -> OptionalChain2Contains0.func,
-    "HasCallInTailPosition0" -> OptionalChain2HasCallInTailPosition0.func
   )
 }
 case class OptionalChain3(x1: TemplateLiteral, parserParams: List[Boolean]) extends OptionalChain {
@@ -131,7 +127,6 @@ object OptionalChain4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ChainEvaluation0" -> OptionalChain4ChainEvaluation0.func,
-    "HasCallInTailPosition0" -> OptionalChain4HasCallInTailPosition0.func
   )
 }
 case class OptionalChain5(x0: OptionalChain, x2: Expression, parserParams: List[Boolean]) extends OptionalChain {
@@ -159,7 +154,6 @@ object OptionalChain5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ChainEvaluation0" -> OptionalChain5ChainEvaluation0.func,
-    "HasCallInTailPosition0" -> OptionalChain5HasCallInTailPosition0.func
   )
 }
 case class OptionalChain6(x0: OptionalChain, x2: Lexical, parserParams: List[Boolean]) extends OptionalChain {
@@ -186,8 +180,6 @@ object OptionalChain6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ChainEvaluation0" -> OptionalChain6ChainEvaluation0.func,
-    "Contains0" -> OptionalChain6Contains0.func,
-    "HasCallInTailPosition0" -> OptionalChain6HasCallInTailPosition0.func
   )
 }
 case class OptionalChain7(x0: OptionalChain, x1: TemplateLiteral, parserParams: List[Boolean]) extends OptionalChain {

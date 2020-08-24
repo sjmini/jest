@@ -131,9 +131,7 @@ case class CoverParenthesizedExpressionAndArrowParameterList4(x2: BindingPattern
 }
 object CoverParenthesizedExpressionAndArrowParameterList4 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "CoveredFormalsList0" -> CoverParenthesizedExpressionAndArrowParameterList4CoveredFormalsList0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class CoverParenthesizedExpressionAndArrowParameterList5(x1: Expression, x4: BindingIdentifier, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x1.parent = Some(this)
@@ -189,7 +187,5 @@ case class CoverParenthesizedExpressionAndArrowParameterList6(x1: Expression, x4
 }
 object CoverParenthesizedExpressionAndArrowParameterList6 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "CoveredFormalsList0" -> CoverParenthesizedExpressionAndArrowParameterList6CoveredFormalsList0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

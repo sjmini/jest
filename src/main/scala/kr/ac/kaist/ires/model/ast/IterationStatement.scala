@@ -211,7 +211,6 @@ case class IterationStatement5(x3: LeftHandSideExpression, x5: Expression, x7: S
 object IterationStatement5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> IterationStatement5HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement5LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement5VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IterationStatement5VarScopedDeclarations0.func
@@ -314,7 +313,6 @@ case class IterationStatement8(x3: LeftHandSideExpression, x5: AssignmentExpress
 object IterationStatement8 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> IterationStatement8HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement8LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement8VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IterationStatement8VarScopedDeclarations0.func
@@ -417,12 +415,7 @@ case class IterationStatement11(x4: LeftHandSideExpression, x6: AssignmentExpres
 }
 object IterationStatement11 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> IterationStatement11HasCallInTailPosition0.func,
-    "LabelledEvaluation0" -> IterationStatement11LabelledEvaluation0.func,
-    "VarDeclaredNames0" -> IterationStatement11VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> IterationStatement11VarScopedDeclarations0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class IterationStatement12(x4: ForBinding, x6: AssignmentExpression, x8: Statement, parserParams: List[Boolean]) extends IterationStatement {
   x4.parent = Some(this)
@@ -453,12 +446,7 @@ case class IterationStatement12(x4: ForBinding, x6: AssignmentExpression, x8: St
 }
 object IterationStatement12 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> IterationStatement12HasCallInTailPosition0.func,
-    "LabelledEvaluation0" -> IterationStatement12LabelledEvaluation0.func,
-    "VarDeclaredNames0" -> IterationStatement12VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> IterationStatement12VarScopedDeclarations0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class IterationStatement13(x3: ForDeclaration, x5: AssignmentExpression, x7: Statement, parserParams: List[Boolean]) extends IterationStatement {
   x3.parent = Some(this)
@@ -488,10 +476,5 @@ case class IterationStatement13(x3: ForDeclaration, x5: AssignmentExpression, x7
 }
 object IterationStatement13 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> IterationStatement13HasCallInTailPosition0.func,
-    "LabelledEvaluation0" -> IterationStatement13LabelledEvaluation0.func,
-    "VarDeclaredNames0" -> IterationStatement13VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> IterationStatement13VarScopedDeclarations0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

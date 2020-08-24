@@ -33,10 +33,6 @@ object Block0 extends ASTInfo {
     "Evaluation0" -> Block0Evaluation0.func,
     "Evaluation1" -> Block0Evaluation1.func,
     "HasCallInTailPosition0" -> Block0HasCallInTailPosition0.func,
-    "LexicallyDeclaredNames0" -> Block0LexicallyDeclaredNames0.func,
-    "TopLevelLexicallyScopedDeclarations0" -> Block0TopLevelLexicallyScopedDeclarations0.func,
-    "TopLevelVarDeclaredNames0" -> Block0TopLevelVarDeclaredNames0.func,
-    "TopLevelVarScopedDeclarations0" -> Block0TopLevelVarScopedDeclarations0.func,
     "VarDeclaredNames0" -> Block0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> Block0VarScopedDeclarations0.func
   )

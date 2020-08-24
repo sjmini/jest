@@ -31,7 +31,6 @@ object ParenthesizedExpression0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> ParenthesizedExpression0Evaluation0.func,
-    "HasCallInTailPosition0" -> ParenthesizedExpression0HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ParenthesizedExpression0IsFunctionDefinition0.func,
     "NamedEvaluation0" -> ParenthesizedExpression0NamedEvaluation0.func
   )

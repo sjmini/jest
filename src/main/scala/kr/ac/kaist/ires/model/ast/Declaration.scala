@@ -48,9 +48,7 @@ case class Declaration1(x0: ClassDeclaration, parserParams: List[Boolean]) exten
 }
 object Declaration1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "DeclarationPart0" -> Declaration1DeclarationPart0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class Declaration2(x0: LexicalDeclaration, parserParams: List[Boolean]) extends Declaration {
   x0.parent = Some(this)

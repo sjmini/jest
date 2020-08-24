@@ -1,6 +1,7 @@
 package kr.ac.kaist.ires
 
 import java.io._
+import kr.ac.kaist.ires.BUG_FIX
 import kr.ac.kaist.ires.error._
 import kr.ac.kaist.ires.phase._
 import kr.ac.kaist.ires.util.Useful._
@@ -11,6 +12,8 @@ import scala.util.{ Try, Success, Failure }
 import spray.json._
 
 abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
+  BUG_FIX = true
+
   // IRES configuration
   lazy val iresConfig: IRESConfig = IRESConfig(CmdBase, Nil, true)
 

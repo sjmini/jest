@@ -28,7 +28,6 @@ case class FunctionBody0(x0: FunctionStatementList, parserParams: List[Boolean])
 object FunctionBody0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUseStrict0" -> FunctionBody0ContainsUseStrict0.func,
     "EvaluateBody0" -> FunctionBody0EvaluateBody0.func
   )
 }

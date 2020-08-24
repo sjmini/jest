@@ -49,9 +49,7 @@ case class LeftHandSideExpression1(x0: CallExpression, parserParams: List[Boolea
 object LeftHandSideExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsDestructuring0" -> LeftHandSideExpression1IsDestructuring0.func,
     "IsFunctionDefinition0" -> LeftHandSideExpression1IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> LeftHandSideExpression1IsIdentifierRef0.func
   )
 }
 case class LeftHandSideExpression2(x0: OptionalExpression, parserParams: List[Boolean]) extends LeftHandSideExpression {
@@ -73,9 +71,5 @@ case class LeftHandSideExpression2(x0: OptionalExpression, parserParams: List[Bo
 }
 object LeftHandSideExpression2 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "IsDestructuring0" -> LeftHandSideExpression2IsDestructuring0.func,
-    "IsFunctionDefinition0" -> LeftHandSideExpression2IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> LeftHandSideExpression2IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

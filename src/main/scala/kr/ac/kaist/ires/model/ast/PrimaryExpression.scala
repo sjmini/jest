@@ -30,7 +30,6 @@ object PrimaryExpression0 extends ASTInfo {
     "Evaluation0" -> PrimaryExpression0Evaluation0.func,
     "HasCallInTailPosition0" -> PrimaryExpression0HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression0IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression0IsIdentifierRef0.func
   )
 }
 case class PrimaryExpression1(x0: IdentifierReference, parserParams: List[Boolean]) extends PrimaryExpression {
@@ -80,7 +79,6 @@ object PrimaryExpression2 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "HasCallInTailPosition0" -> PrimaryExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression2IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression2IsIdentifierRef0.func
   )
 }
 case class PrimaryExpression3(x0: ArrayLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
@@ -103,9 +101,7 @@ case class PrimaryExpression3(x0: ArrayLiteral, parserParams: List[Boolean]) ext
 object PrimaryExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> PrimaryExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression3IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression3IsIdentifierRef0.func
   )
 }
 case class PrimaryExpression4(x0: ObjectLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
@@ -152,10 +148,7 @@ case class PrimaryExpression5(x0: FunctionExpression, parserParams: List[Boolean
 }
 object PrimaryExpression5 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> PrimaryExpression5HasCallInTailPosition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression5IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class PrimaryExpression6(x0: ClassExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
@@ -176,10 +169,7 @@ case class PrimaryExpression6(x0: ClassExpression, parserParams: List[Boolean]) 
 }
 object PrimaryExpression6 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> PrimaryExpression6HasCallInTailPosition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression6IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class PrimaryExpression7(x0: GeneratorExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
@@ -200,10 +190,7 @@ case class PrimaryExpression7(x0: GeneratorExpression, parserParams: List[Boolea
 }
 object PrimaryExpression7 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> PrimaryExpression7HasCallInTailPosition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression7IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class PrimaryExpression8(x0: AsyncFunctionExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
@@ -224,10 +211,7 @@ case class PrimaryExpression8(x0: AsyncFunctionExpression, parserParams: List[Bo
 }
 object PrimaryExpression8 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> PrimaryExpression8HasCallInTailPosition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression8IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class PrimaryExpression9(x0: AsyncGeneratorExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
@@ -248,10 +232,7 @@ case class PrimaryExpression9(x0: AsyncGeneratorExpression, parserParams: List[B
 }
 object PrimaryExpression9 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> PrimaryExpression9HasCallInTailPosition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression9IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class PrimaryExpression10(x0: Lexical, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
@@ -272,12 +253,7 @@ case class PrimaryExpression10(x0: Lexical, parserParams: List[Boolean]) extends
 }
 object PrimaryExpression10 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> PrimaryExpression10Evaluation0.func,
-    "HasCallInTailPosition0" -> PrimaryExpression10HasCallInTailPosition0.func,
-    "IsFunctionDefinition0" -> PrimaryExpression10IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression10IsIdentifierRef0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class PrimaryExpression11(x0: TemplateLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
@@ -301,7 +277,6 @@ object PrimaryExpression11 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "HasCallInTailPosition0" -> PrimaryExpression11HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression11IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> PrimaryExpression11IsIdentifierRef0.func
   )
 }
 case class PrimaryExpression12(x0: CoverParenthesizedExpressionAndArrowParameterList, parserParams: List[Boolean]) extends PrimaryExpression {
@@ -325,7 +300,6 @@ object PrimaryExpression12 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> PrimaryExpression12Evaluation0.func,
-    "HasCallInTailPosition0" -> PrimaryExpression12HasCallInTailPosition0.func,
     "HasName0" -> PrimaryExpression12HasName0.func,
     "IsFunctionDefinition0" -> PrimaryExpression12IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression12IsIdentifierRef0.func,

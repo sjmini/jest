@@ -32,10 +32,5 @@ case class WithStatement0(x2: Expression, x4: Statement, parserParams: List[Bool
 }
 object WithStatement0 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> WithStatement0Evaluation0.func,
-    "HasCallInTailPosition0" -> WithStatement0HasCallInTailPosition0.func,
-    "VarDeclaredNames0" -> WithStatement0VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> WithStatement0VarScopedDeclarations0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

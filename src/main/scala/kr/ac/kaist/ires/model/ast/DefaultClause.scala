@@ -33,7 +33,6 @@ object DefaultClause0 extends ASTInfo {
     "Evaluation0" -> DefaultClause0Evaluation0.func,
     "Evaluation1" -> DefaultClause0Evaluation1.func,
     "HasCallInTailPosition1" -> DefaultClause0HasCallInTailPosition1.func,
-    "LexicallyDeclaredNames1" -> DefaultClause0LexicallyDeclaredNames1.func,
     "LexicallyScopedDeclarations1" -> DefaultClause0LexicallyScopedDeclarations1.func,
     "VarDeclaredNames1" -> DefaultClause0VarDeclaredNames1.func,
     "VarScopedDeclarations1" -> DefaultClause0VarScopedDeclarations1.func

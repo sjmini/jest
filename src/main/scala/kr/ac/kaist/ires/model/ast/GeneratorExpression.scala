@@ -38,7 +38,6 @@ case class GeneratorExpression0(x2: Option[BindingIdentifier], x4: FormalParamet
 object GeneratorExpression0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "Contains1" -> GeneratorExpression0Contains1.func,
     "Evaluation0" -> GeneratorExpression0Evaluation0.func,
     "Evaluation1" -> GeneratorExpression0Evaluation1.func,
     "HasName0" -> GeneratorExpression0HasName0.func,

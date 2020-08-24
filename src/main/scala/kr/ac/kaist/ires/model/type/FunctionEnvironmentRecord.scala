@@ -5,7 +5,6 @@ object FunctionEnvironmentRecord {
   val map: Map[Value, Value] = Map[Value, Value](
     (Str("WithBaseObject") -> DeclarativeEnvironmentRecordDOTWithBaseObject.func),
     (Str("HasSuperBinding") -> FunctionEnvironmentRecordDOTHasSuperBinding.func),
-    (Str("DeleteBinding") -> DeclarativeEnvironmentRecordDOTDeleteBinding.func),
     (Str("InitializeBinding") -> DeclarativeEnvironmentRecordDOTInitializeBinding.func),
     (Str("GetBindingValue") -> DeclarativeEnvironmentRecordDOTGetBindingValue.func),
     (Str("CreateMutableBinding") -> DeclarativeEnvironmentRecordDOTCreateMutableBinding.func),

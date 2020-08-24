@@ -51,7 +51,6 @@ object UnaryExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UnaryExpression1Evaluation0.func,
-    "HasCallInTailPosition0" -> UnaryExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UnaryExpression1IsFunctionDefinition0.func
   )
 }
@@ -77,7 +76,6 @@ object UnaryExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UnaryExpression2Evaluation0.func,
-    "HasCallInTailPosition0" -> UnaryExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UnaryExpression2IsFunctionDefinition0.func
   )
 }
@@ -103,7 +101,6 @@ object UnaryExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UnaryExpression3Evaluation0.func,
-    "HasCallInTailPosition0" -> UnaryExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UnaryExpression3IsFunctionDefinition0.func
   )
 }
@@ -129,7 +126,6 @@ object UnaryExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UnaryExpression4Evaluation0.func,
-    "HasCallInTailPosition0" -> UnaryExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UnaryExpression4IsFunctionDefinition0.func
   )
 }
@@ -155,7 +151,6 @@ object UnaryExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UnaryExpression5Evaluation0.func,
-    "HasCallInTailPosition0" -> UnaryExpression5HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UnaryExpression5IsFunctionDefinition0.func
   )
 }
@@ -181,8 +176,6 @@ object UnaryExpression6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UnaryExpression6Evaluation0.func,
-    "HasCallInTailPosition0" -> UnaryExpression6HasCallInTailPosition0.func,
-    "IsFunctionDefinition0" -> UnaryExpression6IsFunctionDefinition0.func
   )
 }
 case class UnaryExpression7(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
@@ -230,8 +223,5 @@ case class UnaryExpression8(x0: AwaitExpression, parserParams: List[Boolean]) ex
 }
 object UnaryExpression8 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> UnaryExpression8HasCallInTailPosition0.func,
-    "IsFunctionDefinition0" -> UnaryExpression8IsFunctionDefinition0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

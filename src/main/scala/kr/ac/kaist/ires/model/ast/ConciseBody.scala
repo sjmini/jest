@@ -28,7 +28,6 @@ case class ConciseBody0(x1: ExpressionBody, parserParams: List[Boolean]) extends
 object ConciseBody0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUseStrict0" -> ConciseBody0ContainsUseStrict0.func,
     "EvaluateBody0" -> ConciseBody0EvaluateBody0.func,
     "LexicallyDeclaredNames0" -> ConciseBody0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> ConciseBody0LexicallyScopedDeclarations0.func,

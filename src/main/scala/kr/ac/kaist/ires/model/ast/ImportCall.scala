@@ -30,7 +30,5 @@ case class ImportCall0(x2: AssignmentExpression, parserParams: List[Boolean]) ex
 }
 object ImportCall0 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> ImportCall0Evaluation0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

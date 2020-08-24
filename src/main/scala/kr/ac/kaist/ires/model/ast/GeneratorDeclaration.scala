@@ -41,7 +41,6 @@ object GeneratorDeclaration0 extends ASTInfo {
     "BoundNames0" -> GeneratorDeclaration0BoundNames0.func,
     "Contains0" -> GeneratorDeclaration0Contains0.func,
     "InstantiateFunctionObject0" -> GeneratorDeclaration0InstantiateFunctionObject0.func,
-    "IsConstantDeclaration0" -> GeneratorDeclaration0IsConstantDeclaration0.func
   )
 }
 case class GeneratorDeclaration1(x3: FormalParameters, x6: GeneratorBody, parserParams: List[Boolean]) extends GeneratorDeclaration {
@@ -71,10 +70,5 @@ case class GeneratorDeclaration1(x3: FormalParameters, x6: GeneratorBody, parser
 }
 object GeneratorDeclaration1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "BoundNames0" -> GeneratorDeclaration1BoundNames0.func,
-    "Contains0" -> GeneratorDeclaration1Contains0.func,
-    "InstantiateFunctionObject0" -> GeneratorDeclaration1InstantiateFunctionObject0.func,
-    "IsConstantDeclaration0" -> GeneratorDeclaration1IsConstantDeclaration0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

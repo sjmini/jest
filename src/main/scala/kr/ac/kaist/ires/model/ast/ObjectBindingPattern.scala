@@ -30,7 +30,6 @@ object ObjectBindingPattern0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "BindingInitialization0" -> ObjectBindingPattern0BindingInitialization0.func,
     "BoundNames0" -> ObjectBindingPattern0BoundNames0.func,
-    "ContainsExpression0" -> ObjectBindingPattern0ContainsExpression0.func
   )
 }
 case class ObjectBindingPattern1(x1: BindingRestProperty, parserParams: List[Boolean]) extends ObjectBindingPattern {
@@ -56,7 +55,6 @@ object ObjectBindingPattern1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "BindingInitialization0" -> ObjectBindingPattern1BindingInitialization0.func,
-    "ContainsExpression0" -> ObjectBindingPattern1ContainsExpression0.func
   )
 }
 case class ObjectBindingPattern2(x1: BindingPropertyList, parserParams: List[Boolean]) extends ObjectBindingPattern {
@@ -114,6 +112,5 @@ object ObjectBindingPattern3 extends ASTInfo {
     "BoundNames0" -> ObjectBindingPattern3BoundNames0.func,
     "BoundNames1" -> ObjectBindingPattern3BoundNames1.func,
     "BoundNames1" -> ObjectBindingPattern3BoundNames1.func,
-    "ContainsExpression1" -> ObjectBindingPattern3ContainsExpression1.func
   )
 }

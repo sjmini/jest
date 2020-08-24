@@ -53,7 +53,6 @@ object RelationalExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> RelationalExpression1Evaluation0.func,
-    "HasCallInTailPosition0" -> RelationalExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression1IsFunctionDefinition0.func
   )
 }
@@ -109,7 +108,6 @@ object RelationalExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> RelationalExpression3Evaluation0.func,
-    "HasCallInTailPosition0" -> RelationalExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression3IsFunctionDefinition0.func
   )
 }
@@ -137,7 +135,6 @@ object RelationalExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> RelationalExpression4Evaluation0.func,
-    "HasCallInTailPosition0" -> RelationalExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression4IsFunctionDefinition0.func
   )
 }
@@ -165,7 +162,6 @@ object RelationalExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> RelationalExpression5Evaluation0.func,
-    "HasCallInTailPosition0" -> RelationalExpression5HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression5IsFunctionDefinition0.func
   )
 }
@@ -193,7 +189,6 @@ object RelationalExpression6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> RelationalExpression6Evaluation0.func,
-    "HasCallInTailPosition0" -> RelationalExpression6HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression6IsFunctionDefinition0.func
   )
 }

@@ -49,7 +49,6 @@ case class AssignmentExpression1(x0: YieldExpression, parserParams: List[Boolean
 object AssignmentExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> AssignmentExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression1IsFunctionDefinition0.func
   )
 }
@@ -73,7 +72,6 @@ case class AssignmentExpression2(x0: ArrowFunction, parserParams: List[Boolean])
 object AssignmentExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> AssignmentExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression2IsFunctionDefinition0.func
   )
 }
@@ -96,10 +94,7 @@ case class AssignmentExpression3(x0: AsyncArrowFunction, parserParams: List[Bool
 }
 object AssignmentExpression3 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> AssignmentExpression3HasCallInTailPosition0.func,
-    "IsFunctionDefinition0" -> AssignmentExpression3IsFunctionDefinition0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class AssignmentExpression4(x0: LeftHandSideExpression, x2: AssignmentExpression, parserParams: List[Boolean]) extends AssignmentExpression {
   x0.parent = Some(this)
@@ -154,7 +149,6 @@ object AssignmentExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> AssignmentExpression5Evaluation0.func,
-    "HasCallInTailPosition0" -> AssignmentExpression5HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression5IsFunctionDefinition0.func
   )
 }

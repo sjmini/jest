@@ -27,14 +27,7 @@ case class AsyncConciseBody0(x1: ExpressionBody, parserParams: List[Boolean]) ex
 }
 object AsyncConciseBody0 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "ContainsUseStrict0" -> AsyncConciseBody0ContainsUseStrict0.func,
-    "EvaluateBody0" -> AsyncConciseBody0EvaluateBody0.func,
-    "LexicallyDeclaredNames0" -> AsyncConciseBody0LexicallyDeclaredNames0.func,
-    "LexicallyScopedDeclarations0" -> AsyncConciseBody0LexicallyScopedDeclarations0.func,
-    "VarDeclaredNames0" -> AsyncConciseBody0VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> AsyncConciseBody0VarScopedDeclarations0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class AsyncConciseBody1(x1: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncConciseBody {
   x1.parent = Some(this)

@@ -51,7 +51,6 @@ object UpdateExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UpdateExpression1Evaluation0.func,
-    "HasCallInTailPosition0" -> UpdateExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression1IsFunctionDefinition0.func
   )
 }
@@ -77,7 +76,6 @@ object UpdateExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UpdateExpression2Evaluation0.func,
-    "HasCallInTailPosition0" -> UpdateExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression2IsFunctionDefinition0.func
   )
 }
@@ -103,7 +101,6 @@ object UpdateExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UpdateExpression3Evaluation0.func,
-    "HasCallInTailPosition0" -> UpdateExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression3IsFunctionDefinition0.func
   )
 }
@@ -129,7 +126,5 @@ object UpdateExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> UpdateExpression4Evaluation0.func,
-    "HasCallInTailPosition0" -> UpdateExpression4HasCallInTailPosition0.func,
-    "IsFunctionDefinition0" -> UpdateExpression4IsFunctionDefinition0.func
   )
 }

@@ -30,7 +30,6 @@ object BindingIdentifier0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "BindingInitialization0" -> BindingIdentifier0BindingInitialization0.func,
     "BoundNames0" -> BindingIdentifier0BoundNames0.func,
-    "IteratorBindingInitialization0" -> BindingIdentifier0IteratorBindingInitialization0.func
   )
 }
 case class BindingIdentifier1(parserParams: List[Boolean]) extends BindingIdentifier {
@@ -51,12 +50,7 @@ case class BindingIdentifier1(parserParams: List[Boolean]) extends BindingIdenti
 }
 object BindingIdentifier1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "BindingInitialization0" -> BindingIdentifier1BindingInitialization0.func,
-    "BoundNames0" -> BindingIdentifier1BoundNames0.func,
-    "IteratorBindingInitialization0" -> BindingIdentifier1IteratorBindingInitialization0.func,
-    "StringValue0" -> BindingIdentifier1StringValue0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class BindingIdentifier2(parserParams: List[Boolean]) extends BindingIdentifier {
   val name: String = "BindingIdentifier2"
@@ -77,9 +71,7 @@ case class BindingIdentifier2(parserParams: List[Boolean]) extends BindingIdenti
 object BindingIdentifier2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "BindingInitialization0" -> BindingIdentifier2BindingInitialization0.func,
     "BoundNames0" -> BindingIdentifier2BoundNames0.func,
-    "IteratorBindingInitialization0" -> BindingIdentifier2IteratorBindingInitialization0.func,
     "StringValue0" -> BindingIdentifier2StringValue0.func
   )
 }

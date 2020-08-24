@@ -205,17 +205,6 @@ object BuiltinHeap {
         "Reflect" -> DataProperty(NamedAddr("GLOBAL.Reflect"), T, F, T)
       )
     ),
-    "GLOBAL.print" -> Struct(
-      typeName = "BuiltinFunctionObject",
-      imap = IMap(
-        "Extensible" -> Bool(true),
-        "Prototype" -> NamedAddr("GLOBAL.Function.prototype"),
-        "Code" -> HostPrint.func
-      ),
-      nmap = NMap(
-        "length" -> DataProperty(Num(0.0), F, F, T)
-      )
-    ),
     "GLOBAL.Object" -> Struct(
       typeName = "BuiltinFunctionObject",
       imap = IMap(

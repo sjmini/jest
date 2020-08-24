@@ -57,9 +57,5 @@ case class ClassDeclaration1(x1: ClassTail, parserParams: List[Boolean]) extends
 }
 object ClassDeclaration1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "BindingClassDeclarationEvaluation0" -> ClassDeclaration1BindingClassDeclarationEvaluation0.func,
-    "BoundNames0" -> ClassDeclaration1BoundNames0.func,
-    "IsConstantDeclaration0" -> ClassDeclaration1IsConstantDeclaration0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

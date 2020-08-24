@@ -28,7 +28,5 @@ case class ImportMeta0(parserParams: List[Boolean]) extends ImportMeta {
 }
 object ImportMeta0 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> ImportMeta0Evaluation0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

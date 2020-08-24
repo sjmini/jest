@@ -81,7 +81,6 @@ object AdditiveExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> AdditiveExpression2Evaluation0.func,
-    "HasCallInTailPosition0" -> AdditiveExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AdditiveExpression2IsFunctionDefinition0.func
   )
 }

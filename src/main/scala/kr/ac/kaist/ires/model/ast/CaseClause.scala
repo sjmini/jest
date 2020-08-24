@@ -35,7 +35,6 @@ object CaseClause0 extends ASTInfo {
     "Evaluation0" -> CaseClause0Evaluation0.func,
     "Evaluation1" -> CaseClause0Evaluation1.func,
     "HasCallInTailPosition1" -> CaseClause0HasCallInTailPosition1.func,
-    "LexicallyDeclaredNames1" -> CaseClause0LexicallyDeclaredNames1.func,
     "LexicallyScopedDeclarations1" -> CaseClause0LexicallyScopedDeclarations1.func,
     "VarDeclaredNames1" -> CaseClause0VarDeclaredNames1.func,
     "VarScopedDeclarations1" -> CaseClause0VarScopedDeclarations1.func

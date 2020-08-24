@@ -32,8 +32,6 @@ object CaseBlock0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "CaseBlockEvaluation0" -> CaseBlock0CaseBlockEvaluation0.func,
     "CaseBlockEvaluation1" -> CaseBlock0CaseBlockEvaluation1.func,
-    "HasCallInTailPosition0" -> CaseBlock0HasCallInTailPosition0.func,
-    "LexicallyDeclaredNames0" -> CaseBlock0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> CaseBlock0LexicallyScopedDeclarations0.func,
     "VarDeclaredNames0" -> CaseBlock0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> CaseBlock0VarScopedDeclarations0.func
@@ -67,7 +65,6 @@ object CaseBlock1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "CaseBlockEvaluation3" -> CaseBlock1CaseBlockEvaluation3.func,
     "HasCallInTailPosition3" -> CaseBlock1HasCallInTailPosition3.func,
-    "LexicallyDeclaredNames3" -> CaseBlock1LexicallyDeclaredNames3.func,
     "LexicallyScopedDeclarations3" -> CaseBlock1LexicallyScopedDeclarations3.func,
     "VarDeclaredNames3" -> CaseBlock1VarDeclaredNames3.func,
     "VarScopedDeclarations3" -> CaseBlock1VarScopedDeclarations3.func

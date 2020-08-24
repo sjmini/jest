@@ -36,11 +36,9 @@ case class MethodDefinition0(x0: PropertyName, x2: UniqueFormalParameters, x5: F
 object MethodDefinition0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ComputedPropertyContains0" -> MethodDefinition0ComputedPropertyContains0.func,
     "DefineMethod0" -> MethodDefinition0DefineMethod0.func,
     "PropName0" -> MethodDefinition0PropName0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition0PropertyDefinitionEvaluation0.func,
-    "SpecialMethod0" -> MethodDefinition0SpecialMethod0.func
   )
 }
 case class MethodDefinition1(x0: GeneratorMethod, parserParams: List[Boolean]) extends MethodDefinition {
@@ -62,9 +60,7 @@ case class MethodDefinition1(x0: GeneratorMethod, parserParams: List[Boolean]) e
 }
 object MethodDefinition1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "SpecialMethod0" -> MethodDefinition1SpecialMethod0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class MethodDefinition2(x0: AsyncMethod, parserParams: List[Boolean]) extends MethodDefinition {
   x0.parent = Some(this)
@@ -85,9 +81,7 @@ case class MethodDefinition2(x0: AsyncMethod, parserParams: List[Boolean]) exten
 }
 object MethodDefinition2 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "SpecialMethod0" -> MethodDefinition2SpecialMethod0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class MethodDefinition3(x0: AsyncGeneratorMethod, parserParams: List[Boolean]) extends MethodDefinition {
   x0.parent = Some(this)
@@ -108,9 +102,7 @@ case class MethodDefinition3(x0: AsyncGeneratorMethod, parserParams: List[Boolea
 }
 object MethodDefinition3 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "SpecialMethod0" -> MethodDefinition3SpecialMethod0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class MethodDefinition4(x1: PropertyName, x5: FunctionBody, parserParams: List[Boolean]) extends MethodDefinition {
   x1.parent = Some(this)
@@ -142,7 +134,6 @@ object MethodDefinition4 extends ASTInfo {
     "ComputedPropertyContains0" -> MethodDefinition4ComputedPropertyContains0.func,
     "PropName0" -> MethodDefinition4PropName0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition4PropertyDefinitionEvaluation0.func,
-    "SpecialMethod0" -> MethodDefinition4SpecialMethod0.func
   )
 }
 case class MethodDefinition5(x1: PropertyName, x3: PropertySetParameterList, x6: FunctionBody, parserParams: List[Boolean]) extends MethodDefinition {
@@ -177,6 +168,5 @@ object MethodDefinition5 extends ASTInfo {
     "ComputedPropertyContains0" -> MethodDefinition5ComputedPropertyContains0.func,
     "PropName0" -> MethodDefinition5PropName0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition5PropertyDefinitionEvaluation0.func,
-    "SpecialMethod0" -> MethodDefinition5SpecialMethod0.func
   )
 }

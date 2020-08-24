@@ -53,7 +53,6 @@ object StatementList1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> StatementList1Evaluation0.func,
     "HasCallInTailPosition0" -> StatementList1HasCallInTailPosition0.func,
-    "LexicallyDeclaredNames0" -> StatementList1LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> StatementList1LexicallyScopedDeclarations0.func,
     "TopLevelLexicallyDeclaredNames0" -> StatementList1TopLevelLexicallyDeclaredNames0.func,
     "TopLevelLexicallyScopedDeclarations0" -> StatementList1TopLevelLexicallyScopedDeclarations0.func,

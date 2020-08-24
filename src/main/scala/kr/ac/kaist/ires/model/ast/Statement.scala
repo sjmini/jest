@@ -326,7 +326,6 @@ case class Statement13(x0: DebuggerStatement, parserParams: List[Boolean]) exten
 object Statement13 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> Statement13HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> Statement13VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> Statement13VarScopedDeclarations0.func
   )

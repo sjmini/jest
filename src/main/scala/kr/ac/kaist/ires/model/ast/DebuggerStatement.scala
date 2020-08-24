@@ -27,7 +27,5 @@ case class DebuggerStatement0(parserParams: List[Boolean]) extends DebuggerState
 }
 object DebuggerStatement0 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> DebuggerStatement0Evaluation0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

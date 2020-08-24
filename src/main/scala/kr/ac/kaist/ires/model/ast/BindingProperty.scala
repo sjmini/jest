@@ -55,7 +55,6 @@ object BindingProperty1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "BoundNames0" -> BindingProperty1BoundNames0.func,
-    "ContainsExpression0" -> BindingProperty1ContainsExpression0.func,
     "PropertyBindingInitialization0" -> BindingProperty1PropertyBindingInitialization0.func
   )
 }

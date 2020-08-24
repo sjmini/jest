@@ -54,7 +54,6 @@ case class BindingRestElement1(x1: BindingPattern, parserParams: List[Boolean]) 
 object BindingRestElement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsExpression0" -> BindingRestElement1ContainsExpression0.func,
     "IteratorBindingInitialization0" -> BindingRestElement1IteratorBindingInitialization0.func
   )
 }

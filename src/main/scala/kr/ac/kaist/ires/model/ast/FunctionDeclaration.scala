@@ -70,11 +70,5 @@ case class FunctionDeclaration1(x2: FormalParameters, x5: FunctionBody, parserPa
 }
 object FunctionDeclaration1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "BoundNames0" -> FunctionDeclaration1BoundNames0.func,
-    "Contains0" -> FunctionDeclaration1Contains0.func,
-    "Evaluation0" -> FunctionDeclaration1Evaluation0.func,
-    "InstantiateFunctionObject0" -> FunctionDeclaration1InstantiateFunctionObject0.func,
-    "IsConstantDeclaration0" -> FunctionDeclaration1IsConstantDeclaration0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

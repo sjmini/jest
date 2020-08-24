@@ -31,7 +31,6 @@ object OptionalExpression0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> OptionalExpression0Evaluation0.func,
-    "HasCallInTailPosition0" -> OptionalExpression0HasCallInTailPosition0.func
   )
 }
 case class OptionalExpression1(x0: CallExpression, x1: OptionalChain, parserParams: List[Boolean]) extends OptionalExpression {
@@ -57,7 +56,6 @@ object OptionalExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> OptionalExpression1Evaluation0.func,
-    "HasCallInTailPosition0" -> OptionalExpression1HasCallInTailPosition0.func
   )
 }
 case class OptionalExpression2(x0: OptionalExpression, x1: OptionalChain, parserParams: List[Boolean]) extends OptionalExpression {
@@ -83,6 +81,5 @@ object OptionalExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> OptionalExpression2Evaluation0.func,
-    "HasCallInTailPosition0" -> OptionalExpression2HasCallInTailPosition0.func
   )
 }

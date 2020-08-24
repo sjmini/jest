@@ -47,9 +47,7 @@ case class LabelIdentifier1(parserParams: List[Boolean]) extends LabelIdentifier
 }
 object LabelIdentifier1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "StringValue0" -> LabelIdentifier1StringValue0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }
 case class LabelIdentifier2(parserParams: List[Boolean]) extends LabelIdentifier {
   val name: String = "LabelIdentifier2"

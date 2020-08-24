@@ -31,8 +31,6 @@ object BindingElisionElement0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
     "BoundNames1" -> BindingElisionElement0BoundNames1.func,
-    "ContainsExpression1" -> BindingElisionElement0ContainsExpression1.func,
     "IteratorBindingInitialization0" -> BindingElisionElement0IteratorBindingInitialization0.func,
-    "IteratorBindingInitialization1" -> BindingElisionElement0IteratorBindingInitialization1.func
   )
 }

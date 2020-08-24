@@ -29,7 +29,6 @@ object LabelledItem0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "LabelledEvaluation0" -> LabelledItem0LabelledEvaluation0.func,
-    "LexicallyDeclaredNames0" -> LabelledItem0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> LabelledItem0LexicallyScopedDeclarations0.func,
     "TopLevelVarDeclaredNames0" -> LabelledItem0TopLevelVarDeclaredNames0.func,
     "TopLevelVarScopedDeclarations0" -> LabelledItem0TopLevelVarScopedDeclarations0.func
@@ -54,14 +53,5 @@ case class LabelledItem1(x0: FunctionDeclaration, parserParams: List[Boolean]) e
 }
 object LabelledItem1 extends ASTInfo {
   val maxK: Int = 0
-  val semMap: Map[String, Func] = Map(
-    "HasCallInTailPosition0" -> LabelledItem1HasCallInTailPosition0.func,
-    "LabelledEvaluation0" -> LabelledItem1LabelledEvaluation0.func,
-    "LexicallyDeclaredNames0" -> LabelledItem1LexicallyDeclaredNames0.func,
-    "LexicallyScopedDeclarations0" -> LabelledItem1LexicallyScopedDeclarations0.func,
-    "TopLevelVarDeclaredNames0" -> LabelledItem1TopLevelVarDeclaredNames0.func,
-    "TopLevelVarScopedDeclarations0" -> LabelledItem1TopLevelVarScopedDeclarations0.func,
-    "VarDeclaredNames0" -> LabelledItem1VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> LabelledItem1VarScopedDeclarations0.func
-  )
+  val semMap: Map[String, Func] = Map()
 }

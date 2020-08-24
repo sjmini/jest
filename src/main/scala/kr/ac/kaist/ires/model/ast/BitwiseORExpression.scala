@@ -53,7 +53,5 @@ object BitwiseORExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> BitwiseORExpression1Evaluation0.func,
-    "HasCallInTailPosition0" -> BitwiseORExpression1HasCallInTailPosition0.func,
-    "IsFunctionDefinition0" -> BitwiseORExpression1IsFunctionDefinition0.func
   )
 }

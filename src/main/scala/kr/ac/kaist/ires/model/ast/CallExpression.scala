@@ -127,7 +127,6 @@ object CallExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> CallExpression4Evaluation0.func,
-    "HasCallInTailPosition0" -> CallExpression4HasCallInTailPosition0.func
   )
 }
 case class CallExpression5(x0: CallExpression, x2: Lexical, parserParams: List[Boolean]) extends CallExpression {
@@ -155,7 +154,6 @@ object CallExpression5 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "Contains0" -> CallExpression5Contains0.func,
     "Evaluation0" -> CallExpression5Evaluation0.func,
-    "HasCallInTailPosition0" -> CallExpression5HasCallInTailPosition0.func
   )
 }
 case class CallExpression6(x0: CallExpression, x1: TemplateLiteral, parserParams: List[Boolean]) extends CallExpression {
