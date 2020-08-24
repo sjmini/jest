@@ -11,8 +11,6 @@ object GLOBALDOTFunctionDOTprototypeDOTtoString extends Algorithm {
     let func = this
     if (|| (= (typeof func) "BoundFunctionExoticObject") (= (typeof func) "BuiltinFunctionObject")) {
       ??? "TODO: toString of built-in functions"
-      app __x0__ = (WrapCompletion "")
-      return __x0__
     } else {}
     app T = (Type func)
     if (&& (= T "Object") (! (= func.SourceText absent))) {
