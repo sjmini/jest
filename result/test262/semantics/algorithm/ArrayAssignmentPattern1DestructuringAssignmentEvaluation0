@@ -1,27 +1,27 @@
 [32mArrayAssignmentPattern1DestructuringAssignmentEvaluation0[0m
 [32m- Inst: 24 / 24 (100.00%)[0m
 [32m- Cond: 10 / 10 (100.00%)[0m
-[32m+ 4583  [-]   : { ... }[0m
-[32m+ 4584  [-]   : app __x0__ = (GetIterator value)[0m
-[32m+ 4585  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 4586  [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4587  [-]   : __x0__ = __x0__["Value"][0m
-[32m+ 4588  [-]   : return __x0__[0m
-[32m+ 4589  [-]   : {}[0m
-[32m+ 4590  [-]   : let iteratorRecord = __x0__[0m
-[32m+ 4591  [-]   : access __x1__ = (AssignmentElementList "IteratorDestructuringAssignmentEvaluation")[0m
-[32m+ 4592  [-]   : app __x2__ = (__x1__ iteratorRecord)[0m
-[32m+ 4593  [-]   : let result = __x2__[0m
-[32m+ 4594  [[32mT[0m/[32mT[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
-[32m+ 4595  [-]   : { ... }[0m
-[32m+ 4596  [-]   : app __x3__ = (IteratorClose iteratorRecord result)[0m
-[32m+ 4597  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 4598  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4599  [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 4600  [-]   : return __x3__[0m
-[32m+ 4601  [-]   : {}[0m
-[32m+ 4602  [-]   : app __x4__ = (WrapCompletion __x3__)[0m
-[32m+ 4603  [-]   : return __x4__[0m
-[32m+ 4604  [-]   : {}[0m
-[32m+ 4605  [-]   : app __x5__ = (WrapCompletion result)[0m
-[32m+ 4606  [-]   : return __x5__[0m
+[32m+ 4190  [-]   : { ... }[0m
+[32m+ 4191  [-]   : app __x0__ = (GetIterator value)[0m
+[32m+ 4192  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 4193  [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4194  [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 4195  [-]   : return __x0__[0m
+[32m+ 4196  [-]   : {}[0m
+[32m+ 4197  [-]   : let iteratorRecord = __x0__[0m
+[32m+ 4198  [-]   : access __x1__ = (AssignmentElementList "IteratorDestructuringAssignmentEvaluation")[0m
+[32m+ 4199  [-]   : app __x2__ = (__x1__ iteratorRecord)[0m
+[32m+ 4200  [-]   : let result = __x2__[0m
+[32m+ 4201  [[32mT[0m/[32mT[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
+[32m+ 4202  [-]   : { ... }[0m
+[32m+ 4203  [-]   : app __x3__ = (IteratorClose iteratorRecord result)[0m
+[32m+ 4204  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 4205  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4206  [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 4207  [-]   : return __x3__[0m
+[32m+ 4208  [-]   : {}[0m
+[32m+ 4209  [-]   : app __x4__ = (WrapCompletion __x3__)[0m
+[32m+ 4210  [-]   : return __x4__[0m
+[32m+ 4211  [-]   : {}[0m
+[32m+ 4212  [-]   : app __x5__ = (WrapCompletion result)[0m
+[32m+ 4213  [-]   : return __x5__[0m

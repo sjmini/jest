@@ -1,15 +1,15 @@
 [32mLexicalDeclaration0Evaluation0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
 [32m- Cond: 4 / 4 (100.00%)[0m
-[32m+ 2817  [-]   : { ... }[0m
-[32m+ 2818  [-]   : access __x0__ = (BindingList "Evaluation")[0m
-[32m+ 2819  [-]   : let next = __x0__[0m
-[32m+ 2820  [[32mT[0m/[32mT[0m[32m]: if (is-completion next) ... else ...[0m
-[32m+ 2821  [[32mT[0m/[32mT[0m[32m]: if (= next["Type"] CONST_normal) ... else ...[0m
-[32m+ 2822  [-]   : next = next["Value"][0m
-[32m+ 2823  [-]   : return next[0m
-[32m+ 2824  [-]   : {}[0m
-[32m+ 2825  [-]   : next[0m
-[32m+ 2826  [-]   : app __x1__ = (NormalCompletion CONST_empty)[0m
-[32m+ 2827  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 2828  [-]   : return __x2__[0m
+[32m+ 2643  [-]   : { ... }[0m
+[32m+ 2644  [-]   : access __x0__ = (BindingList "Evaluation")[0m
+[32m+ 2645  [-]   : let next = __x0__[0m
+[32m+ 2646  [[32mT[0m/[32mT[0m[32m]: if (is-completion next) ... else ...[0m
+[32m+ 2647  [[32mT[0m/[32mT[0m[32m]: if (= next["Type"] CONST_normal) ... else ...[0m
+[32m+ 2648  [-]   : next = next["Value"][0m
+[32m+ 2649  [-]   : return next[0m
+[32m+ 2650  [-]   : {}[0m
+[32m+ 2651  [-]   : next[0m
+[32m+ 2652  [-]   : app __x1__ = (NormalCompletion CONST_empty)[0m
+[32m+ 2653  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
+[32m+ 2654  [-]   : return __x2__[0m

@@ -1,36 +1,36 @@
 [33mGlobalEnvironmentRecordDOTCanDeclareGlobalFunction[0m
 [33m- Inst: 24 / 33 (72.73%)[0m
 [33m- Cond: 9 / 14 (64.29%)[0m
-[32m+ 20434 [-]   : { ... }[0m
-[32m+ 20435 [-]   : let envRec = this[0m
-[32m+ 20436 [-]   : let ObjRec = envRec["ObjectRecord"][0m
-[32m+ 20437 [-]   : let globalObject = ObjRec["BindingObject"][0m
-[32m+ 20438 [-]   : app __x0__ = (globalObject["GetOwnProperty"] globalObject N)[0m
-[32m+ 20439 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 20440 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 20441 [-]   : __x0__ = __x0__["Value"][0m
-[31m- 20442 [-]   : return __x0__[0m
-[32m+ 20443 [-]   : {}[0m
-[32m+ 20444 [-]   : let existingProp = __x0__[0m
-[32m+ 20445 [[32mT[0m/[32mT[0m[32m]: if (= existingProp undefined) ... else ...[0m
-[32m+ 20446 [-]   : { ... }[0m
-[32m+ 20447 [-]   : app __x1__ = (IsExtensible globalObject)[0m
-[32m+ 20448 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 20449 [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 20450 [-]   : __x1__ = __x1__["Value"][0m
-[31m- 20451 [-]   : return __x1__[0m
-[32m+ 20452 [-]   : {}[0m
-[32m+ 20453 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 20454 [-]   : return __x2__[0m
-[32m+ 20455 [-]   : {}[0m
-[32m+ 20456 [[32mT[0m/[31mF[0m[32m]: if (= existingProp["Configurable"] true) ... else ...[0m
-[32m+ 20457 [-]   : { ... }[0m
-[32m+ 20458 [-]   : app __x3__ = (WrapCompletion true)[0m
-[32m+ 20459 [-]   : return __x3__[0m
-[31m- 20460 [-]   : {}[0m
-[31m- 20461 [-]   : app result = (IsDataDescriptor existingProp)[0m
-[31m- 20462 [-]   : if (&& (&& (= result true) (= existingProp["Writable"] true)) (= existingProp["Enumerable"] true)) ... else ...[0m
-[31m- 20463 [-]   : return true[0m
-[31m- 20464 [-]   : {}[0m
-[31m- 20465 [-]   : app __x4__ = (WrapCompletion false)[0m
-[31m- 20466 [-]   : return __x4__[0m
+[32m+ 17890 [-]   : { ... }[0m
+[32m+ 17891 [-]   : let envRec = this[0m
+[32m+ 17892 [-]   : let ObjRec = envRec["ObjectRecord"][0m
+[32m+ 17893 [-]   : let globalObject = ObjRec["BindingObject"][0m
+[32m+ 17894 [-]   : app __x0__ = (globalObject["GetOwnProperty"] globalObject N)[0m
+[32m+ 17895 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 17896 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17897 [-]   : __x0__ = __x0__["Value"][0m
+[31m- 17898 [-]   : return __x0__[0m
+[32m+ 17899 [-]   : {}[0m
+[32m+ 17900 [-]   : let existingProp = __x0__[0m
+[32m+ 17901 [[32mT[0m/[32mT[0m[32m]: if (= existingProp undefined) ... else ...[0m
+[32m+ 17902 [-]   : { ... }[0m
+[32m+ 17903 [-]   : app __x1__ = (IsExtensible globalObject)[0m
+[32m+ 17904 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 17905 [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17906 [-]   : __x1__ = __x1__["Value"][0m
+[31m- 17907 [-]   : return __x1__[0m
+[32m+ 17908 [-]   : {}[0m
+[32m+ 17909 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
+[32m+ 17910 [-]   : return __x2__[0m
+[32m+ 17911 [-]   : {}[0m
+[32m+ 17912 [[32mT[0m/[31mF[0m[32m]: if (= existingProp["Configurable"] true) ... else ...[0m
+[32m+ 17913 [-]   : { ... }[0m
+[32m+ 17914 [-]   : app __x3__ = (WrapCompletion true)[0m
+[32m+ 17915 [-]   : return __x3__[0m
+[31m- 17916 [-]   : {}[0m
+[31m- 17917 [-]   : app result = (IsDataDescriptor existingProp)[0m
+[31m- 17918 [-]   : if (&& (&& (= result true) (= existingProp["Writable"] true)) (= existingProp["Enumerable"] true)) ... else ...[0m
+[31m- 17919 [-]   : return true[0m
+[31m- 17920 [-]   : {}[0m
+[31m- 17921 [-]   : app __x4__ = (WrapCompletion false)[0m
+[31m- 17922 [-]   : return __x4__[0m

@@ -1,92 +1,92 @@
 [33mPutValue[0m
 [33m- Inst: 71 / 89 (79.78%)[0m
 [33m- Cond: 28 / 38 (73.68%)[0m
-[32m+ 26649 [-]   : { ... }[0m
-[32m+ 26650 [[32mT[0m/[32mT[0m[32m]: if (is-completion V) ... else ...[0m
-[32m+ 26651 [[32mT[0m/[31mF[0m[32m]: if (= V["Type"] CONST_normal) ... else ...[0m
-[32m+ 26652 [-]   : V = V["Value"][0m
-[31m- 26653 [-]   : return V[0m
-[32m+ 26654 [-]   : {}[0m
-[32m+ 26655 [-]   : V[0m
-[32m+ 26656 [[32mT[0m/[32mT[0m[32m]: if (is-completion W) ... else ...[0m
-[32m+ 26657 [[32mT[0m/[31mF[0m[32m]: if (= W["Type"] CONST_normal) ... else ...[0m
-[32m+ 26658 [-]   : W = W["Value"][0m
-[31m- 26659 [-]   : return W[0m
-[32m+ 26660 [-]   : {}[0m
-[32m+ 26661 [-]   : W[0m
-[32m+ 26662 [-]   : app __x0__ = (Type V)[0m
-[32m+ 26663 [[31mF[0m/[32mT[0m[32m]: if (! (= __x0__ Reference)) ... else ...[0m
-[31m- 26664 [-]   : { ... }[0m
-[31m- 26665 [-]   : app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[31m- 26666 [-]   : return __x1__[0m
-[32m+ 26667 [-]   : {}[0m
-[32m+ 26668 [-]   : app __x2__ = (GetBase V)[0m
-[32m+ 26669 [-]   : let base = __x2__[0m
-[32m+ 26670 [-]   : app __x3__ = (IsUnresolvableReference V)[0m
-[32m+ 26671 [[32mT[0m/[32mT[0m[32m]: if (= __x3__ true) ... else ...[0m
-[32m+ 26672 [-]   : { ... }[0m
-[32m+ 26673 [-]   : app __x4__ = (IsStrictReference V)[0m
-[32m+ 26674 [[32mT[0m/[31mF[0m[32m]: if (= __x4__ true) ... else ...[0m
-[32m+ 26675 [-]   : { ... }[0m
-[32m+ 26676 [-]   : app __x5__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 26677 [-]   : return __x5__[0m
-[31m- 26678 [-]   : {}[0m
-[31m- 26679 [-]   : app __x6__ = (GetGlobalObject )[0m
-[31m- 26680 [-]   : let globalObj = __x6__[0m
-[31m- 26681 [-]   : app __x7__ = (GetReferencedName V)[0m
-[31m- 26682 [-]   : app __x8__ = (Set globalObj __x7__ W false)[0m
-[31m- 26683 [-]   : if (is-completion __x8__) ... else ...[0m
-[31m- 26684 [-]   : if (= __x8__["Type"] CONST_normal) ... else ...[0m
-[31m- 26685 [-]   : __x8__ = __x8__["Value"][0m
-[31m- 26686 [-]   : return __x8__[0m
-[31m- 26687 [-]   : {}[0m
-[31m- 26688 [-]   : app __x9__ = (WrapCompletion __x8__)[0m
-[31m- 26689 [-]   : return __x9__[0m
-[32m+ 26690 [-]   : { ... }[0m
-[32m+ 26691 [-]   : app __x10__ = (IsPropertyReference V)[0m
-[32m+ 26692 [[32mT[0m/[32mT[0m[32m]: if (= __x10__ true) ... else ...[0m
-[32m+ 26693 [-]   : { ... }[0m
-[32m+ 26694 [-]   : app __x11__ = (HasPrimitiveBase V)[0m
-[32m+ 26695 [[32mT[0m/[32mT[0m[32m]: if (= __x11__ true) ... else ...[0m
-[32m+ 26696 [-]   : { ... }[0m
-[32m+ 26697 [-]   : app __x12__ = (ToObject base)[0m
-[32m+ 26698 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x12__) ... else ...[0m
-[32m+ 26699 [[32mT[0m/[31mF[0m[32m]: if (= __x12__["Type"] CONST_normal) ... else ...[0m
-[32m+ 26700 [-]   : __x12__ = __x12__["Value"][0m
-[31m- 26701 [-]   : return __x12__[0m
-[32m+ 26702 [-]   : {}[0m
-[32m+ 26703 [-]   : base = __x12__[0m
-[32m+ 26704 [-]   : {}[0m
-[32m+ 26705 [-]   : app __x13__ = (GetReferencedName V)[0m
-[32m+ 26706 [-]   : app __x14__ = (GetThisValue V)[0m
-[32m+ 26707 [-]   : app __x15__ = (base["Set"] base __x13__ W __x14__)[0m
-[32m+ 26708 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x15__) ... else ...[0m
-[32m+ 26709 [[32mT[0m/[32mT[0m[32m]: if (= __x15__["Type"] CONST_normal) ... else ...[0m
-[32m+ 26710 [-]   : __x15__ = __x15__["Value"][0m
-[32m+ 26711 [-]   : return __x15__[0m
-[32m+ 26712 [-]   : {}[0m
-[32m+ 26713 [-]   : let succeeded = __x15__[0m
-[32m+ 26714 [-]   : let __x16__ = (= succeeded false)[0m
-[32m+ 26715 [[32mT[0m/[32mT[0m[32m]: if __x16__ ... else ...[0m
-[32m+ 26716 [-]   : { ... }[0m
-[32m+ 26717 [-]   : app __x17__ = (IsStrictReference V)[0m
-[32m+ 26718 [-]   : __x16__ = (= __x17__ true)[0m
-[32m+ 26719 [-]   : {}[0m
-[32m+ 26720 [[32mT[0m/[32mT[0m[32m]: if __x16__ ... else ...[0m
-[32m+ 26721 [-]   : { ... }[0m
-[32m+ 26722 [-]   : app __x18__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 26723 [-]   : return __x18__[0m
-[32m+ 26724 [-]   : {}[0m
-[32m+ 26725 [-]   : app __x19__ = (NormalCompletion undefined)[0m
-[32m+ 26726 [-]   : return __x19__[0m
-[32m+ 26727 [-]   : { ... }[0m
-[32m+ 26728 [-]   : app __x20__ = (GetReferencedName V)[0m
-[32m+ 26729 [-]   : app __x21__ = (IsStrictReference V)[0m
-[32m+ 26730 [-]   : app __x22__ = (base["SetMutableBinding"] base __x20__ W __x21__)[0m
-[32m+ 26731 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x22__) ... else ...[0m
-[32m+ 26732 [[32mT[0m/[32mT[0m[32m]: if (= __x22__["Type"] CONST_normal) ... else ...[0m
-[32m+ 26733 [-]   : __x22__ = __x22__["Value"][0m
-[32m+ 26734 [-]   : return __x22__[0m
-[32m+ 26735 [-]   : {}[0m
-[32m+ 26736 [-]   : app __x23__ = (WrapCompletion __x22__)[0m
-[32m+ 26737 [-]   : return __x23__[0m
+[32m+ 21656 [-]   : { ... }[0m
+[32m+ 21657 [[32mT[0m/[32mT[0m[32m]: if (is-completion V) ... else ...[0m
+[32m+ 21658 [[32mT[0m/[31mF[0m[32m]: if (= V["Type"] CONST_normal) ... else ...[0m
+[32m+ 21659 [-]   : V = V["Value"][0m
+[31m- 21660 [-]   : return V[0m
+[32m+ 21661 [-]   : {}[0m
+[32m+ 21662 [-]   : V[0m
+[32m+ 21663 [[32mT[0m/[32mT[0m[32m]: if (is-completion W) ... else ...[0m
+[32m+ 21664 [[32mT[0m/[31mF[0m[32m]: if (= W["Type"] CONST_normal) ... else ...[0m
+[32m+ 21665 [-]   : W = W["Value"][0m
+[31m- 21666 [-]   : return W[0m
+[32m+ 21667 [-]   : {}[0m
+[32m+ 21668 [-]   : W[0m
+[32m+ 21669 [-]   : app __x0__ = (Type V)[0m
+[32m+ 21670 [[31mF[0m/[32mT[0m[32m]: if (! (= __x0__ Reference)) ... else ...[0m
+[31m- 21671 [-]   : { ... }[0m
+[31m- 21672 [-]   : app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[31m- 21673 [-]   : return __x1__[0m
+[32m+ 21674 [-]   : {}[0m
+[32m+ 21675 [-]   : app __x2__ = (GetBase V)[0m
+[32m+ 21676 [-]   : let base = __x2__[0m
+[32m+ 21677 [-]   : app __x3__ = (IsUnresolvableReference V)[0m
+[32m+ 21678 [[32mT[0m/[32mT[0m[32m]: if (= __x3__ true) ... else ...[0m
+[32m+ 21679 [-]   : { ... }[0m
+[32m+ 21680 [-]   : app __x4__ = (IsStrictReference V)[0m
+[32m+ 21681 [[32mT[0m/[31mF[0m[32m]: if (= __x4__ true) ... else ...[0m
+[32m+ 21682 [-]   : { ... }[0m
+[32m+ 21683 [-]   : app __x5__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 21684 [-]   : return __x5__[0m
+[31m- 21685 [-]   : {}[0m
+[31m- 21686 [-]   : app __x6__ = (GetGlobalObject )[0m
+[31m- 21687 [-]   : let globalObj = __x6__[0m
+[31m- 21688 [-]   : app __x7__ = (GetReferencedName V)[0m
+[31m- 21689 [-]   : app __x8__ = (Set globalObj __x7__ W false)[0m
+[31m- 21690 [-]   : if (is-completion __x8__) ... else ...[0m
+[31m- 21691 [-]   : if (= __x8__["Type"] CONST_normal) ... else ...[0m
+[31m- 21692 [-]   : __x8__ = __x8__["Value"][0m
+[31m- 21693 [-]   : return __x8__[0m
+[31m- 21694 [-]   : {}[0m
+[31m- 21695 [-]   : app __x9__ = (WrapCompletion __x8__)[0m
+[31m- 21696 [-]   : return __x9__[0m
+[32m+ 21697 [-]   : { ... }[0m
+[32m+ 21698 [-]   : app __x10__ = (IsPropertyReference V)[0m
+[32m+ 21699 [[32mT[0m/[32mT[0m[32m]: if (= __x10__ true) ... else ...[0m
+[32m+ 21700 [-]   : { ... }[0m
+[32m+ 21701 [-]   : app __x11__ = (HasPrimitiveBase V)[0m
+[32m+ 21702 [[32mT[0m/[32mT[0m[32m]: if (= __x11__ true) ... else ...[0m
+[32m+ 21703 [-]   : { ... }[0m
+[32m+ 21704 [-]   : app __x12__ = (ToObject base)[0m
+[32m+ 21705 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x12__) ... else ...[0m
+[32m+ 21706 [[32mT[0m/[31mF[0m[32m]: if (= __x12__["Type"] CONST_normal) ... else ...[0m
+[32m+ 21707 [-]   : __x12__ = __x12__["Value"][0m
+[31m- 21708 [-]   : return __x12__[0m
+[32m+ 21709 [-]   : {}[0m
+[32m+ 21710 [-]   : base = __x12__[0m
+[32m+ 21711 [-]   : {}[0m
+[32m+ 21712 [-]   : app __x13__ = (GetReferencedName V)[0m
+[32m+ 21713 [-]   : app __x14__ = (GetThisValue V)[0m
+[32m+ 21714 [-]   : app __x15__ = (base["Set"] base __x13__ W __x14__)[0m
+[32m+ 21715 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x15__) ... else ...[0m
+[32m+ 21716 [[32mT[0m/[32mT[0m[32m]: if (= __x15__["Type"] CONST_normal) ... else ...[0m
+[32m+ 21717 [-]   : __x15__ = __x15__["Value"][0m
+[32m+ 21718 [-]   : return __x15__[0m
+[32m+ 21719 [-]   : {}[0m
+[32m+ 21720 [-]   : let succeeded = __x15__[0m
+[32m+ 21721 [-]   : let __x16__ = (= succeeded false)[0m
+[32m+ 21722 [[32mT[0m/[32mT[0m[32m]: if __x16__ ... else ...[0m
+[32m+ 21723 [-]   : { ... }[0m
+[32m+ 21724 [-]   : app __x17__ = (IsStrictReference V)[0m
+[32m+ 21725 [-]   : __x16__ = (= __x17__ true)[0m
+[32m+ 21726 [-]   : {}[0m
+[32m+ 21727 [[32mT[0m/[32mT[0m[32m]: if __x16__ ... else ...[0m
+[32m+ 21728 [-]   : { ... }[0m
+[32m+ 21729 [-]   : app __x18__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 21730 [-]   : return __x18__[0m
+[32m+ 21731 [-]   : {}[0m
+[32m+ 21732 [-]   : app __x19__ = (NormalCompletion undefined)[0m
+[32m+ 21733 [-]   : return __x19__[0m
+[32m+ 21734 [-]   : { ... }[0m
+[32m+ 21735 [-]   : app __x20__ = (GetReferencedName V)[0m
+[32m+ 21736 [-]   : app __x21__ = (IsStrictReference V)[0m
+[32m+ 21737 [-]   : app __x22__ = (base["SetMutableBinding"] base __x20__ W __x21__)[0m
+[32m+ 21738 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x22__) ... else ...[0m
+[32m+ 21739 [[32mT[0m/[32mT[0m[32m]: if (= __x22__["Type"] CONST_normal) ... else ...[0m
+[32m+ 21740 [-]   : __x22__ = __x22__["Value"][0m
+[32m+ 21741 [-]   : return __x22__[0m
+[32m+ 21742 [-]   : {}[0m
+[32m+ 21743 [-]   : app __x23__ = (WrapCompletion __x22__)[0m
+[32m+ 21744 [-]   : return __x23__[0m

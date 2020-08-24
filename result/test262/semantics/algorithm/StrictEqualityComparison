@@ -1,30 +1,30 @@
 [33mStrictEqualityComparison[0m
 [33m- Inst: 26 / 27 (96.30%)[0m
 [33m- Cond: 9 / 10 (90.00%)[0m
-[32m+ 27475 [-]   : { ... }[0m
-[32m+ 27476 [-]   : app __x0__ = (Type x)[0m
-[32m+ 27477 [-]   : app __x1__ = (Type y)[0m
-[32m+ 27478 [[32mT[0m/[32mT[0m[32m]: if (! (= __x0__ __x1__)) ... else ...[0m
-[32m+ 27479 [-]   : { ... }[0m
-[32m+ 27480 [-]   : app __x2__ = (WrapCompletion false)[0m
-[32m+ 27481 [-]   : return __x2__[0m
-[32m+ 27482 [-]   : {}[0m
-[32m+ 27483 [-]   : app __x3__ = (Type x)[0m
-[32m+ 27484 [[32mT[0m/[32mT[0m[32m]: if (|| (= __x3__ Number) (= __x3__ BigInt)) ... else ...[0m
-[32m+ 27485 [-]   : { ... }[0m
-[32m+ 27486 [-]   : app T = (Type x)[0m
-[32m+ 27487 [-]   : app result = (PRIMITIVES[T]["equal"] x y)[0m
-[32m+ 27488 [[32mT[0m/[32mT[0m[32m]: if (is-completion result) ... else ...[0m
-[32m+ 27489 [-]   : result = result["Value"][0m
-[32m+ 27490 [-]   : {}[0m
-[32m+ 27491 [-]   : app wrapped = (WrapCompletion result)[0m
-[32m+ 27492 [-]   : return wrapped[0m
-[32m+ 27493 [-]   : {}[0m
-[32m+ 27494 [-]   : app __x4__ = (SameValueNonNumeric x y)[0m
-[32m+ 27495 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[32m+ 27496 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[32m+ 27497 [-]   : __x4__ = __x4__["Value"][0m
-[31m- 27498 [-]   : return __x4__[0m
-[32m+ 27499 [-]   : {}[0m
-[32m+ 27500 [-]   : app __x5__ = (WrapCompletion __x4__)[0m
-[32m+ 27501 [-]   : return __x5__[0m
+[32m+ 22466 [-]   : { ... }[0m
+[32m+ 22467 [-]   : app __x0__ = (Type x)[0m
+[32m+ 22468 [-]   : app __x1__ = (Type y)[0m
+[32m+ 22469 [[32mT[0m/[32mT[0m[32m]: if (! (= __x0__ __x1__)) ... else ...[0m
+[32m+ 22470 [-]   : { ... }[0m
+[32m+ 22471 [-]   : app __x2__ = (WrapCompletion false)[0m
+[32m+ 22472 [-]   : return __x2__[0m
+[32m+ 22473 [-]   : {}[0m
+[32m+ 22474 [-]   : app __x3__ = (Type x)[0m
+[32m+ 22475 [[32mT[0m/[32mT[0m[32m]: if (|| (= __x3__ Number) (= __x3__ BigInt)) ... else ...[0m
+[32m+ 22476 [-]   : { ... }[0m
+[32m+ 22477 [-]   : app T = (Type x)[0m
+[32m+ 22478 [-]   : app result = (PRIMITIVES[T]["equal"] x y)[0m
+[32m+ 22479 [[32mT[0m/[32mT[0m[32m]: if (is-completion result) ... else ...[0m
+[32m+ 22480 [-]   : result = result["Value"][0m
+[32m+ 22481 [-]   : {}[0m
+[32m+ 22482 [-]   : app wrapped = (WrapCompletion result)[0m
+[32m+ 22483 [-]   : return wrapped[0m
+[32m+ 22484 [-]   : {}[0m
+[32m+ 22485 [-]   : app __x4__ = (SameValueNonNumeric x y)[0m
+[32m+ 22486 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 22487 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 22488 [-]   : __x4__ = __x4__["Value"][0m
+[31m- 22489 [-]   : return __x4__[0m
+[32m+ 22490 [-]   : {}[0m
+[32m+ 22491 [-]   : app __x5__ = (WrapCompletion __x4__)[0m
+[32m+ 22492 [-]   : return __x5__[0m

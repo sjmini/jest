@@ -1,69 +1,69 @@
 [33mGLOBALDOTBigIntDOTprototypeDOTtoString[0m
 [33m- Inst: 55 / 66 (83.33%)[0m
 [33m- Cond: 24 / 30 (80.00%)[0m
-[32m+ 13880 [-]   : { ... }[0m
-[32m+ 13881 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
-[32m+ 13882 [-]   : let radix = __x0__[0m
-[32m+ 13883 [-]   : app __x1__ = (thisBigIntValue this)[0m
-[32m+ 13884 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 13885 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 13886 [-]   : __x1__ = __x1__["Value"][0m
-[32m+ 13887 [-]   : return __x1__[0m
-[32m+ 13888 [-]   : {}[0m
-[32m+ 13889 [-]   : let x = __x1__[0m
-[32m+ 13890 [[32mT[0m/[32mT[0m[32m]: if (= argumentsList[0i] absent) ... else ...[0m
-[32m+ 13891 [-]   : let radixNumber = 10i[0m
-[32m+ 13892 [[32mT[0m/[32mT[0m[32m]: if (= radix undefined) ... else ...[0m
-[32m+ 13893 [-]   : let radixNumber = 10i[0m
-[32m+ 13894 [-]   : { ... }[0m
-[32m+ 13895 [-]   : app __x2__ = (ToInteger radix)[0m
-[32m+ 13896 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 13897 [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 13898 [-]   : __x2__ = __x2__["Value"][0m
-[31m- 13899 [-]   : return __x2__[0m
-[32m+ 13900 [-]   : {}[0m
-[32m+ 13901 [-]   : let radixNumber = __x2__[0m
-[32m+ 13902 [[32mT[0m/[32mT[0m[32m]: if (|| (< radixNumber 2i) (< 36i radixNumber)) ... else ...[0m
-[32m+ 13903 [-]   : { ... }[0m
-[32m+ 13904 [-]   : app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 13905 [-]   : return __x3__[0m
-[32m+ 13906 [-]   : {}[0m
-[32m+ 13907 [[32mT[0m/[32mT[0m[32m]: if (== radixNumber 10i) ... else ...[0m
-[32m+ 13908 [-]   : { ... }[0m
-[32m+ 13909 [-]   : app __x4__ = (ToString x)[0m
-[32m+ 13910 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[32m+ 13911 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[32m+ 13912 [-]   : __x4__ = __x4__["Value"][0m
-[31m- 13913 [-]   : return __x4__[0m
-[32m+ 13914 [-]   : {}[0m
-[32m+ 13915 [-]   : app __x5__ = (WrapCompletion __x4__)[0m
-[32m+ 13916 [-]   : return __x5__[0m
-[32m+ 13917 [-]   : {}[0m
-[32m+ 13918 [[31mF[0m/[32mT[0m[32m]: if (= x NaN) ... else ...[0m
-[31m- 13919 [-]   : { ... }[0m
-[31m- 13920 [-]   : app __x6__ = (WrapCompletion "NaN")[0m
-[31m- 13921 [-]   : return __x6__[0m
-[32m+ 13922 [-]   : {}[0m
-[32m+ 13923 [[32mT[0m/[32mT[0m[32m]: if (|| (= x 0i) (= x -0.0)) ... else ...[0m
-[32m+ 13924 [-]   : { ... }[0m
-[32m+ 13925 [-]   : app __x6__ = (WrapCompletion "0")[0m
-[32m+ 13926 [-]   : return __x6__[0m
-[32m+ 13927 [-]   : {}[0m
-[32m+ 13928 [[32mT[0m/[32mT[0m[32m]: if (< x 0.0) ... else ...[0m
-[32m+ 13929 [-]   : { ... }[0m
-[32m+ 13930 [-]   : x = (- x)[0m
-[32m+ 13931 [[31mF[0m/[32mT[0m[32m]: if (= x Infinity) ... else ...[0m
-[31m- 13932 [-]   : { ... }[0m
-[31m- 13933 [-]   : app __x6__ = (WrapCompletion "-Infinity")[0m
-[31m- 13934 [-]   : return __x6__[0m
-[32m+ 13935 [-]   : {}[0m
-[32m+ 13936 [-]   : let __x6__ = (+ "-" (convert x num2str radixNumber))[0m
-[32m+ 13937 [-]   : { ... }[0m
-[32m+ 13938 [[31mF[0m/[32mT[0m[32m]: if (= x Infinity) ... else ...[0m
-[31m- 13939 [-]   : { ... }[0m
-[31m- 13940 [-]   : app __x6__ = (WrapCompletion "Infinity")[0m
-[31m- 13941 [-]   : return __x6__[0m
-[32m+ 13942 [-]   : {}[0m
-[32m+ 13943 [-]   : let __x6__ = (convert x num2str radixNumber)[0m
-[32m+ 13944 [-]   : app __x7__ = (WrapCompletion __x6__)[0m
-[32m+ 13945 [-]   : return __x7__[0m
+[32m+ 12257 [-]   : { ... }[0m
+[32m+ 12258 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
+[32m+ 12259 [-]   : let radix = __x0__[0m
+[32m+ 12260 [-]   : app __x1__ = (thisBigIntValue this)[0m
+[32m+ 12261 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 12262 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12263 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 12264 [-]   : return __x1__[0m
+[32m+ 12265 [-]   : {}[0m
+[32m+ 12266 [-]   : let x = __x1__[0m
+[32m+ 12267 [[32mT[0m/[32mT[0m[32m]: if (= argumentsList[0i] absent) ... else ...[0m
+[32m+ 12268 [-]   : let radixNumber = 10i[0m
+[32m+ 12269 [[32mT[0m/[32mT[0m[32m]: if (= radix undefined) ... else ...[0m
+[32m+ 12270 [-]   : let radixNumber = 10i[0m
+[32m+ 12271 [-]   : { ... }[0m
+[32m+ 12272 [-]   : app __x2__ = (ToInteger radix)[0m
+[32m+ 12273 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 12274 [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12275 [-]   : __x2__ = __x2__["Value"][0m
+[31m- 12276 [-]   : return __x2__[0m
+[32m+ 12277 [-]   : {}[0m
+[32m+ 12278 [-]   : let radixNumber = __x2__[0m
+[32m+ 12279 [[32mT[0m/[32mT[0m[32m]: if (|| (< radixNumber 2i) (< 36i radixNumber)) ... else ...[0m
+[32m+ 12280 [-]   : { ... }[0m
+[32m+ 12281 [-]   : app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 12282 [-]   : return __x3__[0m
+[32m+ 12283 [-]   : {}[0m
+[32m+ 12284 [[32mT[0m/[32mT[0m[32m]: if (== radixNumber 10i) ... else ...[0m
+[32m+ 12285 [-]   : { ... }[0m
+[32m+ 12286 [-]   : app __x4__ = (ToString x)[0m
+[32m+ 12287 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 12288 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12289 [-]   : __x4__ = __x4__["Value"][0m
+[31m- 12290 [-]   : return __x4__[0m
+[32m+ 12291 [-]   : {}[0m
+[32m+ 12292 [-]   : app __x5__ = (WrapCompletion __x4__)[0m
+[32m+ 12293 [-]   : return __x5__[0m
+[32m+ 12294 [-]   : {}[0m
+[32m+ 12295 [[31mF[0m/[32mT[0m[32m]: if (= x NaN) ... else ...[0m
+[31m- 12296 [-]   : { ... }[0m
+[31m- 12297 [-]   : app __x6__ = (WrapCompletion "NaN")[0m
+[31m- 12298 [-]   : return __x6__[0m
+[32m+ 12299 [-]   : {}[0m
+[32m+ 12300 [[32mT[0m/[32mT[0m[32m]: if (|| (= x 0i) (= x -0.0)) ... else ...[0m
+[32m+ 12301 [-]   : { ... }[0m
+[32m+ 12302 [-]   : app __x6__ = (WrapCompletion "0")[0m
+[32m+ 12303 [-]   : return __x6__[0m
+[32m+ 12304 [-]   : {}[0m
+[32m+ 12305 [[32mT[0m/[32mT[0m[32m]: if (< x 0.0) ... else ...[0m
+[32m+ 12306 [-]   : { ... }[0m
+[32m+ 12307 [-]   : x = (- x)[0m
+[32m+ 12308 [[31mF[0m/[32mT[0m[32m]: if (= x Infinity) ... else ...[0m
+[31m- 12309 [-]   : { ... }[0m
+[31m- 12310 [-]   : app __x6__ = (WrapCompletion "-Infinity")[0m
+[31m- 12311 [-]   : return __x6__[0m
+[32m+ 12312 [-]   : {}[0m
+[32m+ 12313 [-]   : let __x6__ = (+ "-" (convert x num2str radixNumber))[0m
+[32m+ 12314 [-]   : { ... }[0m
+[32m+ 12315 [[31mF[0m/[32mT[0m[32m]: if (= x Infinity) ... else ...[0m
+[31m- 12316 [-]   : { ... }[0m
+[31m- 12317 [-]   : app __x6__ = (WrapCompletion "Infinity")[0m
+[31m- 12318 [-]   : return __x6__[0m
+[32m+ 12319 [-]   : {}[0m
+[32m+ 12320 [-]   : let __x6__ = (convert x num2str radixNumber)[0m
+[32m+ 12321 [-]   : app __x7__ = (WrapCompletion __x6__)[0m
+[32m+ 12322 [-]   : return __x7__[0m

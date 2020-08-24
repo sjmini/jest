@@ -1,14 +1,14 @@
 [32mGLOBALDOTArrayDOTprototypeDOTvalues[0m
 [32m- Inst: 11 / 11 (100.00%)[0m
 [32m- Cond: 4 / 4 (100.00%)[0m
-[32m+ 13700 [-]   : { ... }[0m
-[32m+ 13701 [-]   : app __x0__ = (ToObject this)[0m
-[32m+ 13702 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 13703 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 13704 [-]   : __x0__ = __x0__["Value"][0m
-[32m+ 13705 [-]   : return __x0__[0m
-[32m+ 13706 [-]   : {}[0m
-[32m+ 13707 [-]   : let O = __x0__[0m
-[32m+ 13708 [-]   : app __x1__ = (CreateArrayIterator O CONST_value)[0m
-[32m+ 13709 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 13710 [-]   : return __x2__[0m
+[32m+ 12108 [-]   : { ... }[0m
+[32m+ 12109 [-]   : app __x0__ = (ToObject this)[0m
+[32m+ 12110 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 12111 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12112 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 12113 [-]   : return __x0__[0m
+[32m+ 12114 [-]   : {}[0m
+[32m+ 12115 [-]   : let O = __x0__[0m
+[32m+ 12116 [-]   : app __x1__ = (CreateArrayIterator O CONST_value)[0m
+[32m+ 12117 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
+[32m+ 12118 [-]   : return __x2__[0m

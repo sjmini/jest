@@ -1,27 +1,27 @@
 [32mArrayAssignmentPattern0DestructuringAssignmentEvaluation2[0m
 [32m- Inst: 24 / 24 (100.00%)[0m
 [32m- Cond: 10 / 10 (100.00%)[0m
-[32m+ 4521  [-]   : { ... }[0m
-[32m+ 4522  [-]   : app __x0__ = (GetIterator value)[0m
-[32m+ 4523  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 4524  [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4525  [-]   : __x0__ = __x0__["Value"][0m
-[32m+ 4526  [-]   : return __x0__[0m
-[32m+ 4527  [-]   : {}[0m
-[32m+ 4528  [-]   : let iteratorRecord = __x0__[0m
-[32m+ 4529  [-]   : access __x1__ = (Elision "IteratorDestructuringAssignmentEvaluation")[0m
-[32m+ 4530  [-]   : app __x2__ = (__x1__ iteratorRecord)[0m
-[32m+ 4531  [-]   : let result = __x2__[0m
-[32m+ 4532  [[32mT[0m/[32mT[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
-[32m+ 4533  [-]   : { ... }[0m
-[32m+ 4534  [-]   : app __x3__ = (IteratorClose iteratorRecord result)[0m
-[32m+ 4535  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 4536  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4537  [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 4538  [-]   : return __x3__[0m
-[32m+ 4539  [-]   : {}[0m
-[32m+ 4540  [-]   : app __x4__ = (WrapCompletion __x3__)[0m
-[32m+ 4541  [-]   : return __x4__[0m
-[32m+ 4542  [-]   : {}[0m
-[32m+ 4543  [-]   : app __x5__ = (WrapCompletion result)[0m
-[32m+ 4544  [-]   : return __x5__[0m
+[32m+ 4128  [-]   : { ... }[0m
+[32m+ 4129  [-]   : app __x0__ = (GetIterator value)[0m
+[32m+ 4130  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 4131  [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4132  [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 4133  [-]   : return __x0__[0m
+[32m+ 4134  [-]   : {}[0m
+[32m+ 4135  [-]   : let iteratorRecord = __x0__[0m
+[32m+ 4136  [-]   : access __x1__ = (Elision "IteratorDestructuringAssignmentEvaluation")[0m
+[32m+ 4137  [-]   : app __x2__ = (__x1__ iteratorRecord)[0m
+[32m+ 4138  [-]   : let result = __x2__[0m
+[32m+ 4139  [[32mT[0m/[32mT[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
+[32m+ 4140  [-]   : { ... }[0m
+[32m+ 4141  [-]   : app __x3__ = (IteratorClose iteratorRecord result)[0m
+[32m+ 4142  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 4143  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4144  [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 4145  [-]   : return __x3__[0m
+[32m+ 4146  [-]   : {}[0m
+[32m+ 4147  [-]   : app __x4__ = (WrapCompletion __x3__)[0m
+[32m+ 4148  [-]   : return __x4__[0m
+[32m+ 4149  [-]   : {}[0m
+[32m+ 4150  [-]   : app __x5__ = (WrapCompletion result)[0m
+[32m+ 4151  [-]   : return __x5__[0m

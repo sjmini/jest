@@ -1,29 +1,29 @@
 [32mEvaluatePropertyAccessWithExpressionKey[0m
 [32m- Inst: 26 / 26 (100.00%)[0m
 [32m- Cond: 12 / 12 (100.00%)[0m
-[32m+ 9973  [-]   : { ... }[0m
-[32m+ 9974  [-]   : access __x0__ = (expression "Evaluation")[0m
-[32m+ 9975  [-]   : let propertyNameReference = __x0__[0m
-[32m+ 9976  [-]   : app __x1__ = (GetValue propertyNameReference)[0m
-[32m+ 9977  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 9978  [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 9979  [-]   : __x1__ = __x1__["Value"][0m
-[32m+ 9980  [-]   : return __x1__[0m
-[32m+ 9981  [-]   : {}[0m
-[32m+ 9982  [-]   : let propertyNameValue = __x1__[0m
-[32m+ 9983  [-]   : app __x2__ = (RequireObjectCoercible baseValue)[0m
-[32m+ 9984  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 9985  [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 9986  [-]   : __x2__ = __x2__["Value"][0m
-[32m+ 9987  [-]   : return __x2__[0m
-[32m+ 9988  [-]   : {}[0m
-[32m+ 9989  [-]   : let bv = __x2__[0m
-[32m+ 9990  [-]   : app __x3__ = (ToPropertyKey propertyNameValue)[0m
-[32m+ 9991  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 9992  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 9993  [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 9994  [-]   : return __x3__[0m
-[32m+ 9995  [-]   : {}[0m
-[32m+ 9996  [-]   : let propertyKey = __x3__[0m
-[32m+ 9997  [-]   : app __x4__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyKey, "StrictReference" -> strict)))[0m
-[32m+ 9998  [-]   : return __x4__[0m
+[32m+ 8475  [-]   : { ... }[0m
+[32m+ 8476  [-]   : access __x0__ = (expression "Evaluation")[0m
+[32m+ 8477  [-]   : let propertyNameReference = __x0__[0m
+[32m+ 8478  [-]   : app __x1__ = (GetValue propertyNameReference)[0m
+[32m+ 8479  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 8480  [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8481  [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 8482  [-]   : return __x1__[0m
+[32m+ 8483  [-]   : {}[0m
+[32m+ 8484  [-]   : let propertyNameValue = __x1__[0m
+[32m+ 8485  [-]   : app __x2__ = (RequireObjectCoercible baseValue)[0m
+[32m+ 8486  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 8487  [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8488  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 8489  [-]   : return __x2__[0m
+[32m+ 8490  [-]   : {}[0m
+[32m+ 8491  [-]   : let bv = __x2__[0m
+[32m+ 8492  [-]   : app __x3__ = (ToPropertyKey propertyNameValue)[0m
+[32m+ 8493  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 8494  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8495  [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 8496  [-]   : return __x3__[0m
+[32m+ 8497  [-]   : {}[0m
+[32m+ 8498  [-]   : let propertyKey = __x3__[0m
+[32m+ 8499  [-]   : app __x4__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyKey, "StrictReference" -> strict)))[0m
+[32m+ 8500  [-]   : return __x4__[0m

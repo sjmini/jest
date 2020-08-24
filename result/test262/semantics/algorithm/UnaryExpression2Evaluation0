@@ -1,15 +1,15 @@
 [32mUnaryExpression2Evaluation0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
 [32m- Cond: 4 / 4 (100.00%)[0m
-[32m+ 28870 [-]   : { ... }[0m
-[32m+ 28871 [-]   : access __x0__ = (UnaryExpression "Evaluation")[0m
-[32m+ 28872 [-]   : let expr = __x0__[0m
-[32m+ 28873 [-]   : app __x1__ = (GetValue expr)[0m
-[32m+ 28874 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 28875 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 28876 [-]   : __x1__ = __x1__["Value"][0m
-[32m+ 28877 [-]   : return __x1__[0m
-[32m+ 28878 [-]   : {}[0m
-[32m+ 28879 [-]   : __x1__[0m
-[32m+ 28880 [-]   : app __x2__ = (WrapCompletion undefined)[0m
-[32m+ 28881 [-]   : return __x2__[0m
+[32m+ 23697 [-]   : { ... }[0m
+[32m+ 23698 [-]   : access __x0__ = (UnaryExpression "Evaluation")[0m
+[32m+ 23699 [-]   : let expr = __x0__[0m
+[32m+ 23700 [-]   : app __x1__ = (GetValue expr)[0m
+[32m+ 23701 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 23702 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 23703 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 23704 [-]   : return __x1__[0m
+[32m+ 23705 [-]   : {}[0m
+[32m+ 23706 [-]   : __x1__[0m
+[32m+ 23707 [-]   : app __x2__ = (WrapCompletion undefined)[0m
+[32m+ 23708 [-]   : return __x2__[0m

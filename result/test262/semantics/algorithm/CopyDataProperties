@@ -1,71 +1,71 @@
 [33mCopyDataProperties[0m
 [33m- Inst: 64 / 68 (94.12%)[0m
 [33m- Cond: 27 / 32 (84.38%)[0m
-[32m+ 8358  [-]   : { ... }[0m
-[32m+ 8359  [-]   : app __x0__ = (Type target)[0m
-[32m+ 8360  [-]   : assert (= __x0__ Object)[0m
-[32m+ 8361  [[32mT[0m/[32mT[0m[32m]: if (|| (= source undefined) (= source null)) ... else ...[0m
-[32m+ 8362  [-]   : { ... }[0m
-[32m+ 8363  [-]   : app __x1__ = (WrapCompletion target)[0m
-[32m+ 8364  [-]   : return __x1__[0m
-[32m+ 8365  [-]   : {}[0m
-[32m+ 8366  [-]   : app __x2__ = (ToObject source)[0m
-[32m+ 8367  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 8368  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 8369  [-]   : __x2__ = __x2__["Value"][0m
-[31m- 8370  [-]   : return __x2__[0m
-[32m+ 8371  [-]   : {}[0m
-[32m+ 8372  [-]   : let from = __x2__[0m
-[32m+ 8373  [-]   : app __x3__ = (from["OwnPropertyKeys"] from)[0m
-[32m+ 8374  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 8375  [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 8376  [-]   : __x3__ = __x3__["Value"][0m
-[31m- 8377  [-]   : return __x3__[0m
-[32m+ 8378  [-]   : {}[0m
-[32m+ 8379  [-]   : let keys = __x3__[0m
-[32m+ 8380  [-]   : let __x4__ = keys[0m
-[32m+ 8381  [-]   : let __x5__ = 0i[0m
-[32m+ 8382  [[32mT[0m/[32mT[0m[32m]: while (< __x5__ __x4__["length"]) { ... }[0m
-[32m+ 8383  [-]   : { ... }[0m
-[32m+ 8384  [-]   : let nextKey = __x4__[__x5__][0m
-[32m+ 8385  [-]   : let excluded = false[0m
-[32m+ 8386  [-]   : let __x6__ = excludedItems[0m
-[32m+ 8387  [-]   : let __x7__ = 0i[0m
-[32m+ 8388  [[32mT[0m/[32mT[0m[32m]: while (< __x7__ __x6__["length"]) { ... }[0m
-[32m+ 8389  [-]   : { ... }[0m
-[32m+ 8390  [-]   : let e = __x6__[__x7__][0m
-[32m+ 8391  [-]   : app __x8__ = (SameValue e nextKey)[0m
-[32m+ 8392  [[32mT[0m/[32mT[0m[32m]: if (= __x8__ true) ... else ...[0m
-[32m+ 8393  [-]   : excluded = true[0m
-[32m+ 8394  [-]   : {}[0m
-[32m+ 8395  [-]   : __x7__ = (+ __x7__ 1i)[0m
-[32m+ 8396  [[32mT[0m/[32mT[0m[32m]: if (= excluded false) ... else ...[0m
-[32m+ 8397  [-]   : { ... }[0m
-[32m+ 8398  [-]   : app __x9__ = (from["GetOwnProperty"] from nextKey)[0m
-[32m+ 8399  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
-[32m+ 8400  [[32mT[0m/[31mF[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
-[32m+ 8401  [-]   : __x9__ = __x9__["Value"][0m
-[31m- 8402  [-]   : return __x9__[0m
-[32m+ 8403  [-]   : {}[0m
-[32m+ 8404  [-]   : let desc = __x9__[0m
-[32m+ 8405  [[32mT[0m/[32mT[0m[32m]: if (&& (! (= desc undefined)) (= desc["Enumerable"] true)) ... else ...[0m
-[32m+ 8406  [-]   : { ... }[0m
-[32m+ 8407  [-]   : app __x10__ = (Get from nextKey)[0m
-[32m+ 8408  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
-[32m+ 8409  [[32mT[0m/[32mT[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
-[32m+ 8410  [-]   : __x10__ = __x10__["Value"][0m
-[32m+ 8411  [-]   : return __x10__[0m
-[32m+ 8412  [-]   : {}[0m
-[32m+ 8413  [-]   : let propValue = __x10__[0m
-[32m+ 8414  [-]   : app __x11__ = (CreateDataPropertyOrThrow target nextKey propValue)[0m
-[32m+ 8415  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
-[32m+ 8416  [[32mT[0m/[31mF[0m[32m]: if (= __x11__["Type"] CONST_normal) ... else ...[0m
-[32m+ 8417  [-]   : __x11__ = __x11__["Value"][0m
-[31m- 8418  [-]   : return __x11__[0m
-[32m+ 8419  [-]   : {}[0m
-[32m+ 8420  [-]   : __x11__[0m
-[32m+ 8421  [-]   : {}[0m
-[32m+ 8422  [-]   : {}[0m
-[32m+ 8423  [-]   : __x5__ = (+ __x5__ 1i)[0m
-[32m+ 8424  [-]   : app __x12__ = (WrapCompletion target)[0m
-[32m+ 8425  [-]   : return __x12__[0m
+[32m+ 7201  [-]   : { ... }[0m
+[32m+ 7202  [-]   : app __x0__ = (Type target)[0m
+[32m+ 7203  [-]   : assert (= __x0__ Object)[0m
+[32m+ 7204  [[32mT[0m/[32mT[0m[32m]: if (|| (= source undefined) (= source null)) ... else ...[0m
+[32m+ 7205  [-]   : { ... }[0m
+[32m+ 7206  [-]   : app __x1__ = (WrapCompletion target)[0m
+[32m+ 7207  [-]   : return __x1__[0m
+[32m+ 7208  [-]   : {}[0m
+[32m+ 7209  [-]   : app __x2__ = (ToObject source)[0m
+[32m+ 7210  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 7211  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 7212  [-]   : __x2__ = __x2__["Value"][0m
+[31m- 7213  [-]   : return __x2__[0m
+[32m+ 7214  [-]   : {}[0m
+[32m+ 7215  [-]   : let from = __x2__[0m
+[32m+ 7216  [-]   : app __x3__ = (from["OwnPropertyKeys"] from)[0m
+[32m+ 7217  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 7218  [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 7219  [-]   : __x3__ = __x3__["Value"][0m
+[31m- 7220  [-]   : return __x3__[0m
+[32m+ 7221  [-]   : {}[0m
+[32m+ 7222  [-]   : let keys = __x3__[0m
+[32m+ 7223  [-]   : let __x4__ = keys[0m
+[32m+ 7224  [-]   : let __x5__ = 0i[0m
+[32m+ 7225  [[32mT[0m/[32mT[0m[32m]: while (< __x5__ __x4__["length"]) { ... }[0m
+[32m+ 7226  [-]   : { ... }[0m
+[32m+ 7227  [-]   : let nextKey = __x4__[__x5__][0m
+[32m+ 7228  [-]   : let excluded = false[0m
+[32m+ 7229  [-]   : let __x6__ = excludedItems[0m
+[32m+ 7230  [-]   : let __x7__ = 0i[0m
+[32m+ 7231  [[32mT[0m/[32mT[0m[32m]: while (< __x7__ __x6__["length"]) { ... }[0m
+[32m+ 7232  [-]   : { ... }[0m
+[32m+ 7233  [-]   : let e = __x6__[__x7__][0m
+[32m+ 7234  [-]   : app __x8__ = (SameValue e nextKey)[0m
+[32m+ 7235  [[32mT[0m/[32mT[0m[32m]: if (= __x8__ true) ... else ...[0m
+[32m+ 7236  [-]   : excluded = true[0m
+[32m+ 7237  [-]   : {}[0m
+[32m+ 7238  [-]   : __x7__ = (+ __x7__ 1i)[0m
+[32m+ 7239  [[32mT[0m/[32mT[0m[32m]: if (= excluded false) ... else ...[0m
+[32m+ 7240  [-]   : { ... }[0m
+[32m+ 7241  [-]   : app __x9__ = (from["GetOwnProperty"] from nextKey)[0m
+[32m+ 7242  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
+[32m+ 7243  [[32mT[0m/[31mF[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
+[32m+ 7244  [-]   : __x9__ = __x9__["Value"][0m
+[31m- 7245  [-]   : return __x9__[0m
+[32m+ 7246  [-]   : {}[0m
+[32m+ 7247  [-]   : let desc = __x9__[0m
+[32m+ 7248  [[32mT[0m/[32mT[0m[32m]: if (&& (! (= desc undefined)) (= desc["Enumerable"] true)) ... else ...[0m
+[32m+ 7249  [-]   : { ... }[0m
+[32m+ 7250  [-]   : app __x10__ = (Get from nextKey)[0m
+[32m+ 7251  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
+[32m+ 7252  [[32mT[0m/[32mT[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
+[32m+ 7253  [-]   : __x10__ = __x10__["Value"][0m
+[32m+ 7254  [-]   : return __x10__[0m
+[32m+ 7255  [-]   : {}[0m
+[32m+ 7256  [-]   : let propValue = __x10__[0m
+[32m+ 7257  [-]   : app __x11__ = (CreateDataPropertyOrThrow target nextKey propValue)[0m
+[32m+ 7258  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
+[32m+ 7259  [[32mT[0m/[31mF[0m[32m]: if (= __x11__["Type"] CONST_normal) ... else ...[0m
+[32m+ 7260  [-]   : __x11__ = __x11__["Value"][0m
+[31m- 7261  [-]   : return __x11__[0m
+[32m+ 7262  [-]   : {}[0m
+[32m+ 7263  [-]   : __x11__[0m
+[32m+ 7264  [-]   : {}[0m
+[32m+ 7265  [-]   : {}[0m
+[32m+ 7266  [-]   : __x5__ = (+ __x5__ 1i)[0m
+[32m+ 7267  [-]   : app __x12__ = (WrapCompletion target)[0m
+[32m+ 7268  [-]   : return __x12__[0m

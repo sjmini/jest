@@ -1,13 +1,13 @@
 [32mGLOBALDOTStringDOTprototypeDOTtrim[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
 [32m- Cond: 4 / 4 (100.00%)[0m
-[32m+ 18422 [-]   : { ... }[0m
-[32m+ 18423 [-]   : let S = this[0m
-[32m+ 18424 [-]   : app __x0__ = (TrimString S CONST_startPLUSend)[0m
-[32m+ 18425 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 18426 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 18427 [-]   : __x0__ = __x0__["Value"][0m
-[32m+ 18428 [-]   : return __x0__[0m
-[32m+ 18429 [-]   : {}[0m
-[32m+ 18430 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 18431 [-]   : return __x1__[0m
+[32m+ 16180 [-]   : { ... }[0m
+[32m+ 16181 [-]   : let S = this[0m
+[32m+ 16182 [-]   : app __x0__ = (TrimString S CONST_startPLUSend)[0m
+[32m+ 16183 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 16184 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 16185 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 16186 [-]   : return __x0__[0m
+[32m+ 16187 [-]   : {}[0m
+[32m+ 16188 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
+[32m+ 16189 [-]   : return __x1__[0m

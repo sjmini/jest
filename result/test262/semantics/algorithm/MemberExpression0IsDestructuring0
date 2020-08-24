@@ -1,8 +1,8 @@
 [32mMemberExpression0IsDestructuring0[0m
 [32m- Inst: 5 / 5 (100.00%)[0m
 [32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 216   [-]   : { ... }[0m
-[32m+ 217   [[32mT[0m/[32mT[0m[32m]: if (|| (is-instance-of PrimaryExpression ObjectLiteral) (is-instance-of PrimaryExpression ArrayLiteral)) ... else ...[0m
-[32m+ 218   [-]   : return true[0m
-[32m+ 219   [-]   : {}[0m
-[32m+ 220   [-]   : return false[0m
+[32m+ 179   [-]   : { ... }[0m
+[32m+ 180   [[32mT[0m/[32mT[0m[32m]: if (|| (is-instance-of PrimaryExpression ObjectLiteral) (is-instance-of PrimaryExpression ArrayLiteral)) ... else ...[0m
+[32m+ 181   [-]   : return true[0m
+[32m+ 182   [-]   : {}[0m
+[32m+ 183   [-]   : return false[0m

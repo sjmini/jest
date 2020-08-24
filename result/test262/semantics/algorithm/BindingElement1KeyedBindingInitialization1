@@ -1,27 +1,27 @@
 [33mBindingElement1KeyedBindingInitialization1[0m
 [33m- Inst: 22 / 24 (91.67%)[0m
 [33m- Cond: 8 / 10 (80.00%)[0m
-[32m+ 3440  [-]   : { ... }[0m
-[32m+ 3441  [-]   : app __x0__ = (GetV value propertyName)[0m
-[32m+ 3442  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 3443  [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 3444  [-]   : __x0__ = __x0__["Value"][0m
-[31m- 3445  [-]   : return __x0__[0m
-[32m+ 3446  [-]   : {}[0m
-[32m+ 3447  [-]   : let v = __x0__[0m
-[32m+ 3448  [[32mT[0m/[32mT[0m[32m]: if (&& (! (= Initializer absent)) (= v undefined)) ... else ...[0m
-[32m+ 3449  [-]   : { ... }[0m
-[32m+ 3450  [-]   : access __x1__ = (Initializer "Evaluation")[0m
-[32m+ 3451  [-]   : let defaultValue = __x1__[0m
-[32m+ 3452  [-]   : app __x2__ = (GetValue defaultValue)[0m
-[32m+ 3453  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 3454  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 3455  [-]   : __x2__ = __x2__["Value"][0m
-[31m- 3456  [-]   : return __x2__[0m
-[32m+ 3457  [-]   : {}[0m
-[32m+ 3458  [-]   : v = __x2__[0m
-[32m+ 3459  [-]   : {}[0m
-[32m+ 3460  [-]   : access __x3__ = (BindingPattern "BindingInitialization")[0m
-[32m+ 3461  [-]   : app __x4__ = (__x3__ v environment)[0m
-[32m+ 3462  [-]   : app __x5__ = (WrapCompletion __x4__)[0m
-[32m+ 3463  [-]   : return __x5__[0m
+[32m+ 3219  [-]   : { ... }[0m
+[32m+ 3220  [-]   : app __x0__ = (GetV value propertyName)[0m
+[32m+ 3221  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 3222  [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 3223  [-]   : __x0__ = __x0__["Value"][0m
+[31m- 3224  [-]   : return __x0__[0m
+[32m+ 3225  [-]   : {}[0m
+[32m+ 3226  [-]   : let v = __x0__[0m
+[32m+ 3227  [[32mT[0m/[32mT[0m[32m]: if (&& (! (= Initializer absent)) (= v undefined)) ... else ...[0m
+[32m+ 3228  [-]   : { ... }[0m
+[32m+ 3229  [-]   : access __x1__ = (Initializer "Evaluation")[0m
+[32m+ 3230  [-]   : let defaultValue = __x1__[0m
+[32m+ 3231  [-]   : app __x2__ = (GetValue defaultValue)[0m
+[32m+ 3232  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 3233  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 3234  [-]   : __x2__ = __x2__["Value"][0m
+[31m- 3235  [-]   : return __x2__[0m
+[32m+ 3236  [-]   : {}[0m
+[32m+ 3237  [-]   : v = __x2__[0m
+[32m+ 3238  [-]   : {}[0m
+[32m+ 3239  [-]   : access __x3__ = (BindingPattern "BindingInitialization")[0m
+[32m+ 3240  [-]   : app __x4__ = (__x3__ v environment)[0m
+[32m+ 3241  [-]   : app __x5__ = (WrapCompletion __x4__)[0m
+[32m+ 3242  [-]   : return __x5__[0m

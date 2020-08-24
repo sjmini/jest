@@ -1,20 +1,20 @@
 [33mElementList1ArrayAccumulation1[0m
 [33m- Inst: 7 / 17 (41.18%)[0m
 [33m- Cond: 1 / 6 (16.67%)[0m
-[32m+ 9393  [-]   : { ... }[0m
-[32m+ 9394  [[31mF[0m/[32mT[0m[32m]: if (! (= Elision absent)) ... else ...[0m
-[31m- 9395  [-]   : { ... }[0m
-[31m- 9396  [-]   : access __x0__ = (Elision "ArrayAccumulation")[0m
-[31m- 9397  [-]   : app __x1__ = (__x0__ array nextIndex)[0m
-[31m- 9398  [-]   : nextIndex = __x1__[0m
-[31m- 9399  [-]   : if (is-completion nextIndex) ... else ...[0m
-[31m- 9400  [-]   : if (= nextIndex["Type"] CONST_normal) ... else ...[0m
-[31m- 9401  [-]   : nextIndex = nextIndex["Value"][0m
-[31m- 9402  [-]   : return nextIndex[0m
-[31m- 9403  [-]   : {}[0m
-[31m- 9404  [-]   : nextIndex[0m
-[32m+ 9405  [-]   : {}[0m
-[32m+ 9406  [-]   : access __x2__ = (SpreadElement "ArrayAccumulation")[0m
-[32m+ 9407  [-]   : app __x3__ = (__x2__ array nextIndex)[0m
-[32m+ 9408  [-]   : app __x4__ = (WrapCompletion __x3__)[0m
-[32m+ 9409  [-]   : return __x4__[0m
+[32m+ 7900  [-]   : { ... }[0m
+[32m+ 7901  [[31mF[0m/[32mT[0m[32m]: if (! (= Elision absent)) ... else ...[0m
+[31m- 7902  [-]   : { ... }[0m
+[31m- 7903  [-]   : access __x0__ = (Elision "ArrayAccumulation")[0m
+[31m- 7904  [-]   : app __x1__ = (__x0__ array nextIndex)[0m
+[31m- 7905  [-]   : nextIndex = __x1__[0m
+[31m- 7906  [-]   : if (is-completion nextIndex) ... else ...[0m
+[31m- 7907  [-]   : if (= nextIndex["Type"] CONST_normal) ... else ...[0m
+[31m- 7908  [-]   : nextIndex = nextIndex["Value"][0m
+[31m- 7909  [-]   : return nextIndex[0m
+[31m- 7910  [-]   : {}[0m
+[31m- 7911  [-]   : nextIndex[0m
+[32m+ 7912  [-]   : {}[0m
+[32m+ 7913  [-]   : access __x2__ = (SpreadElement "ArrayAccumulation")[0m
+[32m+ 7914  [-]   : app __x3__ = (__x2__ array nextIndex)[0m
+[32m+ 7915  [-]   : app __x4__ = (WrapCompletion __x3__)[0m
+[32m+ 7916  [-]   : return __x4__[0m

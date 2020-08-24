@@ -1,25 +1,25 @@
 [32mToNumeric[0m
 [32m- Inst: 22 / 22 (100.00%)[0m
 [32m- Cond: 10 / 10 (100.00%)[0m
-[32m+ 28249 [-]   : { ... }[0m
-[32m+ 28250 [-]   : app __x0__ = (ToPrimitive value Number)[0m
-[32m+ 28251 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 28252 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 28253 [-]   : __x0__ = __x0__["Value"][0m
-[32m+ 28254 [-]   : return __x0__[0m
-[32m+ 28255 [-]   : {}[0m
-[32m+ 28256 [-]   : let primValue = __x0__[0m
-[32m+ 28257 [-]   : app __x1__ = (Type primValue)[0m
-[32m+ 28258 [[32mT[0m/[32mT[0m[32m]: if (= __x1__ BigInt) ... else ...[0m
-[32m+ 28259 [-]   : { ... }[0m
-[32m+ 28260 [-]   : app __x2__ = (WrapCompletion primValue)[0m
-[32m+ 28261 [-]   : return __x2__[0m
-[32m+ 28262 [-]   : {}[0m
-[32m+ 28263 [-]   : app __x3__ = (ToNumber primValue)[0m
-[32m+ 28264 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 28265 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 28266 [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 28267 [-]   : return __x3__[0m
-[32m+ 28268 [-]   : {}[0m
-[32m+ 28269 [-]   : app __x4__ = (WrapCompletion __x3__)[0m
-[32m+ 28270 [-]   : return __x4__[0m
+[32m+ 23169 [-]   : { ... }[0m
+[32m+ 23170 [-]   : app __x0__ = (ToPrimitive value Number)[0m
+[32m+ 23171 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 23172 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 23173 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 23174 [-]   : return __x0__[0m
+[32m+ 23175 [-]   : {}[0m
+[32m+ 23176 [-]   : let primValue = __x0__[0m
+[32m+ 23177 [-]   : app __x1__ = (Type primValue)[0m
+[32m+ 23178 [[32mT[0m/[32mT[0m[32m]: if (= __x1__ BigInt) ... else ...[0m
+[32m+ 23179 [-]   : { ... }[0m
+[32m+ 23180 [-]   : app __x2__ = (WrapCompletion primValue)[0m
+[32m+ 23181 [-]   : return __x2__[0m
+[32m+ 23182 [-]   : {}[0m
+[32m+ 23183 [-]   : app __x3__ = (ToNumber primValue)[0m
+[32m+ 23184 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 23185 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 23186 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 23187 [-]   : return __x3__[0m
+[32m+ 23188 [-]   : {}[0m
+[32m+ 23189 [-]   : app __x4__ = (WrapCompletion __x3__)[0m
+[32m+ 23190 [-]   : return __x4__[0m

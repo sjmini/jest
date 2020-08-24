@@ -1,32 +1,32 @@
 [33mGLOBALDOTObjectDOTgetOwnPropertyDescriptor[0m
 [33m- Inst: 28 / 29 (96.55%)[0m
 [33m- Cond: 11 / 12 (91.67%)[0m
-[32m+ 15764 [-]   : { ... }[0m
-[32m+ 15765 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
-[32m+ 15766 [-]   : let O = __x0__[0m
-[32m+ 15767 [-]   : app __x1__ = (GetArgument argumentsList 1i)[0m
-[32m+ 15768 [-]   : let P = __x1__[0m
-[32m+ 15769 [-]   : app __x2__ = (ToObject O)[0m
-[32m+ 15770 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 15771 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 15772 [-]   : __x2__ = __x2__["Value"][0m
-[32m+ 15773 [-]   : return __x2__[0m
-[32m+ 15774 [-]   : {}[0m
-[32m+ 15775 [-]   : let obj = __x2__[0m
-[32m+ 15776 [-]   : app __x3__ = (ToPropertyKey P)[0m
-[32m+ 15777 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 15778 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 15779 [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 15780 [-]   : return __x3__[0m
-[32m+ 15781 [-]   : {}[0m
-[32m+ 15782 [-]   : let key = __x3__[0m
-[32m+ 15783 [-]   : app __x4__ = (obj["GetOwnProperty"] obj key)[0m
-[32m+ 15784 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[32m+ 15785 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[32m+ 15786 [-]   : __x4__ = __x4__["Value"][0m
-[31m- 15787 [-]   : return __x4__[0m
-[32m+ 15788 [-]   : {}[0m
-[32m+ 15789 [-]   : let desc = __x4__[0m
-[32m+ 15790 [-]   : app __x5__ = (FromPropertyDescriptor desc)[0m
-[32m+ 15791 [-]   : app __x6__ = (WrapCompletion __x5__)[0m
-[32m+ 15792 [-]   : return __x6__[0m
+[32m+ 13777 [-]   : { ... }[0m
+[32m+ 13778 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
+[32m+ 13779 [-]   : let O = __x0__[0m
+[32m+ 13780 [-]   : app __x1__ = (GetArgument argumentsList 1i)[0m
+[32m+ 13781 [-]   : let P = __x1__[0m
+[32m+ 13782 [-]   : app __x2__ = (ToObject O)[0m
+[32m+ 13783 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 13784 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13785 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 13786 [-]   : return __x2__[0m
+[32m+ 13787 [-]   : {}[0m
+[32m+ 13788 [-]   : let obj = __x2__[0m
+[32m+ 13789 [-]   : app __x3__ = (ToPropertyKey P)[0m
+[32m+ 13790 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 13791 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13792 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 13793 [-]   : return __x3__[0m
+[32m+ 13794 [-]   : {}[0m
+[32m+ 13795 [-]   : let key = __x3__[0m
+[32m+ 13796 [-]   : app __x4__ = (obj["GetOwnProperty"] obj key)[0m
+[32m+ 13797 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 13798 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13799 [-]   : __x4__ = __x4__["Value"][0m
+[31m- 13800 [-]   : return __x4__[0m
+[32m+ 13801 [-]   : {}[0m
+[32m+ 13802 [-]   : let desc = __x4__[0m
+[32m+ 13803 [-]   : app __x5__ = (FromPropertyDescriptor desc)[0m
+[32m+ 13804 [-]   : app __x6__ = (WrapCompletion __x5__)[0m
+[32m+ 13805 [-]   : return __x6__[0m

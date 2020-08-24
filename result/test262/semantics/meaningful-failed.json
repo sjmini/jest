@@ -141,18 +141,18 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function ( ) { var [ { x } ] = [ ] ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { let [ { x } ] = [ ] ; } ) ;"
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x1__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { var [ { x } ] = [ ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { let [ { x } ] = [ ] ; } ) ;",
   "inst": "if __x1__ ... else ..."
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { var [ [ x ] ] = [ null ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { let [ [ x ] ] = [ null ] ; } ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "ArrayCreate",
@@ -295,18 +295,18 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "let [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;"
+  "thenCovered": "var [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;"
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
   "cond": "__x2__",
   "covered": true,
-  "elseCovered": "let [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;",
+  "elseCovered": "var [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;",
   "inst": "if __x2__ ... else ..."
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
   "cond": "__x7__",
   "covered": true,
-  "elseCovered": "let [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;",
+  "elseCovered": "var [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;",
   "inst": "if __x7__ ... else ..."
 }, {
   "algo": "BreakableStatement1LabelledEvaluation0",
@@ -337,12 +337,12 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function ( ) { new WeakMap ( { } ) ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { new WeakSet ( { } ) ; } ) ;"
 }, {
   "algo": "CanonicalNumericIndexString",
   "cond": "(= argument \"-0\")",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= argument \"-0\") ... else ..."
 }, {
   "algo": "CaseBlock1HasCallInTailPosition3",
@@ -354,19 +354,19 @@
   "algo": "CaseBlock1LexicallyScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarDeclaredNames3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseClause0HasCallInTailPosition1",
@@ -464,121 +464,6 @@
   "elseCovered": "assert ( NaN !== NaN ) ;",
   "inst": "if (= steps[\"length\"] absent) ... else ..."
 }, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= newTarget undefined)",
-  "covered": false,
-  "inst": "if (= newTarget undefined) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= kind CONST_generator)",
-  "covered": false,
-  "inst": "if (= kind CONST_generator) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= kind CONST_async)",
-  "covered": false,
-  "inst": "if (= kind CONST_async) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(== argCount 0i)",
-  "covered": false,
-  "inst": "if (== argCount 0i) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(== argCount 1i)",
-  "covered": false,
-  "inst": "if (== argCount 1i) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(< k (- argCount 1i))",
-  "covered": false,
-  "inst": "while (< k (- argCount 1i)) { ... }"
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= parameters absent)",
-  "covered": false,
-  "inst": "if (= parameters absent) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= body absent)",
-  "covered": false,
-  "inst": "if (= body absent) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x6__ false)",
-  "covered": false,
-  "inst": "if (= __x6__ false) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(< idx len)",
-  "covered": false,
-  "inst": "while (< idx len) { ... }"
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(contains declNames name)",
-  "covered": false,
-  "inst": "if (contains declNames name) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x9__ true)",
-  "covered": false,
-  "inst": "if (= __x9__ true) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x12__ true)",
-  "covered": false,
-  "inst": "if (= __x12__ true) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x15__ true)",
-  "covered": false,
-  "inst": "if (= __x15__ true) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x18__ true)",
-  "covered": false,
-  "inst": "if (= __x18__ true) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(|| (= kind CONST_generator) (= kind CONST_asyncGenerator))",
-  "covered": false,
-  "inst": "if (|| (= kind CONST_generator) (= kind CONST_asyncGenerator)) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x21__ true)",
-  "covered": false,
-  "inst": "if (= __x21__ true) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(|| (= kind CONST_async) (= kind CONST_asyncGenerator))",
-  "covered": false,
-  "inst": "if (|| (= kind CONST_async) (= kind CONST_asyncGenerator)) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= __x24__ true)",
-  "covered": false,
-  "inst": "if (= __x24__ true) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(< idx len)",
-  "covered": false,
-  "inst": "while (< idx len) { ... }"
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(contains tempList name)",
-  "covered": false,
-  "inst": "if (contains tempList name) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= kind CONST_generator)",
-  "covered": false,
-  "inst": "if (= kind CONST_generator) ... else ..."
-}, {
-  "algo": "CreateDynamicFunction",
-  "cond": "(= kind CONST_asyncGenerator)",
-  "covered": false,
-  "inst": "if (= kind CONST_asyncGenerator) ... else ..."
-}, {
   "algo": "CreateListFromArrayLike",
   "cond": "(= elementTypes absent)",
   "covered": true,
@@ -600,7 +485,7 @@
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
   "cond": "(= absent envRec[\"SubMap\"][N])",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function ( ) { E0 ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function ( ) { E1 ; } ) ;",
   "inst": "if (= absent envRec[\"SubMap\"][N]) ... else ..."
 }, {
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
@@ -636,7 +521,7 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "var iter = function * ( ) { } ( ) ; iter . next ( ) ; let [ , ] = iter ;"
+  "thenCovered": "var iter = function * ( ) { } ( ) ; iter . next ( ) ; var [ , ] = iter ;"
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
@@ -799,13 +684,13 @@
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iteratorKind CONST_async)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( var { } of [ null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iteratorKind CONST_async) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iterationKind CONST_enumerate)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( var { } of [ null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iterationKind CONST_enumerate) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
@@ -1059,121 +944,6 @@
   "elseCovered": "assert . sameValue ( Number . isSafeInteger ( 9007199254740992 ) , false , \"2**53\" ) ; assert . sameValue ( Number . isSafeInteger ( - 9007199254740992 ) , false , \"-(2**53)\" ) ;",
   "inst": "if (! (< (- 9007199254740992i 1i) __x2__)) ... else ..."
 }, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(< x 0i)",
-  "covered": false,
-  "inst": "if (< x 0i) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(== x Infinity)",
-  "covered": false,
-  "inst": "if (== x Infinity) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(|| (< f 0i) (< 100i f))",
-  "covered": false,
-  "inst": "if (|| (< f 0i) (< 100i f)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(== x 0i)",
-  "covered": false,
-  "inst": "if (== x 0i) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(! (= fractionDigits undefined))",
-  "covered": false,
-  "inst": "if (! (= fractionDigits undefined)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(! (== f 0i))",
-  "covered": false,
-  "inst": "if (! (== f 0i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(== e 0i)",
-  "covered": false,
-  "inst": "if (== e 0i) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
-  "cond": "(< 0i e)",
-  "covered": false,
-  "inst": "if (< 0i e) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
-  "cond": "(|| (< f 0i) (< 100i f))",
-  "covered": false,
-  "inst": "if (|| (< f 0i) (< 100i f)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
-  "cond": "(< x 0i)",
-  "covered": false,
-  "inst": "if (< x 0i) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
-  "cond": "(! (< x 9223372036854775807i))",
-  "covered": false,
-  "inst": "if (! (< x 9223372036854775807i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
-  "cond": "(! (== f 0i))",
-  "covered": false,
-  "inst": "if (! (== f 0i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
-  "cond": "(! (< f k))",
-  "covered": false,
-  "inst": "if (! (< f k)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(= precision undefined)",
-  "covered": false,
-  "inst": "if (= precision undefined) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(< x 0i)",
-  "covered": false,
-  "inst": "if (< x 0i) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(== x Infinity)",
-  "covered": false,
-  "inst": "if (== x Infinity) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(|| (< p 1i) (< 100i p))",
-  "covered": false,
-  "inst": "if (|| (< p 1i) (< 100i p)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(== x 0i)",
-  "covered": false,
-  "inst": "if (== x 0i) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(|| (< e (- 6i)) (! (< e p)))",
-  "covered": false,
-  "inst": "if (|| (< e (- 6i)) (! (< e p))) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(! (== p 1i))",
-  "covered": false,
-  "inst": "if (! (== p 1i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(< 0i e)",
-  "covered": false,
-  "inst": "if (< 0i e) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(== e (- p 1i))",
-  "covered": false,
-  "inst": "if (== e (- p 1i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
-  "cond": "(! (< e 0i))",
-  "covered": false,
-  "inst": "if (! (< e 0i)) ... else ..."
-}, {
   "algo": "GLOBALDOTObjectDOTfreeze",
   "cond": "(= status false)",
   "covered": true,
@@ -1246,36 +1016,6 @@
   "inst": "if __x4__ ... else ...",
   "thenCovered": "var s = new Set ( ) ; s . add ( 1 ) ; assert . sameValue ( s . delete ( 1 ) , true , \"`s.delete(1)` returns `true`\" ) ;"
 }, {
-  "algo": "GLOBALDOTStringDOTfromCharCode",
-  "cond": "(< nextIndex length)",
-  "covered": false,
-  "inst": "while (< nextIndex length) { ... }"
-}, {
-  "algo": "GLOBALDOTStringDOTfromCodePoint",
-  "cond": "(< nextIndex length)",
-  "covered": false,
-  "inst": "while (< nextIndex length) { ... }"
-}, {
-  "algo": "GLOBALDOTStringDOTfromCodePoint",
-  "cond": "(= __x1__ false)",
-  "covered": false,
-  "inst": "if (= __x1__ false) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTfromCodePoint",
-  "cond": "(|| (< nextCP 0i) (< 1114111i nextCP))",
-  "covered": false,
-  "inst": "if (|| (< nextCP 0i) (< 1114111i nextCP)) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTfromCodePoint",
-  "cond": "(< __x6__ __x5__[\"length\"])",
-  "covered": false,
-  "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
-}, {
-  "algo": "GLOBALDOTStringDOTprototypeDOTcharCodeAt",
-  "cond": "(|| (< position 0i) (! (< position size)))",
-  "covered": false,
-  "inst": "if (|| (< position 0i) (! (< position size))) ... else ..."
-}, {
   "algo": "GLOBALDOTStringDOTprototypeDOTendsWith",
   "cond": "(= isRegExp true)",
   "covered": true,
@@ -1305,46 +1045,11 @@
   "inst": "if (! (= matcher undefined)) ... else ...",
   "thenCovered": "var obj = { } ; var returnVal = { } ; var callCount = 0 ; var thisVal , args ; obj [ Symbol . matchAll ] = function ( ) { callCount ++ ; thisVal = this ; args = arguments ; return returnVal ; } ; var str = '' ; assert . sameValue ( str . matchAll ( obj ) , returnVal ) ; assert . sameValue ( callCount , 1 , 'Invokes the method exactly once' ) ; assert . sameValue ( thisVal , obj ) ; assert . notSameValue ( args , undefined ) ; assert . sameValue ( args . length , 1 ) ; assert . sameValue ( args [ 0 ] , str ) ;"
 }, {
-  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
-  "cond": "(! (|| (= searchValue undefined) (= searchValue null)))",
-  "covered": false,
-  "inst": "if (! (|| (= searchValue undefined) (= searchValue null))) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
-  "cond": "(! (= replacer undefined))",
-  "covered": false,
-  "inst": "if (! (= replacer undefined)) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
-  "cond": "(= functionalReplace false)",
-  "covered": false,
-  "inst": "if (= functionalReplace false) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
-  "cond": "(= functionalReplace true)",
-  "covered": false,
-  "inst": "if (= functionalReplace true) ... else ..."
-}, {
   "algo": "GLOBALDOTStringDOTprototypeDOTstartsWith",
   "cond": "(= isRegExp true)",
   "covered": true,
   "elseCovered": "var s = Symbol ( ) ; assert . throws ( TypeError , function ( ) { '' . startsWith ( s ) ; } ) ;",
   "inst": "if (= isRegExp true) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTraw",
-  "cond": "(! (< 0i literalSegments))",
-  "covered": false,
-  "inst": "if (! (< 0i literalSegments)) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTraw",
-  "cond": "(== (+ nextIndex 1i) literalSegments)",
-  "covered": false,
-  "inst": "if (== (+ nextIndex 1i) literalSegments) ... else ..."
-}, {
-  "algo": "GLOBALDOTStringDOTraw",
-  "cond": "(< nextIndex numberOfSubstitutions)",
-  "covered": false,
-  "inst": "if (< nextIndex numberOfSubstitutions) ... else ..."
 }, {
   "algo": "GLOBALDOTSymbolDOTkeyFor",
   "cond": "(= cond true)",
@@ -1382,31 +1087,6 @@
   "inst": "if __x6__ ... else ...",
   "thenCovered": "var foo = { } ; var s = new WeakSet ( [ foo ] ) ; var result = s . delete ( foo ) ; assert . sameValue ( s . has ( foo ) , false ) ; assert . sameValue ( result , true , 'WeakSet#delete returns true' ) ;"
 }, {
-  "algo": "GLOBALDOTparseInt",
-  "cond": "(! (== R 0i))",
-  "covered": false,
-  "inst": "if (! (== R 0i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTparseInt",
-  "cond": "(|| (< R 2i) (< 36i R))",
-  "covered": false,
-  "inst": "if (|| (< R 2i) (< 36i R)) ... else ..."
-}, {
-  "algo": "GLOBALDOTparseInt",
-  "cond": "(! (== R 16i))",
-  "covered": false,
-  "inst": "if (! (== R 16i)) ... else ..."
-}, {
-  "algo": "GLOBALDOTparseInt",
-  "cond": "(= stripPrefix true)",
-  "covered": false,
-  "inst": "if (= stripPrefix true) ... else ..."
-}, {
-  "algo": "GLOBALDOTparseInt",
-  "cond": "(= Z[\"length\"] 0i)",
-  "covered": false,
-  "inst": "if (= Z[\"length\"] 0i) ... else ..."
-}, {
   "algo": "GeneratorResumeAbrupt",
   "cond": "(= genContext[\"ReturnCont\"] absent)",
   "covered": true,
@@ -1417,7 +1097,7 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
-  "thenCovered": "var iter = function * ( ) { } ( ) ; iter . next ( ) ; let [ , ] = iter ;"
+  "thenCovered": "var iter = function * ( ) { } ( ) ; iter . next ( ) ; var [ , ] = iter ;"
 }, {
   "algo": "GeneratorYield",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
@@ -1968,12 +1648,6 @@
   "inst": "if (= GLOBAL_executionStack[\"length\"] 0i) ... else ...",
   "thenCovered": ""
 }, {
-  "algo": "RunJobs",
-  "cond": "__x4__",
-  "covered": true,
-  "elseCovered": "",
-  "inst": "if __x4__ ... else ..."
-}, {
   "algo": "ScriptEvaluation",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] scriptContext)",
   "covered": true,
@@ -2084,67 +1758,67 @@
   "algo": "ToObject",
   "cond": "(= obj[\"HasProperty\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"HasProperty\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"DefineOwnProperty\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"DefineOwnProperty\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"Set\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"Set\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"SetPrototypeOf\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"SetPrototypeOf\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"Get\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"Get\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"PreventExtensions\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"PreventExtensions\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"Delete\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"Delete\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"GetOwnProperty\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"GetOwnProperty\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"OwnPropertyKeys\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"OwnPropertyKeys\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"GetPrototypeOf\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"GetPrototypeOf\"] absent) ... else ..."
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"IsExtensible\"] absent)",
   "covered": true,
-  "elseCovered": "Object . keys ( 'abc' ) ;",
+  "elseCovered": "var x = \"\" . search ( ) ;",
   "inst": "if (= obj[\"IsExtensible\"] absent) ... else ..."
 }, {
   "algo": "TryStatement1VarDeclaredNames0",
@@ -2187,7 +1861,7 @@
   "cond": "(! (= O undefined))",
   "covered": true,
   "inst": "if (! (= O undefined)) ... else ...",
-  "thenCovered": "void { foo : 1 , set foo ( x ) { } } ;"
+  "thenCovered": "eval ( \"({foo : 1, get foo(){}});\" ) ;"
 }, {
   "algo": "ValidateAndApplyPropertyDescriptor",
   "cond": "(! (= O undefined))",

@@ -1,19 +1,19 @@
 [33mIterationStatement9LabelledEvaluation0[0m
 [33m- Inst: 15 / 16 (93.75%)[0m
 [33m- Cond: 7 / 8 (87.50%)[0m
-[32m+ 22375 [-]   : { ... }[0m
-[32m+ 22376 [-]   : app __x0__ = (ForInOfHeadEvaluation (new []) AssignmentExpression CONST_iterate)[0m
-[32m+ 22377 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 22378 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 22379 [-]   : __x0__ = __x0__["Value"][0m
-[31m- 22380 [-]   : return __x0__[0m
-[32m+ 22381 [-]   : {}[0m
-[32m+ 22382 [-]   : let keyResult = __x0__[0m
-[32m+ 22383 [-]   : app __x1__ = (ForInOfBodyEvaluation ForBinding Statement keyResult CONST_iterate CONST_varBinding labelSet)[0m
-[32m+ 22384 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 22385 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 22386 [-]   : __x1__ = __x1__["Value"][0m
-[32m+ 22387 [-]   : return __x1__[0m
-[32m+ 22388 [-]   : {}[0m
-[32m+ 22389 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 22390 [-]   : return __x2__[0m
+[32m+ 18916 [-]   : { ... }[0m
+[32m+ 18917 [-]   : app __x0__ = (ForInOfHeadEvaluation (new []) AssignmentExpression CONST_iterate)[0m
+[32m+ 18918 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 18919 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18920 [-]   : __x0__ = __x0__["Value"][0m
+[31m- 18921 [-]   : return __x0__[0m
+[32m+ 18922 [-]   : {}[0m
+[32m+ 18923 [-]   : let keyResult = __x0__[0m
+[32m+ 18924 [-]   : app __x1__ = (ForInOfBodyEvaluation ForBinding Statement keyResult CONST_iterate CONST_varBinding labelSet)[0m
+[32m+ 18925 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 18926 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18927 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 18928 [-]   : return __x1__[0m
+[32m+ 18929 [-]   : {}[0m
+[32m+ 18930 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
+[32m+ 18931 [-]   : return __x2__[0m

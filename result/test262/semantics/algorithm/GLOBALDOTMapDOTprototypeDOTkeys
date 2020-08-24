@@ -1,13 +1,13 @@
 [32mGLOBALDOTMapDOTprototypeDOTkeys[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
 [32m- Cond: 4 / 4 (100.00%)[0m
-[32m+ 15106 [-]   : { ... }[0m
-[32m+ 15107 [-]   : let M = this[0m
-[32m+ 15108 [-]   : app __x0__ = (CreateMapIterator M CONST_key)[0m
-[32m+ 15109 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 15110 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 15111 [-]   : __x0__ = __x0__["Value"][0m
-[32m+ 15112 [-]   : return __x0__[0m
-[32m+ 15113 [-]   : {}[0m
-[32m+ 15114 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 15115 [-]   : return __x1__[0m
+[32m+ 13314 [-]   : { ... }[0m
+[32m+ 13315 [-]   : let M = this[0m
+[32m+ 13316 [-]   : app __x0__ = (CreateMapIterator M CONST_key)[0m
+[32m+ 13317 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 13318 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13319 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 13320 [-]   : return __x0__[0m
+[32m+ 13321 [-]   : {}[0m
+[32m+ 13322 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
+[32m+ 13323 [-]   : return __x1__[0m

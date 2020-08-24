@@ -1,17 +1,17 @@
 [33mResolveBinding[0m
 [33m- Inst: 13 / 14 (92.86%)[0m
 [33m- Cond: 5 / 6 (83.33%)[0m
-[32m+ 26853 [-]   : { ... }[0m
-[32m+ 26854 [[32mT[0m/[32mT[0m[32m]: if (|| (= env absent) (= env undefined)) ... else ...[0m
-[32m+ 26855 [-]   : env = GLOBAL_context["LexicalEnvironment"][0m
-[32m+ 26856 [-]   : {}[0m
-[32m+ 26857 [-]   : assert (= (typeof env) "LexicalEnvironment")[0m
-[32m+ 26858 [-]   : let strict = true[0m
-[32m+ 26859 [-]   : app __x0__ = (GetIdentifierReference env name strict)[0m
-[32m+ 26860 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 26861 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 26862 [-]   : __x0__ = __x0__["Value"][0m
-[31m- 26863 [-]   : return __x0__[0m
-[32m+ 26864 [-]   : {}[0m
-[32m+ 26865 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 26866 [-]   : return __x1__[0m
+[32m+ 21854 [-]   : { ... }[0m
+[32m+ 21855 [[32mT[0m/[32mT[0m[32m]: if (|| (= env absent) (= env undefined)) ... else ...[0m
+[32m+ 21856 [-]   : env = GLOBAL_context["LexicalEnvironment"][0m
+[32m+ 21857 [-]   : {}[0m
+[32m+ 21858 [-]   : assert (= (typeof env) "LexicalEnvironment")[0m
+[32m+ 21859 [-]   : let strict = true[0m
+[32m+ 21860 [-]   : app __x0__ = (GetIdentifierReference env name strict)[0m
+[32m+ 21861 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 21862 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 21863 [-]   : __x0__ = __x0__["Value"][0m
+[31m- 21864 [-]   : return __x0__[0m
+[32m+ 21865 [-]   : {}[0m
+[32m+ 21866 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
+[32m+ 21867 [-]   : return __x1__[0m

@@ -1,50 +1,50 @@
 [33mPerformPromiseThen[0m
 [33m- Inst: 46 / 47 (97.87%)[0m
 [33m- Cond: 13 / 14 (92.86%)[0m
-[32m+ 25300 [-]   : { ... }[0m
-[32m+ 25301 [-]   : app __x0__ = (IsPromise promise)[0m
-[32m+ 25302 [-]   : assert (= __x0__ true)[0m
-[32m+ 25303 [[32mT[0m/[32mT[0m[32m]: if (! (= resultCapability absent)) ... else ...[0m
-[32m+ 25304 [-]   : {}[0m
-[32m+ 25305 [-]   : resultCapability = undefined[0m
-[32m+ 25306 [-]   : app __x1__ = (IsCallable onFulfilled)[0m
-[32m+ 25307 [[32mT[0m/[32mT[0m[32m]: if (= __x1__ false) ... else ...[0m
-[32m+ 25308 [-]   : onFulfilled = undefined[0m
-[32m+ 25309 [-]   : {}[0m
-[32m+ 25310 [-]   : app __x2__ = (IsCallable onRejected)[0m
-[32m+ 25311 [[32mT[0m/[32mT[0m[32m]: if (= __x2__ false) ... else ...[0m
-[32m+ 25312 [-]   : onRejected = undefined[0m
-[32m+ 25313 [-]   : {}[0m
-[32m+ 25314 [-]   : let fulfillReaction = (new PromiseReaction("Capability" -> resultCapability, "Type" -> CONST_Fulfill, "Handler" -> onFulfilled))[0m
-[32m+ 25315 [-]   : let rejectReaction = (new PromiseReaction("Capability" -> resultCapability, "Type" -> CONST_Reject, "Handler" -> onRejected))[0m
-[32m+ 25316 [[32mT[0m/[32mT[0m[32m]: if (= promise["PromiseState"] CONST_pending) ... else ...[0m
-[32m+ 25317 [-]   : { ... }[0m
-[32m+ 25318 [-]   : append fulfillReaction -> promise["PromiseFulfillReactions"][0m
-[32m+ 25319 [-]   : append rejectReaction -> promise["PromiseRejectReactions"][0m
-[32m+ 25320 [[32mT[0m/[32mT[0m[32m]: if (= promise["PromiseState"] CONST_fulfilled) ... else ...[0m
-[32m+ 25321 [-]   : { ... }[0m
-[32m+ 25322 [-]   : let value = promise["PromiseResult"][0m
-[32m+ 25323 [-]   : app __x3__ = (NewPromiseReactionJob fulfillReaction value)[0m
-[32m+ 25324 [-]   : let fulfillJob = __x3__[0m
-[32m+ 25325 [-]   : app __x4__ = (HostEnqueuePromiseJob fulfillJob["Job"] fulfillJob["Realm"])[0m
-[32m+ 25326 [-]   : __x4__[0m
-[32m+ 25327 [-]   : { ... }[0m
-[32m+ 25328 [-]   : assert (= promise["PromiseState"] CONST_rejected)[0m
-[32m+ 25329 [-]   : let reason = promise["PromiseResult"][0m
-[32m+ 25330 [[32mT[0m/[31mF[0m[32m]: if (= promise["PromiseIsHandled"] false) ... else ...[0m
-[32m+ 25331 [-]   : { ... }[0m
-[32m+ 25332 [-]   : app __x5__ = (HostPromiseRejectionTracker promise "handle")[0m
-[32m+ 25333 [-]   : __x5__[0m
-[31m- 25334 [-]   : {}[0m
-[32m+ 25335 [-]   : app __x6__ = (NewPromiseReactionJob rejectReaction reason)[0m
-[32m+ 25336 [-]   : let rejectJob = __x6__[0m
-[32m+ 25337 [-]   : app __x7__ = (HostEnqueuePromiseJob rejectJob["Job"] rejectJob["Realm"])[0m
-[32m+ 25338 [-]   : __x7__[0m
-[32m+ 25339 [-]   : promise["PromiseIsHandled"] = true[0m
-[32m+ 25340 [[32mT[0m/[32mT[0m[32m]: if (= resultCapability undefined) ... else ...[0m
-[32m+ 25341 [-]   : { ... }[0m
-[32m+ 25342 [-]   : app __x8__ = (WrapCompletion undefined)[0m
-[32m+ 25343 [-]   : return __x8__[0m
-[32m+ 25344 [-]   : { ... }[0m
-[32m+ 25345 [-]   : app __x9__ = (WrapCompletion resultCapability["Promise"])[0m
-[32m+ 25346 [-]   : return __x9__[0m
+[32m+ 21438 [-]   : { ... }[0m
+[32m+ 21439 [-]   : app __x0__ = (IsPromise promise)[0m
+[32m+ 21440 [-]   : assert (= __x0__ true)[0m
+[32m+ 21441 [[32mT[0m/[32mT[0m[32m]: if (! (= resultCapability absent)) ... else ...[0m
+[32m+ 21442 [-]   : {}[0m
+[32m+ 21443 [-]   : resultCapability = undefined[0m
+[32m+ 21444 [-]   : app __x1__ = (IsCallable onFulfilled)[0m
+[32m+ 21445 [[32mT[0m/[32mT[0m[32m]: if (= __x1__ false) ... else ...[0m
+[32m+ 21446 [-]   : onFulfilled = undefined[0m
+[32m+ 21447 [-]   : {}[0m
+[32m+ 21448 [-]   : app __x2__ = (IsCallable onRejected)[0m
+[32m+ 21449 [[32mT[0m/[32mT[0m[32m]: if (= __x2__ false) ... else ...[0m
+[32m+ 21450 [-]   : onRejected = undefined[0m
+[32m+ 21451 [-]   : {}[0m
+[32m+ 21452 [-]   : let fulfillReaction = (new PromiseReaction("Capability" -> resultCapability, "Type" -> CONST_Fulfill, "Handler" -> onFulfilled))[0m
+[32m+ 21453 [-]   : let rejectReaction = (new PromiseReaction("Capability" -> resultCapability, "Type" -> CONST_Reject, "Handler" -> onRejected))[0m
+[32m+ 21454 [[32mT[0m/[32mT[0m[32m]: if (= promise["PromiseState"] CONST_pending) ... else ...[0m
+[32m+ 21455 [-]   : { ... }[0m
+[32m+ 21456 [-]   : append fulfillReaction -> promise["PromiseFulfillReactions"][0m
+[32m+ 21457 [-]   : append rejectReaction -> promise["PromiseRejectReactions"][0m
+[32m+ 21458 [[32mT[0m/[32mT[0m[32m]: if (= promise["PromiseState"] CONST_fulfilled) ... else ...[0m
+[32m+ 21459 [-]   : { ... }[0m
+[32m+ 21460 [-]   : let value = promise["PromiseResult"][0m
+[32m+ 21461 [-]   : app __x3__ = (NewPromiseReactionJob fulfillReaction value)[0m
+[32m+ 21462 [-]   : let fulfillJob = __x3__[0m
+[32m+ 21463 [-]   : app __x4__ = (HostEnqueuePromiseJob fulfillJob["Job"] fulfillJob["Realm"])[0m
+[32m+ 21464 [-]   : __x4__[0m
+[32m+ 21465 [-]   : { ... }[0m
+[32m+ 21466 [-]   : assert (= promise["PromiseState"] CONST_rejected)[0m
+[32m+ 21467 [-]   : let reason = promise["PromiseResult"][0m
+[32m+ 21468 [[32mT[0m/[31mF[0m[32m]: if (= promise["PromiseIsHandled"] false) ... else ...[0m
+[32m+ 21469 [-]   : { ... }[0m
+[32m+ 21470 [-]   : app __x5__ = (HostPromiseRejectionTracker promise "handle")[0m
+[32m+ 21471 [-]   : __x5__[0m
+[31m- 21472 [-]   : {}[0m
+[32m+ 21473 [-]   : app __x6__ = (NewPromiseReactionJob rejectReaction reason)[0m
+[32m+ 21474 [-]   : let rejectJob = __x6__[0m
+[32m+ 21475 [-]   : app __x7__ = (HostEnqueuePromiseJob rejectJob["Job"] rejectJob["Realm"])[0m
+[32m+ 21476 [-]   : __x7__[0m
+[32m+ 21477 [-]   : promise["PromiseIsHandled"] = true[0m
+[32m+ 21478 [[32mT[0m/[32mT[0m[32m]: if (= resultCapability undefined) ... else ...[0m
+[32m+ 21479 [-]   : { ... }[0m
+[32m+ 21480 [-]   : app __x8__ = (WrapCompletion undefined)[0m
+[32m+ 21481 [-]   : return __x8__[0m
+[32m+ 21482 [-]   : { ... }[0m
+[32m+ 21483 [-]   : app __x9__ = (WrapCompletion resultCapability["Promise"])[0m
+[32m+ 21484 [-]   : return __x9__[0m

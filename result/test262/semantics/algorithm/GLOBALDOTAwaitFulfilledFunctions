@@ -1,21 +1,21 @@
 [33mGLOBALDOTAwaitFulfilledFunctions[0m
 [33m- Inst: 17 / 18 (94.44%)[0m
 [33m- Cond: 1 / 2 (50.00%)[0m
-[32m+ 13766 [-]   : { ... }[0m
-[32m+ 13767 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
-[32m+ 13768 [-]   : let value = __x0__[0m
-[32m+ 13769 [-]   : let F = GLOBAL_context["Function"][0m
-[32m+ 13770 [-]   : let asyncContext = F["AsyncContext"][0m
-[32m+ 13771 [-]   : let prevContext = GLOBAL_context[0m
-[32m+ 13772 [-]   : append asyncContext -> GLOBAL_executionStack[0m
-[32m+ 13773 [-]   : GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)][0m
-[32m+ 13774 [-]   : app __x1__ = (NormalCompletion value)[0m
-[32m+ 13775 [-]   : withcont __x2__ () =...[0m
-[32m+ 13776 [-]   : { ... }[0m
-[32m+ 13777 [[31mF[0m/[32mT[0m[32m]: if (= asyncContext["ReturnCont"] absent) ... else ...[0m
-[31m- 13778 [-]   : asyncContext["ReturnCont"] = (new [])[0m
-[32m+ 13779 [-]   : {}[0m
-[32m+ 13780 [-]   : append __x2__ -> asyncContext["ReturnCont"][0m
-[32m+ 13781 [-]   : app __x3__ = (asyncContext["ResumeCont"] __x1__)[0m
-[32m+ 13782 [-]   : app __x4__ = (WrapCompletion undefined)[0m
-[32m+ 13783 [-]   : return __x4__[0m
+[32m+ 12161 [-]   : { ... }[0m
+[32m+ 12162 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
+[32m+ 12163 [-]   : let value = __x0__[0m
+[32m+ 12164 [-]   : let F = GLOBAL_context["Function"][0m
+[32m+ 12165 [-]   : let asyncContext = F["AsyncContext"][0m
+[32m+ 12166 [-]   : let prevContext = GLOBAL_context[0m
+[32m+ 12167 [-]   : append asyncContext -> GLOBAL_executionStack[0m
+[32m+ 12168 [-]   : GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)][0m
+[32m+ 12169 [-]   : app __x1__ = (NormalCompletion value)[0m
+[32m+ 12170 [-]   : withcont __x2__ () =...[0m
+[32m+ 12171 [-]   : { ... }[0m
+[32m+ 12172 [[31mF[0m/[32mT[0m[32m]: if (= asyncContext["ReturnCont"] absent) ... else ...[0m
+[31m- 12173 [-]   : asyncContext["ReturnCont"] = (new [])[0m
+[32m+ 12174 [-]   : {}[0m
+[32m+ 12175 [-]   : append __x2__ -> asyncContext["ReturnCont"][0m
+[32m+ 12176 [-]   : app __x3__ = (asyncContext["ResumeCont"] __x1__)[0m
+[32m+ 12177 [-]   : app __x4__ = (WrapCompletion undefined)[0m
+[32m+ 12178 [-]   : return __x4__[0m

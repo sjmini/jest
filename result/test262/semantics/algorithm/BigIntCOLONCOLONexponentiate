@@ -1,15 +1,15 @@
 [32mBigIntCOLONCOLONexponentiate[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
 [32m- Cond: 4 / 4 (100.00%)[0m
-[32m+ 6577  [-]   : { ... }[0m
-[32m+ 6578  [[32mT[0m/[32mT[0m[32m]: if (< exponent 0n) ... else ...[0m
-[32m+ 6579  [-]   : { ... }[0m
-[32m+ 6580  [-]   : app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 6581  [-]   : return __x0__[0m
-[32m+ 6582  [-]   : {}[0m
-[32m+ 6583  [[32mT[0m/[32mT[0m[32m]: if (&& (= base 0n) (= exponent 0n)) ... else ...[0m
-[32m+ 6584  [-]   : { ... }[0m
-[32m+ 6585  [-]   : app __x1__ = (WrapCompletion 1n)[0m
-[32m+ 6586  [-]   : return __x1__[0m
-[32m+ 6587  [-]   : {}[0m
-[32m+ 6588  [-]   : return (** base exponent)[0m
+[32m+ 5735  [-]   : { ... }[0m
+[32m+ 5736  [[32mT[0m/[32mT[0m[32m]: if (< exponent 0n) ... else ...[0m
+[32m+ 5737  [-]   : { ... }[0m
+[32m+ 5738  [-]   : app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 5739  [-]   : return __x0__[0m
+[32m+ 5740  [-]   : {}[0m
+[32m+ 5741  [[32mT[0m/[32mT[0m[32m]: if (&& (= base 0n) (= exponent 0n)) ... else ...[0m
+[32m+ 5742  [-]   : { ... }[0m
+[32m+ 5743  [-]   : app __x1__ = (WrapCompletion 1n)[0m
+[32m+ 5744  [-]   : return __x1__[0m
+[32m+ 5745  [-]   : {}[0m
+[32m+ 5746  [-]   : return (** base exponent)[0m

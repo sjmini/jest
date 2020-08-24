@@ -1,21 +1,21 @@
 [33mNumberCOLONCOLONleftShift[0m
 [33m- Inst: 16 / 18 (88.89%)[0m
 [33m- Cond: 6 / 8 (75.00%)[0m
-[32m+ 23402 [-]   : { ... }[0m
-[32m+ 23403 [-]   : app __x0__ = (ToInt32 x)[0m
-[32m+ 23404 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 23405 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 23406 [-]   : __x0__ = __x0__["Value"][0m
-[31m- 23407 [-]   : return __x0__[0m
-[32m+ 23408 [-]   : {}[0m
-[32m+ 23409 [-]   : let lnum = __x0__[0m
-[32m+ 23410 [-]   : app __x1__ = (ToUint32 y)[0m
-[32m+ 23411 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 23412 [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 23413 [-]   : __x1__ = __x1__["Value"][0m
-[31m- 23414 [-]   : return __x1__[0m
-[32m+ 23415 [-]   : {}[0m
-[32m+ 23416 [-]   : let rnum = __x1__[0m
-[32m+ 23417 [-]   : let shiftCount = (& rnum 31i)[0m
-[32m+ 23418 [-]   : app __x2__ = (WrapCompletion (<< lnum shiftCount))[0m
-[32m+ 23419 [-]   : return __x2__[0m
+[32m+ 19654 [-]   : { ... }[0m
+[32m+ 19655 [-]   : app __x0__ = (ToInt32 x)[0m
+[32m+ 19656 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 19657 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19658 [-]   : __x0__ = __x0__["Value"][0m
+[31m- 19659 [-]   : return __x0__[0m
+[32m+ 19660 [-]   : {}[0m
+[32m+ 19661 [-]   : let lnum = __x0__[0m
+[32m+ 19662 [-]   : app __x1__ = (ToUint32 y)[0m
+[32m+ 19663 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 19664 [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19665 [-]   : __x1__ = __x1__["Value"][0m
+[31m- 19666 [-]   : return __x1__[0m
+[32m+ 19667 [-]   : {}[0m
+[32m+ 19668 [-]   : let rnum = __x1__[0m
+[32m+ 19669 [-]   : let shiftCount = (& rnum 31i)[0m
+[32m+ 19670 [-]   : app __x2__ = (WrapCompletion (<< lnum shiftCount))[0m
+[32m+ 19671 [-]   : return __x2__[0m

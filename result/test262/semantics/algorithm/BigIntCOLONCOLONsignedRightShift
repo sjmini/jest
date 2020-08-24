@@ -1,7 +1,7 @@
 [32mBigIntCOLONCOLONsignedRightShift[0m
 [32m- Inst: 4 / 4 (100.00%)[0m
 [32m- Cond: -[0m
-[32m+ 6618  [-]   : { ... }[0m
-[32m+ 6619  [-]   : app result = (PRIMITIVES["BigInt"]["leftShift"] x (- y))[0m
-[32m+ 6620  [-]   : app wrapped = (WrapCompletion result)[0m
-[32m+ 6621  [-]   : return wrapped[0m
+[32m+ 5768  [-]   : { ... }[0m
+[32m+ 5769  [-]   : app result = (PRIMITIVES["BigInt"]["leftShift"] x (- y))[0m
+[32m+ 5770  [-]   : app wrapped = (WrapCompletion result)[0m
+[32m+ 5771  [-]   : return wrapped[0m

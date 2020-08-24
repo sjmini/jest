@@ -1,12 +1,12 @@
 [32mArrowFunction0Evaluation0[0m
 [32m- Inst: 9 / 9 (100.00%)[0m
 [32m- Cond: -[0m
-[32m+ 2968  [-]   : { ... }[0m
-[32m+ 2969  [-]   : access __x0__ = (GLOBAL_context "LexicalEnvironment")[0m
-[32m+ 2970  [-]   : let scope = __x0__[0m
-[32m+ 2971  [-]   : access __x1__ = (ArrowParameters "CoveredFormalsList")[0m
-[32m+ 2972  [-]   : let parameters = __x1__[0m
-[32m+ 2973  [-]   : app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype parameters ConciseBody CONST_lexicalthis scope)[0m
-[32m+ 2974  [-]   : closure["SourceText"] = (get-syntax this)[0m
-[32m+ 2975  [-]   : app __x2__ = (WrapCompletion closure)[0m
-[32m+ 2976  [-]   : return __x2__[0m
+[32m+ 2767  [-]   : { ... }[0m
+[32m+ 2768  [-]   : access __x0__ = (GLOBAL_context "LexicalEnvironment")[0m
+[32m+ 2769  [-]   : let scope = __x0__[0m
+[32m+ 2770  [-]   : access __x1__ = (ArrowParameters "CoveredFormalsList")[0m
+[32m+ 2771  [-]   : let parameters = __x1__[0m
+[32m+ 2772  [-]   : app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype parameters ConciseBody CONST_lexicalthis scope)[0m
+[32m+ 2773  [-]   : closure["SourceText"] = (get-syntax this)[0m
+[32m+ 2774  [-]   : app __x2__ = (WrapCompletion closure)[0m
+[32m+ 2775  [-]   : return __x2__[0m

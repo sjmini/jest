@@ -1,12 +1,12 @@
 [32mDeclarativeEnvironmentRecordDOTHasBinding[0m
 [32m- Inst: 9 / 9 (100.00%)[0m
 [32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 9145  [-]   : { ... }[0m
-[32m+ 9146  [-]   : let envRec = this[0m
-[32m+ 9147  [[32mT[0m/[32mT[0m[32m]: if (! (= envRec["SubMap"][N] absent)) ... else ...[0m
-[32m+ 9148  [-]   : { ... }[0m
-[32m+ 9149  [-]   : app __x0__ = (WrapCompletion true)[0m
-[32m+ 9150  [-]   : return __x0__[0m
-[32m+ 9151  [-]   : {}[0m
-[32m+ 9152  [-]   : app __x1__ = (WrapCompletion false)[0m
-[32m+ 9153  [-]   : return __x1__[0m
+[32m+ 7663  [-]   : { ... }[0m
+[32m+ 7664  [-]   : let envRec = this[0m
+[32m+ 7665  [[32mT[0m/[32mT[0m[32m]: if (! (= envRec["SubMap"][N] absent)) ... else ...[0m
+[32m+ 7666  [-]   : { ... }[0m
+[32m+ 7667  [-]   : app __x0__ = (WrapCompletion true)[0m
+[32m+ 7668  [-]   : return __x0__[0m
+[32m+ 7669  [-]   : {}[0m
+[32m+ 7670  [-]   : app __x1__ = (WrapCompletion false)[0m
+[32m+ 7671  [-]   : return __x1__[0m

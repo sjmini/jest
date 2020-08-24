@@ -1,253 +1,253 @@
 [33mYieldExpression2Evaluation0[0m
 [33m- Inst: 189 / 250 (75.60%)[0m
 [33m- Cond: 92 / 130 (70.77%)[0m
-[32m+ 29359 [-]   : { ... }[0m
-[32m+ 29360 [-]   : app __x0__ = (GetGeneratorKind )[0m
-[32m+ 29361 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 29362 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29363 [-]   : __x0__ = __x0__["Value"][0m
-[31m- 29364 [-]   : return __x0__[0m
-[32m+ 29365 [-]   : {}[0m
-[32m+ 29366 [-]   : let generatorKind = __x0__[0m
-[32m+ 29367 [-]   : access __x1__ = (AssignmentExpression "Evaluation")[0m
-[32m+ 29368 [-]   : let exprRef = __x1__[0m
-[32m+ 29369 [-]   : app __x2__ = (GetValue exprRef)[0m
-[32m+ 29370 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 29371 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29372 [-]   : __x2__ = __x2__["Value"][0m
-[32m+ 29373 [-]   : return __x2__[0m
-[32m+ 29374 [-]   : {}[0m
-[32m+ 29375 [-]   : let value = __x2__[0m
-[32m+ 29376 [-]   : app __x3__ = (GetIterator value generatorKind)[0m
-[32m+ 29377 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 29378 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29379 [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 29380 [-]   : return __x3__[0m
-[32m+ 29381 [-]   : {}[0m
-[32m+ 29382 [-]   : let iteratorRecord = __x3__[0m
-[32m+ 29383 [-]   : let iterator = iteratorRecord["Iterator"][0m
-[32m+ 29384 [-]   : app __x4__ = (NormalCompletion undefined)[0m
-[32m+ 29385 [-]   : let received = __x4__[0m
-[32m+ 29386 [[32mT[0m/[31mF[0m[32m]: while true if (= received["Type"] CONST_normal) ... else ...[0m
-[32m+ 29387 [[32mT[0m/[32mT[0m[32m]: if (= received["Type"] CONST_normal) ... else ...[0m
-[32m+ 29388 [-]   : { ... }[0m
-[32m+ 29389 [-]   : app __x5__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new [received["Value"]]))[0m
-[32m+ 29390 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[32m+ 29391 [[32mT[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29392 [-]   : __x5__ = __x5__["Value"][0m
-[32m+ 29393 [-]   : return __x5__[0m
-[32m+ 29394 [-]   : {}[0m
-[32m+ 29395 [-]   : let innerResult = __x5__[0m
-[32m+ 29396 [[32mT[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[32m+ 29397 [-]   : { ... }[0m
-[32m+ 29398 [-]   : app __x6__ = (Await innerResult)[0m
-[32m+ 29399 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[32m+ 29400 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29401 [-]   : __x6__ = __x6__["Value"][0m
-[31m- 29402 [-]   : return __x6__[0m
-[32m+ 29403 [-]   : {}[0m
-[32m+ 29404 [-]   : innerResult = __x6__[0m
-[32m+ 29405 [-]   : {}[0m
-[32m+ 29406 [-]   : app __x7__ = (Type innerResult)[0m
-[32m+ 29407 [[32mT[0m/[32mT[0m[32m]: if (! (= __x7__ Object)) ... else ...[0m
-[32m+ 29408 [-]   : { ... }[0m
-[32m+ 29409 [-]   : app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 29410 [-]   : return __x8__[0m
-[32m+ 29411 [-]   : {}[0m
-[32m+ 29412 [-]   : app __x9__ = (IteratorComplete innerResult)[0m
-[32m+ 29413 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
-[32m+ 29414 [[32mT[0m/[32mT[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29415 [-]   : __x9__ = __x9__["Value"][0m
-[32m+ 29416 [-]   : return __x9__[0m
-[32m+ 29417 [-]   : {}[0m
-[32m+ 29418 [-]   : let done = __x9__[0m
-[32m+ 29419 [[32mT[0m/[32mT[0m[32m]: if (= done true) ... else ...[0m
-[32m+ 29420 [-]   : { ... }[0m
-[32m+ 29421 [-]   : app __x10__ = (IteratorValue innerResult)[0m
-[32m+ 29422 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
-[32m+ 29423 [[32mT[0m/[32mT[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29424 [-]   : __x10__ = __x10__["Value"][0m
-[32m+ 29425 [-]   : return __x10__[0m
-[32m+ 29426 [-]   : {}[0m
-[32m+ 29427 [-]   : app __x11__ = (WrapCompletion __x10__)[0m
-[32m+ 29428 [-]   : return __x11__[0m
-[32m+ 29429 [-]   : {}[0m
-[32m+ 29430 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29431 [-]   : { ... }[0m
-[31m- 29432 [-]   : app __x12__ = (IteratorValue innerResult)[0m
-[31m- 29433 [-]   : if (is-completion __x12__) ... else ...[0m
-[31m- 29434 [-]   : if (= __x12__["Type"] CONST_normal) ... else ...[0m
-[31m- 29435 [-]   : __x12__ = __x12__["Value"][0m
-[31m- 29436 [-]   : return __x12__[0m
-[31m- 29437 [-]   : {}[0m
-[31m- 29438 [-]   : app __x13__ = (AsyncGeneratorYield __x12__)[0m
-[31m- 29439 [-]   : received = __x13__[0m
-[32m+ 29440 [-]   : { ... }[0m
-[32m+ 29441 [-]   : app __x14__ = (GeneratorYield innerResult)[0m
-[32m+ 29442 [-]   : received = __x14__[0m
-[32m+ 29443 [[32mT[0m/[32mT[0m[32m]: if (= received["Type"] CONST_throw) ... else ...[0m
-[32m+ 29444 [-]   : { ... }[0m
-[32m+ 29445 [-]   : app __x15__ = (GetMethod iterator "throw")[0m
-[32m+ 29446 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x15__) ... else ...[0m
-[32m+ 29447 [[32mT[0m/[32mT[0m[32m]: if (= __x15__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29448 [-]   : __x15__ = __x15__["Value"][0m
-[32m+ 29449 [-]   : return __x15__[0m
-[32m+ 29450 [-]   : {}[0m
-[32m+ 29451 [-]   : let throw = __x15__[0m
-[32m+ 29452 [[32mT[0m/[32mT[0m[32m]: if (! (= throw undefined)) ... else ...[0m
-[32m+ 29453 [-]   : { ... }[0m
-[32m+ 29454 [-]   : app __x16__ = (Call throw iterator (new [received["Value"]]))[0m
-[32m+ 29455 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x16__) ... else ...[0m
-[32m+ 29456 [[32mT[0m/[32mT[0m[32m]: if (= __x16__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29457 [-]   : __x16__ = __x16__["Value"][0m
-[32m+ 29458 [-]   : return __x16__[0m
-[32m+ 29459 [-]   : {}[0m
-[32m+ 29460 [-]   : let innerResult = __x16__[0m
-[32m+ 29461 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29462 [-]   : { ... }[0m
-[31m- 29463 [-]   : app __x17__ = (Await innerResult)[0m
-[31m- 29464 [-]   : if (is-completion __x17__) ... else ...[0m
-[31m- 29465 [-]   : if (= __x17__["Type"] CONST_normal) ... else ...[0m
-[31m- 29466 [-]   : __x17__ = __x17__["Value"][0m
-[31m- 29467 [-]   : return __x17__[0m
-[31m- 29468 [-]   : {}[0m
-[31m- 29469 [-]   : innerResult = __x17__[0m
-[32m+ 29470 [-]   : {}[0m
-[32m+ 29471 [-]   : app __x18__ = (Type innerResult)[0m
-[32m+ 29472 [[32mT[0m/[32mT[0m[32m]: if (! (= __x18__ Object)) ... else ...[0m
-[32m+ 29473 [-]   : { ... }[0m
-[32m+ 29474 [-]   : app __x19__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 29475 [-]   : return __x19__[0m
-[32m+ 29476 [-]   : {}[0m
-[32m+ 29477 [-]   : app __x20__ = (IteratorComplete innerResult)[0m
-[32m+ 29478 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x20__) ... else ...[0m
-[32m+ 29479 [[32mT[0m/[32mT[0m[32m]: if (= __x20__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29480 [-]   : __x20__ = __x20__["Value"][0m
-[32m+ 29481 [-]   : return __x20__[0m
-[32m+ 29482 [-]   : {}[0m
-[32m+ 29483 [-]   : let done = __x20__[0m
-[32m+ 29484 [[32mT[0m/[32mT[0m[32m]: if (= done true) ... else ...[0m
-[32m+ 29485 [-]   : { ... }[0m
-[32m+ 29486 [-]   : app __x21__ = (IteratorValue innerResult)[0m
-[32m+ 29487 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x21__) ... else ...[0m
-[32m+ 29488 [[32mT[0m/[32mT[0m[32m]: if (= __x21__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29489 [-]   : __x21__ = __x21__["Value"][0m
-[32m+ 29490 [-]   : return __x21__[0m
-[32m+ 29491 [-]   : {}[0m
-[32m+ 29492 [-]   : app __x22__ = (WrapCompletion __x21__)[0m
-[32m+ 29493 [-]   : return __x22__[0m
-[32m+ 29494 [-]   : {}[0m
-[32m+ 29495 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29496 [-]   : { ... }[0m
-[31m- 29497 [-]   : app __x23__ = (IteratorValue innerResult)[0m
-[31m- 29498 [-]   : if (is-completion __x23__) ... else ...[0m
-[31m- 29499 [-]   : if (= __x23__["Type"] CONST_normal) ... else ...[0m
-[31m- 29500 [-]   : __x23__ = __x23__["Value"][0m
-[31m- 29501 [-]   : return __x23__[0m
-[31m- 29502 [-]   : {}[0m
-[31m- 29503 [-]   : app __x24__ = (AsyncGeneratorYield __x23__)[0m
-[31m- 29504 [-]   : received = __x24__[0m
-[32m+ 29505 [-]   : { ... }[0m
-[32m+ 29506 [-]   : app __x25__ = (GeneratorYield innerResult)[0m
-[32m+ 29507 [-]   : received = __x25__[0m
-[32m+ 29508 [-]   : { ... }[0m
-[32m+ 29509 [-]   : let closeCompletion = (new Completion("Type" -> CONST_normal, "Value" -> CONST_empty, "Target" -> CONST_empty))[0m
-[32m+ 29510 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29511 [-]   : { ... }[0m
-[31m- 29512 [-]   : app __x26__ = (AsyncIteratorClose iteratorRecord closeCompletion)[0m
-[31m- 29513 [-]   : if (is-completion __x26__) ... else ...[0m
-[31m- 29514 [-]   : if (= __x26__["Type"] CONST_normal) ... else ...[0m
-[31m- 29515 [-]   : __x26__ = __x26__["Value"][0m
-[31m- 29516 [-]   : return __x26__[0m
-[31m- 29517 [-]   : {}[0m
-[31m- 29518 [-]   : __x26__[0m
-[32m+ 29519 [-]   : { ... }[0m
-[32m+ 29520 [-]   : app __x27__ = (IteratorClose iteratorRecord closeCompletion)[0m
-[32m+ 29521 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x27__) ... else ...[0m
-[32m+ 29522 [[32mT[0m/[32mT[0m[32m]: if (= __x27__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29523 [-]   : __x27__ = __x27__["Value"][0m
-[32m+ 29524 [-]   : return __x27__[0m
-[32m+ 29525 [-]   : {}[0m
-[32m+ 29526 [-]   : __x27__[0m
-[32m+ 29527 [-]   : app __x28__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 29528 [-]   : return __x28__[0m
-[32m+ 29529 [-]   : { ... }[0m
-[32m+ 29530 [-]   : assert (= received["Type"] CONST_return)[0m
-[32m+ 29531 [-]   : app __x29__ = (GetMethod iterator "return")[0m
-[32m+ 29532 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x29__) ... else ...[0m
-[32m+ 29533 [[32mT[0m/[32mT[0m[32m]: if (= __x29__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29534 [-]   : __x29__ = __x29__["Value"][0m
-[32m+ 29535 [-]   : return __x29__[0m
-[32m+ 29536 [-]   : {}[0m
-[32m+ 29537 [-]   : let return = __x29__[0m
-[32m+ 29538 [[32mT[0m/[32mT[0m[32m]: if (= return undefined) ... else ...[0m
-[32m+ 29539 [-]   : { ... }[0m
-[32m+ 29540 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29541 [-]   : { ... }[0m
-[31m- 29542 [-]   : app __x30__ = (Await received["Value"])[0m
-[31m- 29543 [-]   : if (is-completion __x30__) ... else ...[0m
-[31m- 29544 [-]   : if (= __x30__["Type"] CONST_normal) ... else ...[0m
-[31m- 29545 [-]   : __x30__ = __x30__["Value"][0m
-[31m- 29546 [-]   : return __x30__[0m
-[31m- 29547 [-]   : {}[0m
-[31m- 29548 [-]   : received["Value"] = __x30__[0m
-[32m+ 29549 [-]   : {}[0m
-[32m+ 29550 [-]   : app __x31__ = (Completion received)[0m
-[32m+ 29551 [-]   : app __x32__ = (WrapCompletion __x31__)[0m
-[32m+ 29552 [-]   : return __x32__[0m
-[32m+ 29553 [-]   : {}[0m
-[32m+ 29554 [-]   : app __x33__ = (Call return iterator (new [received["Value"]]))[0m
-[32m+ 29555 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x33__) ... else ...[0m
-[32m+ 29556 [[32mT[0m/[32mT[0m[32m]: if (= __x33__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29557 [-]   : __x33__ = __x33__["Value"][0m
-[32m+ 29558 [-]   : return __x33__[0m
-[32m+ 29559 [-]   : {}[0m
-[32m+ 29560 [-]   : let innerReturnResult = __x33__[0m
-[32m+ 29561 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29562 [-]   : { ... }[0m
-[31m- 29563 [-]   : app __x34__ = (Await innerReturnResult)[0m
-[31m- 29564 [-]   : if (is-completion __x34__) ... else ...[0m
-[31m- 29565 [-]   : if (= __x34__["Type"] CONST_normal) ... else ...[0m
-[31m- 29566 [-]   : __x34__ = __x34__["Value"][0m
-[31m- 29567 [-]   : return __x34__[0m
-[31m- 29568 [-]   : {}[0m
-[31m- 29569 [-]   : innerReturnResult = __x34__[0m
-[32m+ 29570 [-]   : {}[0m
-[32m+ 29571 [-]   : app __x35__ = (Type innerReturnResult)[0m
-[32m+ 29572 [[32mT[0m/[32mT[0m[32m]: if (! (= __x35__ Object)) ... else ...[0m
-[32m+ 29573 [-]   : { ... }[0m
-[32m+ 29574 [-]   : app __x36__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 29575 [-]   : return __x36__[0m
-[32m+ 29576 [-]   : {}[0m
-[32m+ 29577 [-]   : app __x37__ = (IteratorComplete innerReturnResult)[0m
-[32m+ 29578 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x37__) ... else ...[0m
-[32m+ 29579 [[32mT[0m/[32mT[0m[32m]: if (= __x37__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29580 [-]   : __x37__ = __x37__["Value"][0m
-[32m+ 29581 [-]   : return __x37__[0m
-[32m+ 29582 [-]   : {}[0m
-[32m+ 29583 [-]   : let done = __x37__[0m
-[32m+ 29584 [[32mT[0m/[32mT[0m[32m]: if (= done true) ... else ...[0m
-[32m+ 29585 [-]   : { ... }[0m
-[32m+ 29586 [-]   : app __x38__ = (IteratorValue innerReturnResult)[0m
-[32m+ 29587 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x38__) ... else ...[0m
-[32m+ 29588 [[32mT[0m/[32mT[0m[32m]: if (= __x38__["Type"] CONST_normal) ... else ...[0m
-[32m+ 29589 [-]   : __x38__ = __x38__["Value"][0m
-[32m+ 29590 [-]   : return __x38__[0m
-[32m+ 29591 [-]   : {}[0m
-[32m+ 29592 [-]   : let value = __x38__[0m
-[32m+ 29593 [-]   : app __x39__ = (WrapCompletion (new Completion("Type" -> CONST_return, "Value" -> value, "Target" -> CONST_empty)))[0m
-[32m+ 29594 [-]   : return __x39__[0m
-[32m+ 29595 [-]   : {}[0m
-[32m+ 29596 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
-[31m- 29597 [-]   : { ... }[0m
-[31m- 29598 [-]   : app __x40__ = (IteratorValue innerReturnResult)[0m
-[31m- 29599 [-]   : if (is-completion __x40__) ... else ...[0m
-[31m- 29600 [-]   : if (= __x40__["Type"] CONST_normal) ... else ...[0m
-[31m- 29601 [-]   : __x40__ = __x40__["Value"][0m
-[31m- 29602 [-]   : return __x40__[0m
-[31m- 29603 [-]   : {}[0m
-[31m- 29604 [-]   : app __x41__ = (AsyncGeneratorYield __x40__)[0m
-[31m- 29605 [-]   : received = __x41__[0m
-[32m+ 29606 [-]   : { ... }[0m
-[32m+ 29607 [-]   : app __x42__ = (GeneratorYield innerReturnResult)[0m
-[32m+ 29608 [-]   : received = __x42__[0m
+[32m+ 24126 [-]   : { ... }[0m
+[32m+ 24127 [-]   : app __x0__ = (GetGeneratorKind )[0m
+[32m+ 24128 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 24129 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24130 [-]   : __x0__ = __x0__["Value"][0m
+[31m- 24131 [-]   : return __x0__[0m
+[32m+ 24132 [-]   : {}[0m
+[32m+ 24133 [-]   : let generatorKind = __x0__[0m
+[32m+ 24134 [-]   : access __x1__ = (AssignmentExpression "Evaluation")[0m
+[32m+ 24135 [-]   : let exprRef = __x1__[0m
+[32m+ 24136 [-]   : app __x2__ = (GetValue exprRef)[0m
+[32m+ 24137 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 24138 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24139 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 24140 [-]   : return __x2__[0m
+[32m+ 24141 [-]   : {}[0m
+[32m+ 24142 [-]   : let value = __x2__[0m
+[32m+ 24143 [-]   : app __x3__ = (GetIterator value generatorKind)[0m
+[32m+ 24144 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 24145 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24146 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 24147 [-]   : return __x3__[0m
+[32m+ 24148 [-]   : {}[0m
+[32m+ 24149 [-]   : let iteratorRecord = __x3__[0m
+[32m+ 24150 [-]   : let iterator = iteratorRecord["Iterator"][0m
+[32m+ 24151 [-]   : app __x4__ = (NormalCompletion undefined)[0m
+[32m+ 24152 [-]   : let received = __x4__[0m
+[32m+ 24153 [[32mT[0m/[31mF[0m[32m]: while true if (= received["Type"] CONST_normal) ... else ...[0m
+[32m+ 24154 [[32mT[0m/[32mT[0m[32m]: if (= received["Type"] CONST_normal) ... else ...[0m
+[32m+ 24155 [-]   : { ... }[0m
+[32m+ 24156 [-]   : app __x5__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new [received["Value"]]))[0m
+[32m+ 24157 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
+[32m+ 24158 [[32mT[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24159 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 24160 [-]   : return __x5__[0m
+[32m+ 24161 [-]   : {}[0m
+[32m+ 24162 [-]   : let innerResult = __x5__[0m
+[32m+ 24163 [[32mT[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[32m+ 24164 [-]   : { ... }[0m
+[32m+ 24165 [-]   : app __x6__ = (Await innerResult)[0m
+[32m+ 24166 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 24167 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24168 [-]   : __x6__ = __x6__["Value"][0m
+[31m- 24169 [-]   : return __x6__[0m
+[32m+ 24170 [-]   : {}[0m
+[32m+ 24171 [-]   : innerResult = __x6__[0m
+[32m+ 24172 [-]   : {}[0m
+[32m+ 24173 [-]   : app __x7__ = (Type innerResult)[0m
+[32m+ 24174 [[32mT[0m/[32mT[0m[32m]: if (! (= __x7__ Object)) ... else ...[0m
+[32m+ 24175 [-]   : { ... }[0m
+[32m+ 24176 [-]   : app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 24177 [-]   : return __x8__[0m
+[32m+ 24178 [-]   : {}[0m
+[32m+ 24179 [-]   : app __x9__ = (IteratorComplete innerResult)[0m
+[32m+ 24180 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
+[32m+ 24181 [[32mT[0m/[32mT[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24182 [-]   : __x9__ = __x9__["Value"][0m
+[32m+ 24183 [-]   : return __x9__[0m
+[32m+ 24184 [-]   : {}[0m
+[32m+ 24185 [-]   : let done = __x9__[0m
+[32m+ 24186 [[32mT[0m/[32mT[0m[32m]: if (= done true) ... else ...[0m
+[32m+ 24187 [-]   : { ... }[0m
+[32m+ 24188 [-]   : app __x10__ = (IteratorValue innerResult)[0m
+[32m+ 24189 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
+[32m+ 24190 [[32mT[0m/[32mT[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24191 [-]   : __x10__ = __x10__["Value"][0m
+[32m+ 24192 [-]   : return __x10__[0m
+[32m+ 24193 [-]   : {}[0m
+[32m+ 24194 [-]   : app __x11__ = (WrapCompletion __x10__)[0m
+[32m+ 24195 [-]   : return __x11__[0m
+[32m+ 24196 [-]   : {}[0m
+[32m+ 24197 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24198 [-]   : { ... }[0m
+[31m- 24199 [-]   : app __x12__ = (IteratorValue innerResult)[0m
+[31m- 24200 [-]   : if (is-completion __x12__) ... else ...[0m
+[31m- 24201 [-]   : if (= __x12__["Type"] CONST_normal) ... else ...[0m
+[31m- 24202 [-]   : __x12__ = __x12__["Value"][0m
+[31m- 24203 [-]   : return __x12__[0m
+[31m- 24204 [-]   : {}[0m
+[31m- 24205 [-]   : app __x13__ = (AsyncGeneratorYield __x12__)[0m
+[31m- 24206 [-]   : received = __x13__[0m
+[32m+ 24207 [-]   : { ... }[0m
+[32m+ 24208 [-]   : app __x14__ = (GeneratorYield innerResult)[0m
+[32m+ 24209 [-]   : received = __x14__[0m
+[32m+ 24210 [[32mT[0m/[32mT[0m[32m]: if (= received["Type"] CONST_throw) ... else ...[0m
+[32m+ 24211 [-]   : { ... }[0m
+[32m+ 24212 [-]   : app __x15__ = (GetMethod iterator "throw")[0m
+[32m+ 24213 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x15__) ... else ...[0m
+[32m+ 24214 [[32mT[0m/[32mT[0m[32m]: if (= __x15__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24215 [-]   : __x15__ = __x15__["Value"][0m
+[32m+ 24216 [-]   : return __x15__[0m
+[32m+ 24217 [-]   : {}[0m
+[32m+ 24218 [-]   : let throw = __x15__[0m
+[32m+ 24219 [[32mT[0m/[32mT[0m[32m]: if (! (= throw undefined)) ... else ...[0m
+[32m+ 24220 [-]   : { ... }[0m
+[32m+ 24221 [-]   : app __x16__ = (Call throw iterator (new [received["Value"]]))[0m
+[32m+ 24222 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x16__) ... else ...[0m
+[32m+ 24223 [[32mT[0m/[32mT[0m[32m]: if (= __x16__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24224 [-]   : __x16__ = __x16__["Value"][0m
+[32m+ 24225 [-]   : return __x16__[0m
+[32m+ 24226 [-]   : {}[0m
+[32m+ 24227 [-]   : let innerResult = __x16__[0m
+[32m+ 24228 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24229 [-]   : { ... }[0m
+[31m- 24230 [-]   : app __x17__ = (Await innerResult)[0m
+[31m- 24231 [-]   : if (is-completion __x17__) ... else ...[0m
+[31m- 24232 [-]   : if (= __x17__["Type"] CONST_normal) ... else ...[0m
+[31m- 24233 [-]   : __x17__ = __x17__["Value"][0m
+[31m- 24234 [-]   : return __x17__[0m
+[31m- 24235 [-]   : {}[0m
+[31m- 24236 [-]   : innerResult = __x17__[0m
+[32m+ 24237 [-]   : {}[0m
+[32m+ 24238 [-]   : app __x18__ = (Type innerResult)[0m
+[32m+ 24239 [[32mT[0m/[32mT[0m[32m]: if (! (= __x18__ Object)) ... else ...[0m
+[32m+ 24240 [-]   : { ... }[0m
+[32m+ 24241 [-]   : app __x19__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 24242 [-]   : return __x19__[0m
+[32m+ 24243 [-]   : {}[0m
+[32m+ 24244 [-]   : app __x20__ = (IteratorComplete innerResult)[0m
+[32m+ 24245 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x20__) ... else ...[0m
+[32m+ 24246 [[32mT[0m/[32mT[0m[32m]: if (= __x20__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24247 [-]   : __x20__ = __x20__["Value"][0m
+[32m+ 24248 [-]   : return __x20__[0m
+[32m+ 24249 [-]   : {}[0m
+[32m+ 24250 [-]   : let done = __x20__[0m
+[32m+ 24251 [[32mT[0m/[32mT[0m[32m]: if (= done true) ... else ...[0m
+[32m+ 24252 [-]   : { ... }[0m
+[32m+ 24253 [-]   : app __x21__ = (IteratorValue innerResult)[0m
+[32m+ 24254 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x21__) ... else ...[0m
+[32m+ 24255 [[32mT[0m/[32mT[0m[32m]: if (= __x21__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24256 [-]   : __x21__ = __x21__["Value"][0m
+[32m+ 24257 [-]   : return __x21__[0m
+[32m+ 24258 [-]   : {}[0m
+[32m+ 24259 [-]   : app __x22__ = (WrapCompletion __x21__)[0m
+[32m+ 24260 [-]   : return __x22__[0m
+[32m+ 24261 [-]   : {}[0m
+[32m+ 24262 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24263 [-]   : { ... }[0m
+[31m- 24264 [-]   : app __x23__ = (IteratorValue innerResult)[0m
+[31m- 24265 [-]   : if (is-completion __x23__) ... else ...[0m
+[31m- 24266 [-]   : if (= __x23__["Type"] CONST_normal) ... else ...[0m
+[31m- 24267 [-]   : __x23__ = __x23__["Value"][0m
+[31m- 24268 [-]   : return __x23__[0m
+[31m- 24269 [-]   : {}[0m
+[31m- 24270 [-]   : app __x24__ = (AsyncGeneratorYield __x23__)[0m
+[31m- 24271 [-]   : received = __x24__[0m
+[32m+ 24272 [-]   : { ... }[0m
+[32m+ 24273 [-]   : app __x25__ = (GeneratorYield innerResult)[0m
+[32m+ 24274 [-]   : received = __x25__[0m
+[32m+ 24275 [-]   : { ... }[0m
+[32m+ 24276 [-]   : let closeCompletion = (new Completion("Type" -> CONST_normal, "Value" -> CONST_empty, "Target" -> CONST_empty))[0m
+[32m+ 24277 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24278 [-]   : { ... }[0m
+[31m- 24279 [-]   : app __x26__ = (AsyncIteratorClose iteratorRecord closeCompletion)[0m
+[31m- 24280 [-]   : if (is-completion __x26__) ... else ...[0m
+[31m- 24281 [-]   : if (= __x26__["Type"] CONST_normal) ... else ...[0m
+[31m- 24282 [-]   : __x26__ = __x26__["Value"][0m
+[31m- 24283 [-]   : return __x26__[0m
+[31m- 24284 [-]   : {}[0m
+[31m- 24285 [-]   : __x26__[0m
+[32m+ 24286 [-]   : { ... }[0m
+[32m+ 24287 [-]   : app __x27__ = (IteratorClose iteratorRecord closeCompletion)[0m
+[32m+ 24288 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x27__) ... else ...[0m
+[32m+ 24289 [[32mT[0m/[32mT[0m[32m]: if (= __x27__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24290 [-]   : __x27__ = __x27__["Value"][0m
+[32m+ 24291 [-]   : return __x27__[0m
+[32m+ 24292 [-]   : {}[0m
+[32m+ 24293 [-]   : __x27__[0m
+[32m+ 24294 [-]   : app __x28__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 24295 [-]   : return __x28__[0m
+[32m+ 24296 [-]   : { ... }[0m
+[32m+ 24297 [-]   : assert (= received["Type"] CONST_return)[0m
+[32m+ 24298 [-]   : app __x29__ = (GetMethod iterator "return")[0m
+[32m+ 24299 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x29__) ... else ...[0m
+[32m+ 24300 [[32mT[0m/[32mT[0m[32m]: if (= __x29__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24301 [-]   : __x29__ = __x29__["Value"][0m
+[32m+ 24302 [-]   : return __x29__[0m
+[32m+ 24303 [-]   : {}[0m
+[32m+ 24304 [-]   : let return = __x29__[0m
+[32m+ 24305 [[32mT[0m/[32mT[0m[32m]: if (= return undefined) ... else ...[0m
+[32m+ 24306 [-]   : { ... }[0m
+[32m+ 24307 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24308 [-]   : { ... }[0m
+[31m- 24309 [-]   : app __x30__ = (Await received["Value"])[0m
+[31m- 24310 [-]   : if (is-completion __x30__) ... else ...[0m
+[31m- 24311 [-]   : if (= __x30__["Type"] CONST_normal) ... else ...[0m
+[31m- 24312 [-]   : __x30__ = __x30__["Value"][0m
+[31m- 24313 [-]   : return __x30__[0m
+[31m- 24314 [-]   : {}[0m
+[31m- 24315 [-]   : received["Value"] = __x30__[0m
+[32m+ 24316 [-]   : {}[0m
+[32m+ 24317 [-]   : app __x31__ = (Completion received)[0m
+[32m+ 24318 [-]   : app __x32__ = (WrapCompletion __x31__)[0m
+[32m+ 24319 [-]   : return __x32__[0m
+[32m+ 24320 [-]   : {}[0m
+[32m+ 24321 [-]   : app __x33__ = (Call return iterator (new [received["Value"]]))[0m
+[32m+ 24322 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x33__) ... else ...[0m
+[32m+ 24323 [[32mT[0m/[32mT[0m[32m]: if (= __x33__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24324 [-]   : __x33__ = __x33__["Value"][0m
+[32m+ 24325 [-]   : return __x33__[0m
+[32m+ 24326 [-]   : {}[0m
+[32m+ 24327 [-]   : let innerReturnResult = __x33__[0m
+[32m+ 24328 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24329 [-]   : { ... }[0m
+[31m- 24330 [-]   : app __x34__ = (Await innerReturnResult)[0m
+[31m- 24331 [-]   : if (is-completion __x34__) ... else ...[0m
+[31m- 24332 [-]   : if (= __x34__["Type"] CONST_normal) ... else ...[0m
+[31m- 24333 [-]   : __x34__ = __x34__["Value"][0m
+[31m- 24334 [-]   : return __x34__[0m
+[31m- 24335 [-]   : {}[0m
+[31m- 24336 [-]   : innerReturnResult = __x34__[0m
+[32m+ 24337 [-]   : {}[0m
+[32m+ 24338 [-]   : app __x35__ = (Type innerReturnResult)[0m
+[32m+ 24339 [[32mT[0m/[32mT[0m[32m]: if (! (= __x35__ Object)) ... else ...[0m
+[32m+ 24340 [-]   : { ... }[0m
+[32m+ 24341 [-]   : app __x36__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 24342 [-]   : return __x36__[0m
+[32m+ 24343 [-]   : {}[0m
+[32m+ 24344 [-]   : app __x37__ = (IteratorComplete innerReturnResult)[0m
+[32m+ 24345 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x37__) ... else ...[0m
+[32m+ 24346 [[32mT[0m/[32mT[0m[32m]: if (= __x37__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24347 [-]   : __x37__ = __x37__["Value"][0m
+[32m+ 24348 [-]   : return __x37__[0m
+[32m+ 24349 [-]   : {}[0m
+[32m+ 24350 [-]   : let done = __x37__[0m
+[32m+ 24351 [[32mT[0m/[32mT[0m[32m]: if (= done true) ... else ...[0m
+[32m+ 24352 [-]   : { ... }[0m
+[32m+ 24353 [-]   : app __x38__ = (IteratorValue innerReturnResult)[0m
+[32m+ 24354 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x38__) ... else ...[0m
+[32m+ 24355 [[32mT[0m/[32mT[0m[32m]: if (= __x38__["Type"] CONST_normal) ... else ...[0m
+[32m+ 24356 [-]   : __x38__ = __x38__["Value"][0m
+[32m+ 24357 [-]   : return __x38__[0m
+[32m+ 24358 [-]   : {}[0m
+[32m+ 24359 [-]   : let value = __x38__[0m
+[32m+ 24360 [-]   : app __x39__ = (WrapCompletion (new Completion("Type" -> CONST_return, "Value" -> value, "Target" -> CONST_empty)))[0m
+[32m+ 24361 [-]   : return __x39__[0m
+[32m+ 24362 [-]   : {}[0m
+[32m+ 24363 [[31mF[0m/[32mT[0m[32m]: if (= generatorKind CONST_async) ... else ...[0m
+[31m- 24364 [-]   : { ... }[0m
+[31m- 24365 [-]   : app __x40__ = (IteratorValue innerReturnResult)[0m
+[31m- 24366 [-]   : if (is-completion __x40__) ... else ...[0m
+[31m- 24367 [-]   : if (= __x40__["Type"] CONST_normal) ... else ...[0m
+[31m- 24368 [-]   : __x40__ = __x40__["Value"][0m
+[31m- 24369 [-]   : return __x40__[0m
+[31m- 24370 [-]   : {}[0m
+[31m- 24371 [-]   : app __x41__ = (AsyncGeneratorYield __x40__)[0m
+[31m- 24372 [-]   : received = __x41__[0m
+[32m+ 24373 [-]   : { ... }[0m
+[32m+ 24374 [-]   : app __x42__ = (GeneratorYield innerReturnResult)[0m
+[32m+ 24375 [-]   : received = __x42__[0m

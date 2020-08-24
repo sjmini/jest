@@ -1,12 +1,12 @@
 [33mOrdinaryObjectDOTSetPrototypeOf[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
 [33m- Cond: 3 / 4 (75.00%)[0m
-[32m+ 24605 [-]   : { ... }[0m
-[32m+ 24606 [-]   : app __x0__ = (OrdinarySetPrototypeOf O V)[0m
-[32m+ 24607 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 24608 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 24609 [-]   : __x0__ = __x0__["Value"][0m
-[31m- 24610 [-]   : return __x0__[0m
-[32m+ 24611 [-]   : {}[0m
-[32m+ 24612 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 24613 [-]   : return __x1__[0m
+[32m+ 20748 [-]   : { ... }[0m
+[32m+ 20749 [-]   : app __x0__ = (OrdinarySetPrototypeOf O V)[0m
+[32m+ 20750 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 20751 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 20752 [-]   : __x0__ = __x0__["Value"][0m
+[31m- 20753 [-]   : return __x0__[0m
+[32m+ 20754 [-]   : {}[0m
+[32m+ 20755 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
+[32m+ 20756 [-]   : return __x1__[0m

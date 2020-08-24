@@ -1,10 +1,10 @@
 [32mEnumerateObjectProperties[0m
 [32m- Inst: 7 / 7 (100.00%)[0m
 [32m- Cond: -[0m
-[32m+ 9572  [-]   : { ... }[0m
-[32m+ 9573  [-]   : app __x0__ = (Type O)[0m
-[32m+ 9574  [-]   : assert (= __x0__ Object)[0m
-[32m+ 9575  [-]   : app __x1__ = (EnumerateObjectPropertiesHelper O (new []) (new []))[0m
-[32m+ 9576  [-]   : app __x2__ = (CreateListIteratorRecord __x1__)[0m
-[32m+ 9577  [-]   : app __x3__ = (WrapCompletion __x2__)[0m
-[32m+ 9578  [-]   : return __x3__[0m
+[32m+ 8078  [-]   : { ... }[0m
+[32m+ 8079  [-]   : app __x0__ = (Type O)[0m
+[32m+ 8080  [-]   : assert (= __x0__ Object)[0m
+[32m+ 8081  [-]   : app __x1__ = (EnumerateObjectPropertiesHelper O (new []) (new []))[0m
+[32m+ 8082  [-]   : app __x2__ = (CreateListIteratorRecord __x1__)[0m
+[32m+ 8083  [-]   : app __x3__ = (WrapCompletion __x2__)[0m
+[32m+ 8084  [-]   : return __x3__[0m

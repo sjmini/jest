@@ -1,97 +1,97 @@
 [33mArraySpeciesCreate[0m
 [33m- Inst: 84 / 94 (89.36%)[0m
 [33m- Cond: 42 / 50 (84.00%)[0m
-[32m+ 4976  [-]   : { ... }[0m
-[32m+ 4977  [-]   : app __x0__ = (IsNonNegativeInteger length)[0m
-[32m+ 4978  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 4979  [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4980  [-]   : __x0__ = __x0__["Value"][0m
-[31m- 4981  [-]   : return __x0__[0m
-[32m+ 4982  [-]   : {}[0m
-[32m+ 4983  [-]   : assert (= __x0__ true)[0m
-[32m+ 4984  [[31mF[0m/[32mT[0m[32m]: if (= length -0.0) ... else ...[0m
-[31m- 4985  [-]   : length = 0i[0m
-[32m+ 4986  [-]   : {}[0m
-[32m+ 4987  [-]   : app __x1__ = (IsArray originalArray)[0m
-[32m+ 4988  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 4989  [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4990  [-]   : __x1__ = __x1__["Value"][0m
-[31m- 4991  [-]   : return __x1__[0m
-[32m+ 4992  [-]   : {}[0m
-[32m+ 4993  [-]   : let isArray = __x1__[0m
-[32m+ 4994  [[32mT[0m/[32mT[0m[32m]: if (= isArray false) ... else ...[0m
-[32m+ 4995  [-]   : { ... }[0m
-[32m+ 4996  [-]   : app __x2__ = (ArrayCreate length)[0m
-[32m+ 4997  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 4998  [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 4999  [-]   : __x2__ = __x2__["Value"][0m
-[32m+ 5000  [-]   : return __x2__[0m
-[32m+ 5001  [-]   : {}[0m
-[32m+ 5002  [-]   : app __x3__ = (WrapCompletion __x2__)[0m
-[32m+ 5003  [-]   : return __x3__[0m
-[32m+ 5004  [-]   : {}[0m
-[32m+ 5005  [-]   : app __x4__ = (Get originalArray "constructor")[0m
-[32m+ 5006  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[32m+ 5007  [[32mT[0m/[32mT[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[32m+ 5008  [-]   : __x4__ = __x4__["Value"][0m
-[32m+ 5009  [-]   : return __x4__[0m
-[32m+ 5010  [-]   : {}[0m
-[32m+ 5011  [-]   : let C = __x4__[0m
-[32m+ 5012  [-]   : app __x5__ = (IsConstructor C)[0m
-[32m+ 5013  [[32mT[0m/[32mT[0m[32m]: if (= __x5__ true) ... else ...[0m
-[32m+ 5014  [-]   : { ... }[0m
-[32m+ 5015  [-]   : let thisRealm = REALM[0m
-[32m+ 5016  [-]   : app __x6__ = (GetFunctionRealm C)[0m
-[32m+ 5017  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[32m+ 5018  [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[32m+ 5019  [-]   : __x6__ = __x6__["Value"][0m
-[31m- 5020  [-]   : return __x6__[0m
-[32m+ 5021  [-]   : {}[0m
-[32m+ 5022  [-]   : let realmC = __x6__[0m
-[32m+ 5023  [[31mF[0m/[32mT[0m[32m]: if (! (= thisRealm realmC)) ... else ...[0m
-[31m- 5024  [-]   : { ... }[0m
-[31m- 5025  [-]   : app __x7__ = (SameValue C realmC["Intrinsics"]["INTRINSIC_Array"])[0m
-[31m- 5026  [-]   : if (= __x7__ true) ... else ...[0m
-[31m- 5027  [-]   : C = undefined[0m
-[31m- 5028  [-]   : {}[0m
-[32m+ 5029  [-]   : {}[0m
-[32m+ 5030  [-]   : {}[0m
-[32m+ 5031  [-]   : app __x8__ = (Type C)[0m
-[32m+ 5032  [[32mT[0m/[32mT[0m[32m]: if (= __x8__ Object) ... else ...[0m
-[32m+ 5033  [-]   : { ... }[0m
-[32m+ 5034  [-]   : app __x9__ = (Get C SYMBOL_species)[0m
-[32m+ 5035  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
-[32m+ 5036  [[32mT[0m/[32mT[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
-[32m+ 5037  [-]   : __x9__ = __x9__["Value"][0m
-[32m+ 5038  [-]   : return __x9__[0m
-[32m+ 5039  [-]   : {}[0m
-[32m+ 5040  [-]   : C = __x9__[0m
-[32m+ 5041  [[32mT[0m/[32mT[0m[32m]: if (= C null) ... else ...[0m
-[32m+ 5042  [-]   : C = undefined[0m
-[32m+ 5043  [-]   : {}[0m
-[32m+ 5044  [-]   : {}[0m
-[32m+ 5045  [[32mT[0m/[32mT[0m[32m]: if (= C undefined) ... else ...[0m
-[32m+ 5046  [-]   : { ... }[0m
-[32m+ 5047  [-]   : app __x10__ = (ArrayCreate length)[0m
-[32m+ 5048  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
-[32m+ 5049  [[32mT[0m/[31mF[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
-[32m+ 5050  [-]   : __x10__ = __x10__["Value"][0m
-[31m- 5051  [-]   : return __x10__[0m
-[32m+ 5052  [-]   : {}[0m
-[32m+ 5053  [-]   : app __x11__ = (WrapCompletion __x10__)[0m
-[32m+ 5054  [-]   : return __x11__[0m
-[32m+ 5055  [-]   : {}[0m
-[32m+ 5056  [-]   : app __x12__ = (IsConstructor C)[0m
-[32m+ 5057  [[32mT[0m/[32mT[0m[32m]: if (= __x12__ false) ... else ...[0m
-[32m+ 5058  [-]   : { ... }[0m
-[32m+ 5059  [-]   : app __x13__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 5060  [-]   : return __x13__[0m
-[32m+ 5061  [-]   : {}[0m
-[32m+ 5062  [-]   : app __x14__ = (Construct C (new [length]))[0m
-[32m+ 5063  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x14__) ... else ...[0m
-[32m+ 5064  [[32mT[0m/[32mT[0m[32m]: if (= __x14__["Type"] CONST_normal) ... else ...[0m
-[32m+ 5065  [-]   : __x14__ = __x14__["Value"][0m
-[32m+ 5066  [-]   : return __x14__[0m
-[32m+ 5067  [-]   : {}[0m
-[32m+ 5068  [-]   : app __x15__ = (WrapCompletion __x14__)[0m
-[32m+ 5069  [-]   : return __x15__[0m
+[32m+ 4508  [-]   : { ... }[0m
+[32m+ 4509  [-]   : app __x0__ = (IsNonNegativeInteger length)[0m
+[32m+ 4510  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 4511  [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4512  [-]   : __x0__ = __x0__["Value"][0m
+[31m- 4513  [-]   : return __x0__[0m
+[32m+ 4514  [-]   : {}[0m
+[32m+ 4515  [-]   : assert (= __x0__ true)[0m
+[32m+ 4516  [[31mF[0m/[32mT[0m[32m]: if (= length -0.0) ... else ...[0m
+[31m- 4517  [-]   : length = 0i[0m
+[32m+ 4518  [-]   : {}[0m
+[32m+ 4519  [-]   : app __x1__ = (IsArray originalArray)[0m
+[32m+ 4520  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 4521  [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4522  [-]   : __x1__ = __x1__["Value"][0m
+[31m- 4523  [-]   : return __x1__[0m
+[32m+ 4524  [-]   : {}[0m
+[32m+ 4525  [-]   : let isArray = __x1__[0m
+[32m+ 4526  [[32mT[0m/[32mT[0m[32m]: if (= isArray false) ... else ...[0m
+[32m+ 4527  [-]   : { ... }[0m
+[32m+ 4528  [-]   : app __x2__ = (ArrayCreate length)[0m
+[32m+ 4529  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 4530  [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4531  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 4532  [-]   : return __x2__[0m
+[32m+ 4533  [-]   : {}[0m
+[32m+ 4534  [-]   : app __x3__ = (WrapCompletion __x2__)[0m
+[32m+ 4535  [-]   : return __x3__[0m
+[32m+ 4536  [-]   : {}[0m
+[32m+ 4537  [-]   : app __x4__ = (Get originalArray "constructor")[0m
+[32m+ 4538  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 4539  [[32mT[0m/[32mT[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4540  [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 4541  [-]   : return __x4__[0m
+[32m+ 4542  [-]   : {}[0m
+[32m+ 4543  [-]   : let C = __x4__[0m
+[32m+ 4544  [-]   : app __x5__ = (IsConstructor C)[0m
+[32m+ 4545  [[32mT[0m/[32mT[0m[32m]: if (= __x5__ true) ... else ...[0m
+[32m+ 4546  [-]   : { ... }[0m
+[32m+ 4547  [-]   : let thisRealm = REALM[0m
+[32m+ 4548  [-]   : app __x6__ = (GetFunctionRealm C)[0m
+[32m+ 4549  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 4550  [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4551  [-]   : __x6__ = __x6__["Value"][0m
+[31m- 4552  [-]   : return __x6__[0m
+[32m+ 4553  [-]   : {}[0m
+[32m+ 4554  [-]   : let realmC = __x6__[0m
+[32m+ 4555  [[31mF[0m/[32mT[0m[32m]: if (! (= thisRealm realmC)) ... else ...[0m
+[31m- 4556  [-]   : { ... }[0m
+[31m- 4557  [-]   : app __x7__ = (SameValue C realmC["Intrinsics"]["INTRINSIC_Array"])[0m
+[31m- 4558  [-]   : if (= __x7__ true) ... else ...[0m
+[31m- 4559  [-]   : C = undefined[0m
+[31m- 4560  [-]   : {}[0m
+[32m+ 4561  [-]   : {}[0m
+[32m+ 4562  [-]   : {}[0m
+[32m+ 4563  [-]   : app __x8__ = (Type C)[0m
+[32m+ 4564  [[32mT[0m/[32mT[0m[32m]: if (= __x8__ Object) ... else ...[0m
+[32m+ 4565  [-]   : { ... }[0m
+[32m+ 4566  [-]   : app __x9__ = (Get C SYMBOL_species)[0m
+[32m+ 4567  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
+[32m+ 4568  [[32mT[0m/[32mT[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4569  [-]   : __x9__ = __x9__["Value"][0m
+[32m+ 4570  [-]   : return __x9__[0m
+[32m+ 4571  [-]   : {}[0m
+[32m+ 4572  [-]   : C = __x9__[0m
+[32m+ 4573  [[32mT[0m/[32mT[0m[32m]: if (= C null) ... else ...[0m
+[32m+ 4574  [-]   : C = undefined[0m
+[32m+ 4575  [-]   : {}[0m
+[32m+ 4576  [-]   : {}[0m
+[32m+ 4577  [[32mT[0m/[32mT[0m[32m]: if (= C undefined) ... else ...[0m
+[32m+ 4578  [-]   : { ... }[0m
+[32m+ 4579  [-]   : app __x10__ = (ArrayCreate length)[0m
+[32m+ 4580  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
+[32m+ 4581  [[32mT[0m/[31mF[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4582  [-]   : __x10__ = __x10__["Value"][0m
+[31m- 4583  [-]   : return __x10__[0m
+[32m+ 4584  [-]   : {}[0m
+[32m+ 4585  [-]   : app __x11__ = (WrapCompletion __x10__)[0m
+[32m+ 4586  [-]   : return __x11__[0m
+[32m+ 4587  [-]   : {}[0m
+[32m+ 4588  [-]   : app __x12__ = (IsConstructor C)[0m
+[32m+ 4589  [[32mT[0m/[32mT[0m[32m]: if (= __x12__ false) ... else ...[0m
+[32m+ 4590  [-]   : { ... }[0m
+[32m+ 4591  [-]   : app __x13__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
+[32m+ 4592  [-]   : return __x13__[0m
+[32m+ 4593  [-]   : {}[0m
+[32m+ 4594  [-]   : app __x14__ = (Construct C (new [length]))[0m
+[32m+ 4595  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x14__) ... else ...[0m
+[32m+ 4596  [[32mT[0m/[32mT[0m[32m]: if (= __x14__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4597  [-]   : __x14__ = __x14__["Value"][0m
+[32m+ 4598  [-]   : return __x14__[0m
+[32m+ 4599  [-]   : {}[0m
+[32m+ 4600  [-]   : app __x15__ = (WrapCompletion __x14__)[0m
+[32m+ 4601  [-]   : return __x15__[0m

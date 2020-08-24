@@ -1,28 +1,28 @@
 [33mCaseBlock1LexicallyScopedDeclarations3[0m
 [33m- Inst: 21 / 25 (84.00%)[0m
 [33m- Cond: 7 / 8 (87.50%)[0m
-[32m+ 7685  [-]   : { ... }[0m
-[32m+ 7686  [[32mT[0m/[32mT[0m[32m]: if (! (= CaseClauses0 absent)) ... else ...[0m
-[32m+ 7687  [-]   : { ... }[0m
-[32m+ 7688  [-]   : access __x0__ = (CaseClauses0 "LexicallyScopedDeclarations")[0m
-[32m+ 7689  [-]   : let declarations = __x0__[0m
-[32m+ 7690  [-]   : let declarations = (new [])[0m
-[32m+ 7691  [-]   : access __x1__ = (DefaultClause "LexicallyScopedDeclarations")[0m
-[32m+ 7692  [-]   : let __x2__ = __x1__[0m
-[32m+ 7693  [-]   : let __x3__ = 0i[0m
-[32m+ 7694  [[32mT[0m/[32mT[0m[32m]: while (< __x3__ __x2__["length"]) { ... }[0m
-[32m+ 7695  [-]   : { ... }[0m
-[32m+ 7696  [-]   : let __x4__ = __x2__[__x3__][0m
-[32m+ 7697  [-]   : append __x4__ -> declarations[0m
-[32m+ 7698  [-]   : __x3__ = (+ __x3__ 1i)[0m
-[32m+ 7699  [[32mT[0m/[32mT[0m[32m]: if (= CaseClauses1 absent) ... else ...[0m
-[32m+ 7700  [-]   : return declarations[0m
-[32m+ 7701  [-]   : {}[0m
-[32m+ 7702  [-]   : access __x5__ = (CaseClauses1 "LexicallyScopedDeclarations")[0m
-[32m+ 7703  [-]   : let __x6__ = 0i[0m
-[32m+ 7704  [[31mF[0m/[32mT[0m[32m]: while (< __x6__ __x5__["length"]) { ... }[0m
-[31m- 7705  [-]   : { ... }[0m
-[31m- 7706  [-]   : let __x7__ = __x5__[__x6__][0m
-[31m- 7707  [-]   : append __x7__ -> declarations[0m
-[31m- 7708  [-]   : __x6__ = (+ __x6__ 1i)[0m
-[32m+ 7709  [-]   : return declarations[0m
+[32m+ 6634  [-]   : { ... }[0m
+[32m+ 6635  [[32mT[0m/[32mT[0m[32m]: if (! (= CaseClauses0 absent)) ... else ...[0m
+[32m+ 6636  [-]   : { ... }[0m
+[32m+ 6637  [-]   : access __x0__ = (CaseClauses0 "LexicallyScopedDeclarations")[0m
+[32m+ 6638  [-]   : let declarations = __x0__[0m
+[32m+ 6639  [-]   : let declarations = (new [])[0m
+[32m+ 6640  [-]   : access __x1__ = (DefaultClause "LexicallyScopedDeclarations")[0m
+[32m+ 6641  [-]   : let __x2__ = __x1__[0m
+[32m+ 6642  [-]   : let __x3__ = 0i[0m
+[32m+ 6643  [[32mT[0m/[32mT[0m[32m]: while (< __x3__ __x2__["length"]) { ... }[0m
+[32m+ 6644  [-]   : { ... }[0m
+[32m+ 6645  [-]   : let __x4__ = __x2__[__x3__][0m
+[32m+ 6646  [-]   : append __x4__ -> declarations[0m
+[32m+ 6647  [-]   : __x3__ = (+ __x3__ 1i)[0m
+[32m+ 6648  [[32mT[0m/[32mT[0m[32m]: if (= CaseClauses1 absent) ... else ...[0m
+[32m+ 6649  [-]   : return declarations[0m
+[32m+ 6650  [-]   : {}[0m
+[32m+ 6651  [-]   : access __x5__ = (CaseClauses1 "LexicallyScopedDeclarations")[0m
+[32m+ 6652  [-]   : let __x6__ = 0i[0m
+[32m+ 6653  [[31mF[0m/[32mT[0m[32m]: while (< __x6__ __x5__["length"]) { ... }[0m
+[31m- 6654  [-]   : { ... }[0m
+[31m- 6655  [-]   : let __x7__ = __x5__[__x6__][0m
+[31m- 6656  [-]   : append __x7__ -> declarations[0m
+[31m- 6657  [-]   : __x6__ = (+ __x6__ 1i)[0m
+[32m+ 6658  [-]   : return declarations[0m

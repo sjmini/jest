@@ -1,42 +1,42 @@
 [33mGLOBALDOTStringDOTprototypeDOTcodePointAt[0m
 [33m- Inst: 31 / 39 (79.49%)[0m
 [33m- Cond: 14 / 18 (77.78%)[0m
-[32m+ 17295 [-]   : { ... }[0m
-[32m+ 17296 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
-[32m+ 17297 [-]   : let pos = __x0__[0m
-[32m+ 17298 [-]   : app __x1__ = (RequireObjectCoercible this)[0m
-[32m+ 17299 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 17300 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[32m+ 17301 [-]   : __x1__ = __x1__["Value"][0m
-[32m+ 17302 [-]   : return __x1__[0m
-[32m+ 17303 [-]   : {}[0m
-[32m+ 17304 [-]   : let O = __x1__[0m
-[32m+ 17305 [-]   : app __x2__ = (ToString O)[0m
-[32m+ 17306 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 17307 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[32m+ 17308 [-]   : __x2__ = __x2__["Value"][0m
-[32m+ 17309 [-]   : return __x2__[0m
-[32m+ 17310 [-]   : {}[0m
-[32m+ 17311 [-]   : let S = __x2__[0m
-[32m+ 17312 [-]   : app __x3__ = (ToInteger pos)[0m
-[32m+ 17313 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 17314 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[32m+ 17315 [-]   : __x3__ = __x3__["Value"][0m
-[32m+ 17316 [-]   : return __x3__[0m
-[32m+ 17317 [-]   : {}[0m
-[32m+ 17318 [-]   : let position = __x3__[0m
-[32m+ 17319 [-]   : let size = S["length"][0m
-[32m+ 17320 [[32mT[0m/[32mT[0m[32m]: if (|| (< position 0i) (! (< position size))) ... else ...[0m
-[32m+ 17321 [-]   : { ... }[0m
-[32m+ 17322 [-]   : app __x4__ = (WrapCompletion undefined)[0m
-[32m+ 17323 [-]   : return __x4__[0m
-[32m+ 17324 [-]   : {}[0m
-[32m+ 17325 [-]   : app __x5__ = (CodePointAt S position)[0m
-[31m- 17326 [-]   : if (is-completion __x5__) ... else ...[0m
-[31m- 17327 [-]   : if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 17328 [-]   : __x5__ = __x5__["Value"][0m
-[31m- 17329 [-]   : return __x5__[0m
-[31m- 17330 [-]   : {}[0m
-[31m- 17331 [-]   : let cp = __x5__[0m
-[31m- 17332 [-]   : app __x6__ = (WrapCompletion cp["CodePoint"])[0m
-[31m- 17333 [-]   : return __x6__[0m
+[32m+ 15200 [-]   : { ... }[0m
+[32m+ 15201 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
+[32m+ 15202 [-]   : let pos = __x0__[0m
+[32m+ 15203 [-]   : app __x1__ = (RequireObjectCoercible this)[0m
+[32m+ 15204 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 15205 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15206 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 15207 [-]   : return __x1__[0m
+[32m+ 15208 [-]   : {}[0m
+[32m+ 15209 [-]   : let O = __x1__[0m
+[32m+ 15210 [-]   : app __x2__ = (ToString O)[0m
+[32m+ 15211 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 15212 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15213 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 15214 [-]   : return __x2__[0m
+[32m+ 15215 [-]   : {}[0m
+[32m+ 15216 [-]   : let S = __x2__[0m
+[32m+ 15217 [-]   : app __x3__ = (ToInteger pos)[0m
+[32m+ 15218 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 15219 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15220 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 15221 [-]   : return __x3__[0m
+[32m+ 15222 [-]   : {}[0m
+[32m+ 15223 [-]   : let position = __x3__[0m
+[32m+ 15224 [-]   : let size = S["length"][0m
+[32m+ 15225 [[32mT[0m/[32mT[0m[32m]: if (|| (< position 0i) (! (< position size))) ... else ...[0m
+[32m+ 15226 [-]   : { ... }[0m
+[32m+ 15227 [-]   : app __x4__ = (WrapCompletion undefined)[0m
+[32m+ 15228 [-]   : return __x4__[0m
+[32m+ 15229 [-]   : {}[0m
+[32m+ 15230 [-]   : app __x5__ = (CodePointAt S position)[0m
+[31m- 15231 [-]   : if (is-completion __x5__) ... else ...[0m
+[31m- 15232 [-]   : if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[31m- 15233 [-]   : __x5__ = __x5__["Value"][0m
+[31m- 15234 [-]   : return __x5__[0m
+[31m- 15235 [-]   : {}[0m
+[31m- 15236 [-]   : let cp = __x5__[0m
+[31m- 15237 [-]   : app __x6__ = (WrapCompletion cp["CodePoint"])[0m
+[31m- 15238 [-]   : return __x6__[0m
